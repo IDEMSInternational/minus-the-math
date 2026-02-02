@@ -1,0 +1,30 @@
+INFO    : PreTeXt project found in `/home/runner/work/minus-the-math/minus-the-math`.
+WARNING : Project's CLI version could not be detected from `requirements.txt`.
+WARNING : Try `pretext init --refresh` to produce a compatible file.
+INFO    : 
+ERROR   : Publication file does not specify asset directories.
+ERROR   : Publication file does not specify asset directories.
+WARNING : Assets like latex-images will not be regenerated for this build
+WARNING : (previously generated assets will be used if they exist).
+WARNING : To generate these assets before building, run `pretext build -g`.
+ERROR   : Publication file does not specify asset directories.
+ERROR   : Publication file does not specify asset directories.
+ERROR   : Publication file does not specify asset directories.
+ERROR   : Publication file does not specify asset directories.
+ERROR   : Publication file does not specify asset directories.
+ERROR   : Publication file does not specify asset directories.
+ERROR   : Publication file does not specify asset directories.
+ERROR   : Publication file does not specify asset directories.
+INFO    : Preparing to build into /home/runner/work/minus-the-math/minus-the-math/output/html.
+INFO    : 
+Now building HTML into /home/runner/work/minus-the-math/minus-the-math/output/html
+
+INFO    : discovering source file's directory name: /home/runner/work/minus-the-math/minus-the-math/source
+INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmpwh4ksk1a
+INFO    : XSL conversion of /home/runner/work/minus-the-math/minus-the-math/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/runner/.ptx/xsl/pretext-html.xsl
+INFO    : 
+Success! Run `pretext view html` to see the results.
+
+INFO    : 
