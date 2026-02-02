@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This publication file contains settings for publication of your PreTeXt project.
+-->
+<publication>
+  <!-- HTML-Specific Options -->
+  <html>
+    <calculator model="geogebra-graphing"/>
+    <index-page ref="frontmatter"/>
+    <video privacy="yes"/>
+  </html>
+  
+  <!-- LaTeX-Specific Options -->
+  <latex>
+    <sides>two</sides>
+    <pageref>yes</pageref>
+  </latex>
+</publication>
