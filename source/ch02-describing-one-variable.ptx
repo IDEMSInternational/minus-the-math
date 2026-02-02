@@ -62,9 +62,11 @@
     <subsection xml:id="subsec-median">
       <title>Median</title>
       
-      <p>
-        The <term>median</term> is also a frequently used measure of central tendency. The median is the midpoint of a distribution: the same number of scores is above the median as below it. For the data in <xref ref="table-tdownpasses"/>, there are 31 scores. The 16th highest score (which equals 20) is the median because there are 15 scores below the 16th score and 15 scores above the 16th score. The median can also be thought of as the 50th percentile.
-      </p>
+      <introduction>
+        <p>
+          The <term>median</term> is also a frequently used measure of central tendency. The median is the midpoint of a distribution: the same number of scores is above the median as below it. For the data in <xref ref="table-tdownpasses"/>, there are 31 scores. The 16th highest score (which equals 20) is the median because there are 15 scores below the 16th score and 15 scores above the 16th score. The median can also be thought of as the 50th percentile.
+        </p>
+      </introduction>
       
       <subsubsection xml:id="subsubsec-median-computation">
         <title>Computation of the Median</title>
@@ -123,7 +125,7 @@
     <fn>This section is adapted from David M. Lane. "Comparing Measures of Central Tendency." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/summarizing_distributions/comparing_measures.html"/></fn>
     
     <p>
-      How do the various measures of central tendency compare with each other? For symmetric distributions, the mean and median are equal, as is the mode except in bimodal distributions. Differences among the measures occur with skewed distributions. <xref ref="fig-disposskew"/> shows the distribution of 642 scores on an introductory psychology test. The skew of this distribution can be described as slightly positive, meaning that there are more outliers on the positive (right) side of the distribution (see <xref ref="sec-shapes-of-distributions">Section 5.1.4</xref>).
+      How do the various measures of central tendency compare with each other? For symmetric distributions, the mean and median are equal, as is the mode except in bimodal distributions. Differences among the measures occur with skewed distributions. <xref ref="fig-disposskew"/> shows the distribution of 642 scores on an introductory psychology test. The skew of this distribution can be described as slightly positive, meaning that there are more outliers on the positive (right) side of the distribution.
     </p>
     
     <figure xml:id="fig-disposskew">
@@ -243,7 +245,7 @@
       </me>
       
       <p>
-        For Quiz 1, the 75th percentile is 8 and the 25th percentile is 6. The interquartile range is therefore 2. For Quiz 2, which has greater spread, the 75th percentile is 9, the 25th percentile is 5, and the interquartile range is 4. Recall that in the discussion of box plots (<xref ref="sec-box-plots">Section 1.4.2</xref>), the 75th percentile was called the upper hinge and the 25th percentile was called the lower hinge. Thus, the interquartile range is neatly depicted by the box portion of a boxplot.
+        For Quiz 1, the 75th percentile is 8 and the 25th percentile is 6. The interquartile range is therefore 2. For Quiz 2, which has greater spread, the 75th percentile is 9, the 25th percentile is 5, and the interquartile range is 4. Recall that in the discussion of box plots (<xref ref="subsec-box-plots">Section 1.4.2</xref>), the 75th percentile was called the upper hinge and the 25th percentile was called the lower hinge. Thus, the interquartile range is neatly depicted by the box portion of a boxplot.
       </p>
     </subsection>
     
@@ -425,9 +427,10 @@
     <title>Transforming Variables</title>
     <fn>The initial part of this section is adapted from David M. Lane. "Linear Transformations." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/introduction/linear_transforms.html"/>. There is also material adapted from David M. Lane. "Standard Normal Distribution." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/normal_distribution/standard_normal.html"/>.</fn>
     
-    <p>
-      Often it is necessary to transform data from one measurement scale to another. For example, you might want to convert height measured in feet to height measured in inches. <xref ref="table-heightconversion"/> shows the heights of four people measured in both feet and inches. To transform feet to inches, you simply multiply by 12. Similarly, to transform inches to feet, you divide by 12.
-    </p>
+    <introduction>
+      <p>
+        Often it is necessary to transform data from one measurement scale to another. For example, you might want to convert height measured in feet to height measured in inches. <xref ref="table-heightconversion"/> shows the heights of four people measured in both feet and inches. To transform feet to inches, you simply multiply by 12. Similarly, to transform inches to feet, you divide by 12.
+      </p>
     
     <table xml:id="table-heightconversion">
       <title>Converting between feet and inches.</title>
@@ -515,14 +518,15 @@
       The transformation consists of multiplying by a constant and then adding a second constant. For the conversion from Centigrade to Fahrenheit, the first constant is 1.8 and the second is 32.
     </p>
     
-    <p>
-      <xref ref="fig-cfunctionf"/> shows a plot of degrees Centigrade as a function of degrees Fahrenheit. Notice that the points form a straight line. This will always be the case if the transformation from one scale to another consists of multiplying by one constant and then adding a second constant. Such transformations are therefore called <term>linear transformations</term>.
-    </p>
-    
-    <figure xml:id="fig-cfunctionf">
-      <caption>Degrees Centigrade as a function of degrees Fahrenheit.</caption>
-      <image source="Images/describing-one-variable/cfunctionf.png" width="50%"/>
-    </figure>
+      <p>
+        <xref ref="fig-cfunctionf"/> shows a plot of degrees Centigrade as a function of degrees Fahrenheit. Notice that the points form a straight line. This will always be the case if the transformation from one scale to another consists of multiplying by one constant and then adding a second constant. Such transformations are therefore called <term>linear transformations</term>.
+      </p>
+      
+      <figure xml:id="fig-cfunctionf">
+        <caption>Degrees Centigrade as a function of degrees Fahrenheit.</caption>
+        <image source="Images/describing-one-variable/cfunctionf.png" width="50%"/>
+      </figure>
+    </introduction>
     
     <subsection xml:id="sec-standardization">
       <title>Standardization (Z Scores)</title>

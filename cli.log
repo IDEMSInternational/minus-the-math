@@ -20,7 +20,7 @@ INFO    :
 Now building HTML into /home/runner/work/minus-the-math/minus-the-math/output/html
 
 INFO    : discovering source file's directory name: /home/runner/work/minus-the-math/minus-the-math/source
-INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmpplskwv19
+INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmp2t_d55om
 INFO    : XSL conversion of /home/runner/work/minus-the-math/minus-the-math/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : comprehensive messages, warnings, and errors:
 INFO    : successful application of /home/runner/.ptx/xsl/pretext-html.xsl
