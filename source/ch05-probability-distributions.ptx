@@ -2,18 +2,421 @@
 <chapter xml:id="ch05-probability-distributions" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Probability Distributions</title>
   
-  <introduction>
-    <p>
-      <!-- Introduction content to be added -->
-    </p>
-  </introduction>
-
-  <section xml:id="sec-ch05-section1">
-    <title>Section Title</title>
+  <section xml:id="sec-various-types-distributions">
+    <title>Various Types of Distributions</title>
     
-    <p>
-      <!-- Section content to be added -->
-    </p>
+    <subsection xml:id="subsec-distributions-qualitative-discrete">
+      <title>Distributions of Qualitative or Discrete Variables</title>
+      
+      <p>
+        I recently purchased a bag of Plain M&amp;M's. The M&amp;M's were in six different colors. A quick count showed that there were 55 M&amp;M's: 17 brown, 18 red, 7 yellow, 7 green, 2 blue, and 4 orange. These counts are shown below in <xref ref="table-mm-frequencies"/>.
+      </p>
+      
+      <table xml:id="table-mm-frequencies">
+        <title>Frequencies in the Bag of M&amp;M's</title>
+        <tabular>
+          <row header="yes">
+            <cell>Color</cell>
+            <cell>Frequency</cell>
+          </row>
+          <row>
+            <cell>Brown</cell>
+            <cell>17</cell>
+          </row>
+          <row>
+            <cell>Red</cell>
+            <cell>18</cell>
+          </row>
+          <row>
+            <cell>Yellow</cell>
+            <cell>7</cell>
+          </row>
+          <row>
+            <cell>Green</cell>
+            <cell>7</cell>
+          </row>
+          <row>
+            <cell>Blue</cell>
+            <cell>2</cell>
+          </row>
+          <row>
+            <cell>Orange</cell>
+            <cell>4</cell>
+          </row>
+        </tabular>
+      </table>
+      
+      <p>
+        This table is called a frequency table and it describes the distribution of M&amp;M color frequencies. Not surprisingly, this kind of distribution is called a <term>frequency distribution</term>. Often a frequency distribution is shown graphically as in <xref ref="fig-mm-55-dist"/>.
+      </p>
+      
+      <figure xml:id="fig-mm-55-dist">
+        <caption>Distribution of 55 M&amp;M's</caption>
+        <image source="Images/prob-distributions/55mmdist.jpg" width="60%">
+          <description>Bar chart showing the distribution of colors in a bag of 55 M and M's</description>
+        </image>
+      </figure>
+      
+      <p>
+        The distribution shown in <xref ref="fig-mm-55-dist"/> concerns just my one bag of M&amp;M's. You might be wondering about the distribution of colors for all M&amp;M's. The manufacturer of M&amp;M's provides some information about this matter, but they do not tell us exactly how many M&amp;M's of each color they have ever produced. Instead, they report proportions rather than frequencies. <xref ref="fig-mm-all-dist"/> shows these proportions. Since every M&amp;M is one of the six familiar colors, the six proportions shown in the figure add to one. We call <xref ref="fig-mm-all-dist"/> a <term>probability distribution</term> because if you choose an M&amp;M at random, the probability of getting, say, a brown M&amp;M is equal to the proportion of M&amp;M's that are brown (0.30).
+      </p>
+      
+      <figure xml:id="fig-mm-all-dist">
+        <caption>Distribution of all M&amp;M's</caption>
+        <image source="Images/prob-distributions/allmmdist.jpg" width="60%">
+          <description>Bar chart showing the probability distribution of all M and M colors</description>
+        </image>
+      </figure>
+      
+      <p>
+        Notice that the distributions in <xref ref="fig-mm-55-dist"/> and <xref ref="fig-mm-all-dist"/> are not identical. <xref ref="fig-mm-55-dist"/> portrays the distribution in a sample of 55 M&amp;M's. <xref ref="fig-mm-all-dist"/> shows the proportions for all M&amp;M's. Chance factors involving the machines used by the manufacturer introduce random variation into the different bags produced. Some bags will have a distribution of colors that is close to <xref ref="fig-mm-all-dist"/>; others will be further away.
+      </p>
+    </subsection>
+    
+    <subsection xml:id="subsec-continuous-variables">
+      <title>Continuous Variables</title>
+      
+      <p>
+        The variable <q>color of M&amp;M</q> is a qualitative variable, and its distribution is called discrete because there are a finite number of values the variable can take on. Let us now extend the concept of a distribution to continuous variables.
+      </p>
+      
+      <p>
+        The data shown in <xref ref="table-response-times"/> are the times it took David Lane (the author of much of the material appearing in this book) to move the cursor over a small target in a series of 20 trials. The times are sorted from shortest to longest. The variable <q>time to respond</q> is a continuous variable. With time measured accurately (to many decimal places), no two response times would be expected to be the same. Measuring time in milliseconds (thousandths of a second) is often precise enough to approximate a continuous variable in psychology. As you can see in <xref ref="table-response-times"/>, measuring David Lane's responses this way produced times no two of which were the same. As a result, a frequency distribution would be uninformative: it would consist of the 20 times in the experiment, each with a frequency of 1.
+      </p>
+      
+      <table xml:id="table-response-times">
+        <title>Response Times</title>
+        <tabular>
+          <row>
+            <cell>568</cell>
+            <cell>577</cell>
+            <cell>581</cell>
+            <cell>640</cell>
+            <cell>641</cell>
+          </row>
+          <row>
+            <cell>645</cell>
+            <cell>657</cell>
+            <cell>673</cell>
+            <cell>696</cell>
+            <cell>703</cell>
+          </row>
+          <row>
+            <cell>720</cell>
+            <cell>728</cell>
+            <cell>729</cell>
+            <cell>777</cell>
+            <cell>808</cell>
+          </row>
+          <row>
+            <cell>824</cell>
+            <cell>825</cell>
+            <cell>865</cell>
+            <cell>875</cell>
+            <cell>1007</cell>
+          </row>
+        </tabular>
+      </table>
+      
+      <p>
+        The solution to this problem is to create a grouped frequency distribution, as we saw when learning about histograms in <xref ref="ch01-graphical-tools"/>. In a grouped frequency distribution, scores falling within various ranges are tabulated. <xref ref="table-grouped-freq-dist"/> shows a grouped frequency distribution for these 20 times.
+      </p>
+      
+      <table xml:id="table-grouped-freq-dist">
+        <title>Grouped frequency distribution</title>
+        <tabular>
+          <row header="yes">
+            <cell>Range</cell>
+            <cell>Frequency</cell>
+          </row>
+          <row>
+            <cell>500-600</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell>600-700</cell>
+            <cell>6</cell>
+          </row>
+          <row>
+            <cell>700-800</cell>
+            <cell>5</cell>
+          </row>
+          <row>
+            <cell>800-900</cell>
+            <cell>5</cell>
+          </row>
+          <row>
+            <cell>900-1000</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>1000-1100</cell>
+            <cell>1</cell>
+          </row>
+        </tabular>
+      </table>
+      
+      <p>
+        <xref ref="fig-grouped-freq-hist"/> shows a histogram for the frequency distribution in <xref ref="table-grouped-freq-dist"/>.
+      </p>
+      
+      <figure xml:id="fig-grouped-freq-hist">
+        <caption>A histogram of the grouped frequency distribution shown in <xref ref="table-grouped-freq-dist"/>. The labels on the X-axis are the middle values of the range they represent.</caption>
+        <image source="Images/prob-distributions/groupfreqhist.jpg" width="60%">
+          <description>Histogram showing grouped frequency distribution of response times</description>
+        </image>
+      </figure>
+    </subsection>
+    
+    <subsection xml:id="subsec-probability-densities">
+      <title>Probability Densities</title>
+      
+      <p>
+        The histogram in <xref ref="fig-grouped-freq-hist"/> portrays just David Lane's 20 times in the one experiment. To represent the probability associated with an arbitrary movement (which can take any positive amount of time), we must represent all these potential times at once. For this purpose, we plot the distribution for the continuous variable of time. Distributions for continuous variables are called continuous distributions. They also carry the fancier name <term>probability density</term>. Some probability densities have particular importance in statistics. A very important one is shaped like a bell, and called the <term>normal distribution</term>. Many naturally-occurring phenomena can be approximated surprisingly well by this distribution. It will serve to illustrate some features of all continuous distributions.
+      </p>
+      
+      <p>
+        An example of a normal distribution is shown in <xref ref="fig-normal-dist"/>. Do you see the <q>bell</q>? The normal distribution doesn't represent a real bell, however, since the left and right tips extend indefinitely (we can't draw them any further so they look like they've stopped in our diagram). The Y-axis in the normal distribution represents the <q>density of probability.</q> Intuitively, it shows the chance of obtaining values near corresponding points on the X-axis. In <xref ref="fig-normal-dist"/>, for example, the probability of an observation with value near 40 is about half of the probability of an observation with value near 50.
+      </p>
+      
+      <p>
+        Although this text does not discuss the concept of probability density in detail, you should keep the following ideas in mind about the curve that describes a continuous distribution (like the normal distribution). First, the area under the curve equals 1. Second, the probability of any exact value of X is 0. Finally, the area under the curve and bounded between two given points on the X-axis is the probability that a number chosen at random will fall between the two points. Let us illustrate with David Lane's hand movements. First, the probability that his movement takes some amount of time is one! (We exclude the possibility of him never finishing his gesture.) Second, the probability that his movement takes exactly 598.956432342346576 milliseconds is essentially zero. (We can make the probability as close as we like to zero by making the time measurement more and more precise.) Finally, suppose that the probability of David Lane's movement taking between 600 and 700 milliseconds is one tenth. Then the continuous distribution for David Lane's possible times would have a shape that places 10% of the area below the curve in the region bounded by 600 and 700 on the X-axis.
+      </p>
+      
+      <figure xml:id="fig-normal-dist">
+        <caption>A normal distribution</caption>
+        <image source="Images/prob-distributions/normaldist.jpg" width="60%">
+          <description>Bell-shaped curve showing a normal distribution</description>
+        </image>
+      </figure>
+    </subsection>
+    
+    <subsection xml:id="subsec-shapes-distributions">
+      <title>Shapes of Distributions</title>
+      
+      <p>
+        As we've already seen when graphing different data, distributions have different shapes; they don't all look like the normal distribution in <xref ref="fig-normal-dist"/>. For example, the normal probability density is higher in the middle compared to its two tails. Other distributions need not have this feature. There is even variation among the distributions that we call <q>normal.</q> For example, some normal distributions are more spread out than the one shown in <xref ref="fig-normal-dist"/> (their tails begin to hit the X-axis further from the middle of the curve – for example, at 10 and 90 if drawn in place of <xref ref="fig-normal-dist"/>). Others are less spread out (their tails might approach the X-axis at 30 and 70). We'll learn more about the details of the normal distribution later in this chapter.
+      </p>
+      
+      <p>
+        The distribution shown in <xref ref="fig-normal-dist"/> is symmetric; if you folded it in the middle, the two sides would match perfectly. <xref ref="fig-pos-skew-dist"/> shows the discrete distribution of scores on a psychology test. This distribution is not symmetric: the tail in the positive direction extends further than the tail in the negative direction. A distribution with the longer tail extending in the positive direction is said to have a <term>positive skew</term>. It is also described as <q>skewed to the right.</q>
+      </p>
+      
+      <figure xml:id="fig-pos-skew-dist">
+        <caption>A distribution with a positive skew</caption>
+        <image source="Images/prob-distributions/posskewdist.jpg" width="60%">
+          <description>Histogram showing a distribution with positive skew</description>
+        </image>
+      </figure>
+      
+      <p>
+        <xref ref="fig-large-pos-skew-dist"/> shows the salaries of major league baseball players in 1974 (in thousands of dollars). This distribution has an extreme positive skew.
+      </p>
+      
+      <figure xml:id="fig-large-pos-skew-dist">
+        <caption>A distribution with a very large positive skew</caption>
+        <image source="Images/prob-distributions/largeposskewdist.jpg" width="60%">
+          <description>Histogram of baseball salaries showing extreme positive skew</description>
+        </image>
+      </figure>
+      
+      <p>
+        A continuous distribution with a positive skew is shown in <xref ref="fig-pos-skew-cont-dist"/>.
+      </p>
+      
+      <figure xml:id="fig-pos-skew-cont-dist">
+        <caption>A continuous distribution with a positive skew</caption>
+        <image source="Images/prob-distributions/posskewcontdist.jpg" width="60%">
+          <description>Continuous curve showing positive skew</description>
+        </image>
+      </figure>
+      
+      <p>
+        Although less common, some distributions have a <term>negative skew</term>. <xref ref="fig-neg-skew-dist"/> shows the scores on a 20-point problem on a statistics exam. Since the tail of the distribution extends to the left, this distribution is skewed to the left.
+      </p>
+      
+      <figure xml:id="fig-neg-skew-dist">
+        <caption>A distribution with negative skew</caption>
+        <image source="Images/prob-distributions/negskewdist.jpg" width="60%">
+          <description>Histogram showing a distribution with negative skew</description>
+        </image>
+      </figure>
+      
+      <p>
+        A continuous distribution with a negative skew is shown in <xref ref="fig-neg-skew-cont-dist"/>.
+      </p>
+      
+      <figure xml:id="fig-neg-skew-cont-dist">
+        <caption>A continuous distribution with a negative skew</caption>
+        <image source="Images/prob-distributions/negskewcontdist.jpg" width="60%">
+          <description>Continuous curve showing negative skew</description>
+        </image>
+      </figure>
+      
+      <p>
+        The distributions shown so far all have one distinct high point or peak. The distribution in <xref ref="fig-bimodal-dist"/> has two distinct peaks. A distribution with two peaks is called a <term>bimodal distribution</term>.
+      </p>
+      
+      <figure xml:id="fig-bimodal-dist">
+        <caption>Frequencies of times between eruptions of the Old Faithful geyser. Notice the two distinct peaks: one at 1.75 and the other at 4.25.</caption>
+        <image source="Images/prob-distributions/eruptionfreqs.jpg" width="60%">
+          <description>Histogram showing bimodal distribution of Old Faithful eruption intervals</description>
+        </image>
+      </figure>
+    </subsection>
   </section>
+  
+  <section xml:id="sec-normal-distributions">
+    <title>Normal Distributions</title>
+    
+    <introduction>
+      <p>
+        The normal distribution is the most important and most widely used distribution in statistics. It is sometimes called the <q>bell curve,</q> although the tonal qualities of such a bell would be less than pleasing. It is also called the <q>Gaussian curve</q> after the mathematician Karl Friedrich Gauss. Although Gauss played an important role in its history, Abraham de Moivre first discovered the normal distribution.
+      </p>
+      
+      <p>
+        Strictly speaking, it is not correct to talk about <q>the normal distribution</q> since there are many normal distributions. Normal distributions can differ in their means and in their standard deviations. <xref ref="fig-normal-dist-3"/> shows three normal distributions. The green (left-most) distribution has a mean of -3 and a standard deviation of 0.5, the distribution in red (the middle distribution) has a mean of 0 and a standard deviation of 1, and the distribution in black (right-most) has a mean of 2 and a standard deviation of 3. These as well as all other normal distributions are symmetric with relatively more values at the center of the distribution and relatively few in the tails.
+      </p>
+      
+      <figure xml:id="fig-normal-dist-3">
+        <caption>Normal distributions differing in mean and standard deviation</caption>
+        <image source="Images/prob-distributions/normaldist3.png" width="60%">
+          <description>Three normal distribution curves with different means and standard deviations</description>
+        </image>
+      </figure>
+      
+      <p>
+        Seven features of normal distributions are listed below. Some of these features are illustrated in more detail in the remaining sections of this chapter.
+      </p>
+      
+      <p>
+        <ul>
+          <li>Normal distributions are symmetric around their mean.</li>
+          <li>The mean, median, and mode of a normal distribution are equal.</li>
+          <li>The area under the normal curve is equal to 1.0.</li>
+          <li>Normal distributions are denser in the center and less dense in the tails.</li>
+          <li>Normal distributions are defined by two parameters, the mean (<m>\mu</m>) and the standard deviation (<m>\sigma</m>).</li>
+          <li>68% of the area of a normal distribution is within one standard deviation of the mean.</li>
+          <li>Approximately 95% of the area of a normal distribution is within two standard deviations of the mean.</li>
+        </ul>
+      </p>
+    </introduction>
+    
+    <subsection xml:id="subsec-importance-normal-distributions">
+      <title>Importance of Normal Distributions</title>
+      
+      <p>
+        The importance of the normal curve stems primarily from the fact that the distributions of many natural phenomena are at least approximately normally distributed. One of the first applications of the normal distribution was to the analysis of errors of measurement made in astronomical observations, errors that occurred because of imperfect instruments and imperfect observers. Galileo in the 17th century noted that these errors were symmetric and that small errors occurred more frequently than large errors. This led to several hypothesized distributions of errors, but it was not until the early 19th century that it was discovered that these errors followed a normal distribution. Independently, the mathematicians Adrain in 1808 and Gauss in 1809 developed the formula for the normal distribution and showed that errors were fit well by this distribution.
+      </p>
+      
+      <p>
+        Most statistical procedures for testing differences between means assume normal distributions. Because the distribution of means is very close to normal, these tests work well even if the original distribution is only roughly normal.
+      </p>
+      
+      <p>
+        Quételet was the first to apply the normal distribution to human characteristics. He noted that characteristics such as height, weight, and strength were normally distributed.
+      </p>
+    </subsection>
+    
+    <subsection xml:id="subsec-areas-normal-distributions">
+      <title>Areas Under Normal Distributions</title>
+      
+      <p>
+        Areas under portions of a normal distribution can be computed by using calculus. Since this is a non-mathematical treatment of statistics, we will rely on computer programs and tables to determine these areas.
+      </p>
+      
+      <p>
+        <xref ref="fig-normal-dist-mean50-sd10"/> shows a normal distribution with a mean of 50 and a standard deviation of 10. The shaded area between 40 and 60 contains 68% of the distribution.
+      </p>
+      
+      <figure xml:id="fig-normal-dist-mean50-sd10">
+        <caption>Normal distribution with a mean of 50 and standard deviation of 10. 68% of the area is within one standard deviation (10) of the mean (50).</caption>
+        <image source="Images/prob-distributions/normaldistmean5sd10.png" width="60%">
+          <description>Normal distribution curve centered at 50 with shaded area showing 68 percent</description>
+        </image>
+      </figure>
+      
+      <p>
+        <xref ref="fig-normal-dist-mean100-sd20"/> shows a normal distribution with a mean of 100 and a standard deviation of 20. As in <xref ref="fig-normal-dist-mean50-sd10"/>, 68% of the distribution is within one standard deviation of the mean.
+      </p>
+      
+      <figure xml:id="fig-normal-dist-mean100-sd20">
+        <caption>Normal distribution with a mean of 100 and standard deviation of 20. 68% of the area is within one standard deviation (20) of the mean (100).</caption>
+        <image source="Images/prob-distributions/normaldistmean100sd20.png" width="60%">
+          <description>Normal distribution curve centered at 100 with shaded area showing 68 percent</description>
+        </image>
+      </figure>
+      
+      <p>
+        The normal distributions shown in <xref ref="fig-normal-dist-mean50-sd10"/> and <xref ref="fig-normal-dist-mean100-sd20"/> are specific examples of the general rule that <em>68% of the area of any normal distribution is within one standard deviation of the mean</em>.
+      </p>
+      
+      <p>
+        <xref ref="fig-normal-dist-mean75-sd10"/> shows a normal distribution with a mean of 75 and a standard deviation of 10. The shaded area contains 95% of the area and extends from 55.4 to 94.6. <em>For all normal distributions, 95% of the area is within 1.96 standard deviations of the mean</em>. For quick approximations, it is sometimes useful to round off and use 2 rather than 1.96 as the number of standard deviations you need to extend from the mean so as to include 95% of the area.
+      </p>
+      
+      <figure xml:id="fig-normal-dist-mean75-sd10">
+        <caption>A normal distribution with a mean of 75 and a standard deviation of 10. 95% of the area is within 1.96 standard deviations of the mean.</caption>
+        <image source="Images/prob-distributions/normaldistmean75sd10.png" width="60%">
+          <description>Normal distribution curve centered at 75 with shaded area showing 95 percent</description>
+        </image>
+      </figure>
+      
+      <p>
+        It is easy to find free online normal distribution calculators that will give you the areas under the normal distribution (e.g., <url href="https://onlinestatbook.com/2/calculators/normal_dist.html"/>). For example, you can use one to find the proportion of a normal distribution with a mean of 90 and a standard deviation of 12 that is above 110 (<xref ref="fig-normal-calculator"/>). Set the mean to 90 and the standard deviation to 12. Then enter <q>110</q> in the box to the right of the radio button <q>Above.</q> At the bottom of the display you will see that the shaded area is 0.0478. See if you can use the calculator to find that the area between 115 and 120 is 0.0124.
+      </p>
+      
+      <figure xml:id="fig-normal-calculator">
+        <caption>Display from calculator showing the area above 110</caption>
+        <image source="Images/prob-distributions/calculator.png" width="60%">
+          <description>Screenshot of normal distribution calculator showing area above 110</description>
+        </image>
+      </figure>
+      
+      <p>
+        Say you wanted to find the score corresponding to the 75th percentile of a normal distribution with a mean of 90 and a standard deviation of 12. Using an inverse normal calculator (e.g., <url href="https://onlinestatbook.com/2/calculators/inverse_normal_dist.html"/>), you enter the parameters as shown in <xref ref="fig-normal-calculator-75"/> and find that the area below 98.09 is 0.75.
+      </p>
+      
+      <figure xml:id="fig-normal-calculator-75">
+        <caption>Display from normal calculator showing that the 75th percentile is 98.09</caption>
+        <image source="Images/prob-distributions/calculator75percentile.png" width="60%">
+          <description>Screenshot of inverse normal calculator showing 75th percentile at 98.09</description>
+        </image>
+      </figure>
+    </subsection>
+    
+    <subsection xml:id="subsec-standard-normal-distribution">
+      <title>The Standard Normal Distribution</title>
+      
+      <p>
+        As discussed above, normal distributions do not necessarily have the same means and standard deviations. A normal distribution with a mean of 0 and a standard deviation of 1 is called a <term>standard normal distribution</term>.
+      </p>
+      
+      <p>
+        A value from any normal distribution can be transformed into its corresponding value on a standard normal distribution using the following formula:
+        <me>Z = \frac{X - \mu}{\sigma}</me>
+        where <m>Z</m> is the value on the standard normal distribution, <m>X</m> is the value on the original distribution, <m>\mu</m> is the mean of the original distribution, and <m>\sigma</m> is the standard deviation of the original distribution. Note that this transformation is one we already learned about (<q>standardization</q>) in <xref ref="subsec-standardization"/>. Here, we are highlighting that this transformation can be used to relate any normal distribution to the standard normal distribution.
+      </p>
+    </subsection>
+  </section>
+  
+  <references>
+    <title>References</title>
+    <biblio type="raw" xml:id="biblio-distributions">
+      This section is adapted from David M. Lane and Heidi Ziemer. <q>Distributions.</q> <pubtitle>Online Statistics Education: A Multimedia Course of Study</pubtitle>. <url href="https://onlinestatbook.com/2/introduction/distributions.html"/>.
+    </biblio>
+    <biblio type="raw" xml:id="biblio-intro-normal">
+      The initial part of this section is adapted from David M. Lane. <q>Introduction to Normal Distributions.</q> <pubtitle>Online Statistics Education: A Multimedia Course of Study</pubtitle>. <url href="https://onlinestatbook.com/2/normal_distribution/intro.html"/>.
+    </biblio>
+    <biblio type="raw" xml:id="biblio-history-normal">
+      This subsection is adapted from David M. Lane. <q>History of the Normal Distribution.</q> <pubtitle>Online Statistics Education: A Multimedia Course of Study</pubtitle>. <url href="https://onlinestatbook.com/2/normal_distribution/history_normal.html"/>.
+    </biblio>
+    <biblio type="raw" xml:id="biblio-areas-normal">
+      This subsection is adapted from David M. Lane. <q>Areas Under Normal Distributions.</q> <pubtitle>Online Statistics Education: A Multimedia Course of Study</pubtitle>. <url href="https://onlinestatbook.com/2/normal_distribution/areas_normal.html"/>.
+    </biblio>
+    <biblio type="raw" xml:id="biblio-standard-normal">
+      This subsection is adapted from David M. Lane. <q>Standard Normal Distribution.</q> <pubtitle>Online Statistics Education: A Multimedia Course of Study</pubtitle>. <url href="https://onlinestatbook.com/2/normal_distribution/standard_normal.html"/>.
+    </biblio>
+  </references>
 
 </chapter>
