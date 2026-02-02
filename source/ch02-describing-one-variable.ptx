@@ -249,7 +249,7 @@
       </p>
     </subsection>
     
-    <subsection xml:id="sec-variance">
+    <subsection xml:id="subsec-variance">
       <title>Variance</title>
       
       <p>
@@ -528,7 +528,7 @@
       </figure>
     </introduction>
     
-    <subsection xml:id="sec-standardization">
+    <subsection xml:id="subsec-standardization">
       <title>Standardization (Z Scores)</title>
       
       <p>
