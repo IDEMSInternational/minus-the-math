@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is the main entry point for your PreTeXt book -->
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+  
+  <docinfo>
+    <macros>
+      % Add LaTeX macros here if needed
+    </macros>
+  </docinfo>
+
+  <book xml:id="statistics-minus-the-maths">
+    <title>Statistics Minus the Maths</title>
+
+    <frontmatter xml:id="frontmatter">
+      <titlepage>
+        <author>
+          <personname>Nathan Favero</personname>
+        </author>
+      </titlepage>
+
+      <xi:include href="./preface.ptx"/>
+    </frontmatter>
+
+    <xi:include href="./ch01-graphical-tools.ptx"/>
+    <xi:include href="./ch02-describing-one-variable.ptx"/>
+    <xi:include href="./ch03-relationship-two-quantitative.ptx"/>
+    <xi:include href="./ch04-estimation.ptx"/>
+    <xi:include href="./ch05-probability-distributions.ptx"/>
+    <xi:include href="./ch06-sampling-distributions.ptx"/>
+    <xi:include href="./ch07-hypothesis-testing.ptx"/>
+    <xi:include href="./ch08-comparing-means.ptx"/>
+    <xi:include href="./ch09-comparing-groups.ptx"/>
+    <xi:include href="./ch10-causality-experimental-designs.ptx"/>
+    <xi:include href="./ch11-models-uncertainty.ptx"/>
+    <xi:include href="./ch12-regression-qual-independent.ptx"/>
+    <xi:include href="./ch13-regression-qual-dependent.ptx"/>
+
+    <backmatter xml:id="backmatter">
+      <title>Backmatter</title>
+    </backmatter>
+
+  </book>
+
+</pretext>
