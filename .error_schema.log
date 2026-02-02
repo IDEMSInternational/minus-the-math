@@ -1,0 +1,3 @@
+/home/runner/work/minus-the-math/minus-the-math/source/main.ptx:21:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element biography, got include
+/home/runner/work/minus-the-math/minus-the-math/source/main.ptx:14:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element frontmatter there
+/home/runner/work/minus-the-math/minus-the-math/source/main.ptx:11:0:ERROR:RELAXNGV:RELAXNG_ERR_CONTENTVALID: Element book failed to validate content
