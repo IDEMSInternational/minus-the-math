@@ -71,6 +71,23 @@ Built files will be placed in the `output/` directory:
 - `output/pdf/` - PDF version
 - `output/latex/` - LaTeX source files
 
+## GitHub Pages Deployment
+
+The book is automatically built and deployed to GitHub Pages whenever changes are pushed to the `main` branch. The workflow:
+
+1. Installs PreTeXt CLI
+2. Builds the HTML version of the book
+3. Deploys the HTML output to GitHub Pages
+
+You can also manually trigger the deployment from the Actions tab in the GitHub repository.
+
+### Prerequisites for GitHub Pages
+
+Ensure that GitHub Pages is enabled in your repository settings:
+1. Go to Settings → Pages
+2. Set Source to "GitHub Actions"
+3. The workflow will automatically deploy on the next push to `main`
+
 ## About PreTeXt
 
 PreTeXt is an authoring and publishing system for scholarly documents, with special support for textbooks. Learn more at [pretextbook.org](https://pretextbook.org/).
