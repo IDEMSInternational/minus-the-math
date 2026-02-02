@@ -570,7 +570,7 @@
     </table>
 
     <p>
-      Up til now, we have only discussed simple regression, in which we have a single independent variable. But in <xref ref="table-regression-cs-gpa"/>, we find results for a regression where two independent variables<mdash/>SAT scores on the verbal section (verb_sat) and SAT scores on the math section (math_sat)<mdash/>are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as described in the appendix to this chapter. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. For the results in <xref ref="table-regression-cs-gpa"/>, we can interpret the results as follows:
+      Up until now, we have only discussed simple regression, in which we have a single independent variable. But in <xref ref="table-regression-cs-gpa"/>, we find results for a regression where two independent variables<mdash/>SAT scores on the verbal section (verb_sat) and SAT scores on the math section (math_sat)<mdash/>are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as described in the appendix to this chapter. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. For the results in <xref ref="table-regression-cs-gpa"/>, we can interpret the results as follows:
     </p>
 
     <p>

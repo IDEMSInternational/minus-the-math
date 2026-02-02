@@ -20,7 +20,7 @@ INFO    :
 Now building HTML into /home/runner/work/minus-the-math/minus-the-math/output/html
 
 INFO    : discovering source file's directory name: /home/runner/work/minus-the-math/minus-the-math/source
-INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmpgao4jgtc
+INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmpaql6_sh4
 INFO    : XSL conversion of /home/runner/work/minus-the-math/minus-the-math/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : comprehensive messages, warnings, and errors:
 INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
