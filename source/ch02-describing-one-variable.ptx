@@ -2,18 +2,581 @@
 <chapter xml:id="ch02-describing-one-variable" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Statistics for Describing One Variable at a Time</title>
   
-  <introduction>
-    <p>
-      <!-- Introduction content to be added -->
-    </p>
-  </introduction>
-
-  <section xml:id="sec-ch02-section1">
-    <title>Section Title</title>
+  <section xml:id="sec-measures-central-tendency">
+    <title>Measures of Central Tendency</title>
+    <fn>This section is adapted from David M. Lane. "Measures of Central Tendency." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/summarizing_distributions/measures.html"/></fn>
+    
+    <subsection xml:id="subsec-mean">
+      <title>Mean</title>
+      
+      <p>
+        The <term>mean</term><fn>More specifically, the arithmetic mean is the most common measure of central tendency. Although the arithmetic mean is not the only "mean" (there is also a geometric mean), it is by far the most commonly used. Therefore, if the term "mean" is used without specifying whether it is the arithmetic mean, the geometric mean, or some other mean, it is assumed to refer to the arithmetic mean.</fn> is the most common measure of central tendency. It is simply the sum of the numbers divided by the number of numbers. When using symbols and formulas to represent different statistics, we often distinguish between whether we are looking at a <q>sample</q> or a <q>population.</q> We'll cover this distinction in more detail in <xref ref="ch04-estimation">Chapter 4</xref>. For now, think of a pollster who has conducted a survey with a sample of 1000 people. Even though only 1000 people responded to the survey, the pollster is actually interested in estimating the attitudes of a larger population—the entire public.
+      </p>
+      
+      <p>
+        The symbol <m>\mu</m> is used for the mean of a population. The symbol <m>\bar{X}</m> is used for the mean of a sample. The formula for <m>\mu</m> is shown below:
+      </p>
+      
+      <me>
+        \mu = \frac{\sum X}{N}
+      </me>
+      
+      <p>
+        where <m>\sum X</m> is the sum of all the numbers in the population and <m>N</m> is the number of numbers in the population.
+      </p>
+      
+      <p>
+        The formula for <m>\bar{X}</m> is essentially identical:
+      </p>
+      
+      <me>
+        \bar{X} = \frac{\sum X}{n}
+      </me>
+      
+      <p>
+        where <m>\sum X</m> is the sum of all the numbers in the sample and <m>n</m> is the number of numbers in the sample.
+      </p>
+      
+      <p>
+        As an example, the mean of the numbers 1, 2, 3, 6, 8 is 20/5 = 4 regardless of whether the numbers constitute the entire population or just a sample from the population.
+      </p>
+      
+      <p>
+        <xref ref="table-tdownpasses"/> shows the number of touchdown (TD) passes thrown by each of the 31 teams in the National Football League in the 2000 season. The mean number of touchdown passes thrown is 20.4516 as shown below.
+      </p>
+      
+      <me>
+        \mu = \frac{\sum X}{N} = \frac{634}{31} = 20.4516
+      </me>
+      
+      <table xml:id="table-tdownpasses">
+        <title>Number of touchdown passes.</title>
+        <tabular>
+          <row>
+            <cell>37 33 33 32 29 28 28 23 22 22 22 21 21 21 20 20 19 19 18 18 18 18 16 15 14 14 14 12 12 9 6</cell>
+          </row>
+        </tabular>
+      </table>
+    </subsection>
+    
+    <subsection xml:id="subsec-median">
+      <title>Median</title>
+      
+      <introduction>
+        <p>
+          The <term>median</term> is also a frequently used measure of central tendency. The median is the midpoint of a distribution: the same number of scores is above the median as below it. For the data in <xref ref="table-tdownpasses"/>, there are 31 scores. The 16th highest score (which equals 20) is the median because there are 15 scores below the 16th score and 15 scores above the 16th score. The median can also be thought of as the 50th percentile.
+        </p>
+      </introduction>
+      
+      <subsubsection xml:id="subsubsec-median-computation">
+        <title>Computation of the Median</title>
+        
+        <p>
+          When there is an odd number of numbers, the median is simply the middle number. For example, the median of 2, 4, and 7 is 4. When there is an even number of numbers, the median is the mean of the two middle numbers. Thus, the median of the numbers 2, 4, 7, 12 is (4+7)/2 = 5.5.
+        </p>
+      </subsubsection>
+    </subsection>
+    
+    <subsection xml:id="subsec-mode">
+      <title>Mode</title>
+      
+      <p>
+        The <term>mode</term> is the most frequently occurring value. For the data in <xref ref="table-tdownpasses"/>, the mode is 18 since more teams (4) had 18 touchdown passes than any other number of touchdown passes. With continuous data such as response time measured to many decimals, the frequency of each value is one since no two scores will be exactly the same (see discussion of continuous variables). Therefore the mode of continuous data is normally computed from a grouped frequency distribution. <xref ref="table-groupfreqdist"/> shows a grouped frequency distribution for the target response time data. Since the interval with the highest frequency is 600-700, the mode is the middle of that interval (650).
+      </p>
+      
+      <table xml:id="table-groupfreqdist">
+        <title>Grouped frequency distribution.</title>
+        <tabular>
+          <row header="yes">
+            <cell><term>Range</term></cell>
+            <cell><term>Frequency</term></cell>
+          </row>
+          <row>
+            <cell>500-600</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell>600-700</cell>
+            <cell>6</cell>
+          </row>
+          <row>
+            <cell>700-800</cell>
+            <cell>5</cell>
+          </row>
+          <row>
+            <cell>800-900</cell>
+            <cell>5</cell>
+          </row>
+          <row>
+            <cell>900-1000</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>1000-1100</cell>
+            <cell>1</cell>
+          </row>
+        </tabular>
+      </table>
+    </subsection>
+  </section>
+  
+  <section xml:id="sec-comparing-measures">
+    <title>Comparing Measures of Central Tendency</title>
+    <fn>This section is adapted from David M. Lane. "Comparing Measures of Central Tendency." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/summarizing_distributions/comparing_measures.html"/></fn>
     
     <p>
-      <!-- Section content to be added -->
+      How do the various measures of central tendency compare with each other? For symmetric distributions, the mean and median are equal, as is the mode except in bimodal distributions. Differences among the measures occur with skewed distributions. <xref ref="fig-disposskew"/> shows the distribution of 642 scores on an introductory psychology test. The skew of this distribution can be described as slightly positive, meaning that there are more outliers on the positive (right) side of the distribution.
     </p>
+    
+    <figure xml:id="fig-disposskew">
+      <caption>A distribution with a positive skew.</caption>
+      <image source="Images/describing-one-variable/disposskew.jpg" width="70%"/>
+    </figure>
+    
+    <p>
+      Measures of central tendency are shown in <xref ref="table-testscoremeasures"/>. Notice they do not differ greatly, with the exception that the mode is considerably lower than the other measures. When distributions have a positive skew, the mean is typically higher than the median, although it may not be in bimodal distributions. For these data, the mean of 91.58 is higher than the median of 90.
+    </p>
+    
+    <table xml:id="table-testscoremeasures">
+      <title>Measures of central tendency for the test scores.</title>
+      <tabular>
+        <row header="yes">
+          <cell><term>Measure</term></cell>
+          <cell><term>Value</term></cell>
+        </row>
+        <row>
+          <cell>Mode</cell>
+          <cell>84.00</cell>
+        </row>
+        <row>
+          <cell>Median</cell>
+          <cell>90.00</cell>
+        </row>
+        <row>
+          <cell>Mean</cell>
+          <cell>91.58</cell>
+        </row>
+      </tabular>
+    </table>
+    
+    <p>
+      The distribution of baseball salaries (in 1994) shown in <xref ref="fig-bballsalarydist"/> has a much more pronounced skew than the distribution in <xref ref="fig-disposskew"/>.
+    </p>
+    
+    <figure xml:id="fig-bballsalarydist">
+      <caption>A distribution with a very large positive skew. This histogram shows the salaries of major league baseball players (in thousands of dollars: 25 equals 250,000).</caption>
+      <image source="Images/describing-one-variable/bballsalarydist.jpg" width="50%"/>
+    </figure>
+    
+    <p>
+      <xref ref="table-bballmeasures"/> shows the measures of central tendency for these data. The large skew results in very different values for these measures. No single measure of central tendency is sufficient for data such as these. If you were asked the very general question: <q>So, what do baseball players make?</q> and answered with the mean of $1,183,000, you would not have told the whole story since only about one third of baseball players make that much. If you answered with the mode of $250,000 or the median of $500,000, you would not be giving any indication that some players make many millions of dollars. Fortunately, there is no need to summarize a distribution with a single number. When the various measures differ, our opinion is that you should report the mean and the median. Sometimes it is worth reporting the mode as well. In the media, the median is usually reported to summarize the center of skewed distributions. You will hear about median salaries and median prices of houses sold, etc. This is better than reporting only the mean, but it would be informative to hear more statistics.
+    </p>
+    
+    <table xml:id="table-bballmeasures">
+      <title>Measures of central tendency for baseball salaries (in thousands of dollars).</title>
+      <tabular>
+        <row header="yes">
+          <cell><term>Measure</term></cell>
+          <cell><term>Value</term></cell>
+        </row>
+        <row>
+          <cell>Mode</cell>
+          <cell>250</cell>
+        </row>
+        <row>
+          <cell>Median</cell>
+          <cell>500</cell>
+        </row>
+        <row>
+          <cell>Mean</cell>
+          <cell>1,183</cell>
+        </row>
+      </tabular>
+    </table>
+  </section>
+  
+  <section xml:id="sec-measures-spread">
+    <title>Measures of Spread</title>
+    <fn>This section is adapted from David M. Lane. "Measures of Variability." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/summarizing_distributions/variability.html"/></fn>
+    
+    <subsection xml:id="subsec-what-is-variability">
+      <title>What is Variability?</title>
+      
+      <p>
+        Variability refers to how <q>spread out</q> a group of scores is. To see what we mean by spread out, consider graphs in <xref ref="fig-quizzes"/>. These graphs represent the scores on two quizzes. The mean score for each quiz is 7.0. Despite the equality of means, you can see that the distributions are quite different. Specifically, the scores on Quiz 1 are more densely packed and those on Quiz 2 are more spread out. The differences among students were much greater on Quiz 2 than on Quiz 1.
+      </p>
+      
+      <figure xml:id="fig-quizzes">
+        <caption>Bar charts of two quizzes.</caption>
+        <sidebyside widths="45% 45%">
+          <figure xml:id="fig-quiz1">
+            <caption>Quiz 1</caption>
+            <image source="Images/describing-one-variable/Quiz1.jpg"/>
+          </figure>
+          <figure xml:id="fig-quiz2">
+            <caption>Quiz 2</caption>
+            <image source="Images/describing-one-variable/Quiz2.jpg"/>
+          </figure>
+        </sidebyside>
+      </figure>
+      
+      <p>
+        The terms variability, spread, and dispersion are synonyms, and refer to how spread out a distribution is. Just as in the section on central tendency where we discussed measures of the center of a distribution of scores, in this section we will discuss measures of the variability of a distribution. There are four frequently used measures of variability: the range, interquartile range, variance, and standard deviation. In the next few paragraphs, we will look at each of these four measures of variability in more detail.
+      </p>
+    </subsection>
+    
+    <subsection xml:id="subsec-range">
+      <title>Range</title>
+      
+      <p>
+        The <term>range</term> is the simplest measure of variability to calculate, and one you have probably encountered many times in your life. The range is simply the highest score minus the lowest score. Let's take a few examples. What is the range of the following group of numbers: 10, 2, 5, 6, 7, 3, 4? Well, the highest number is 10, and the lowest number is 2, so 10 - 2 = 8. The range is 8. Let's take another example. Here's a dataset with 10 numbers: 99, 45, 23, 67, 45, 91, 82, 78, 62, 51. What is the range? The highest number is 99 and the lowest number is 23, so 99 - 23 equals 76; the range is 76. Now consider the two quizzes shown in <xref ref="fig-quizzes"/>. On Quiz 1, the lowest score is 5 and the highest score is 9. Therefore, the range is 4. The range on Quiz 2 was larger: the lowest score was 4 and the highest score was 10. Therefore the range is 6.
+      </p>
+    </subsection>
+    
+    <subsection xml:id="subsec-iqr">
+      <title>Interquartile Range</title>
+      
+      <p>
+        The <term>interquartile range</term> (IQR) is the range of the middle 50% of the scores in a distribution. It is computed as follows:
+      </p>
+      
+      <me>
+        IQR = \text{ 75th percentile } - \text{ 25th percentile }
+      </me>
+      
+      <p>
+        For Quiz 1, the 75th percentile is 8 and the 25th percentile is 6. The interquartile range is therefore 2. For Quiz 2, which has greater spread, the 75th percentile is 9, the 25th percentile is 5, and the interquartile range is 4. Recall that in the discussion of box plots (<xref ref="subsec-box-plots">Section 1.4.2</xref>), the 75th percentile was called the upper hinge and the 25th percentile was called the lower hinge. Thus, the interquartile range is neatly depicted by the box portion of a boxplot.
+      </p>
+    </subsection>
+    
+    <subsection xml:id="subsec-variance">
+      <title>Variance</title>
+      
+      <p>
+        Variability can also be defined in terms of how close the scores in the distribution are to the middle of the distribution. Using the mean as the measure of the middle of the distribution, the <term>variance</term> is defined as the average squared difference of the scores from the mean. The data from Quiz 1 are shown in <xref ref="table-quiz1var"/>. The mean score is 7.0. Therefore, the column <q>Deviation from Mean</q> contains the score minus 7. The column <q>Squared Deviation</q> is simply the previous column squared.
+      </p>
+      
+      <table xml:id="table-quiz1var">
+        <title>Calculation of Variance for Quiz 1 scores.</title>
+        <tabular>
+          <row header="yes">
+            <cell><term>Scores</term></cell>
+            <cell><term>Deviation from Mean</term></cell>
+            <cell><term>Squared Deviation</term></cell>
+          </row>
+          <row>
+            <cell>9</cell>
+            <cell>2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>9</cell>
+            <cell>2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>9</cell>
+            <cell>2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>-1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>-1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>-1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>-1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>-1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>-2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>-2</cell>
+            <cell>4</cell>
+          </row>
+          <row header="yes">
+            <cell></cell>
+            <cell><term>Means</term></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>1.5</cell>
+          </row>
+        </tabular>
+      </table>
+      
+      <p>
+        One thing that is important to notice is that the mean deviation from the mean is 0. This will always be the case. The mean of the squared deviations is 1.5. Therefore, the variance is 1.5. Analogous calculations with Quiz 2 show that its variance is 6.7. The formula for the variance is:
+      </p>
+      
+      <me>
+        \sigma^2=\frac{\sum (X-\mu)^2}{N}
+      </me>
+      
+      <p>
+        where <m>\sigma^2</m> is the variance, <m>\mu</m> is the mean, and <m>N</m> is the number of numbers. For Quiz 1, <m>\mu</m> = 7 and <m>N</m> = 20.
+      </p>
+      
+      <p>
+        If the variance in a sample is used to estimate the variance in a population, then the previous formula underestimates the variance and the following formula should be used:
+      </p>
+      
+      <me>
+        s^2=\frac{\sum(X-\bar{X})^2}{n-1}
+      </me>
+      
+      <p>
+        where <m>s^2</m> is the estimate of the variance and <m>\bar{X}</m> is the sample mean.
+      </p>
+      
+      <p>
+        Note that <m>\bar{X}</m> is the mean of a sample taken from a population with a mean of <m>\mu</m>. Since, in practice, the variance is usually computed in a sample, this formula is most often used. While it is not easy to succinctly explain why we divide by <m>n-1</m> rather than simply <m>n</m>, the simulation <q>estimating variance</q><fn><url href="https://onlinestatbook.com/2/summarizing_distributions/variance_est.html"/></fn> illustrates the bias that arises if we use <m>n</m> as the denominator in the formula.
+      </p>
+      
+      <p>
+        Let's look at a concrete example of calculating the sample variance. Assume the scores 1, 2, 4, and 5 were sampled from a larger population. To estimate the variance in the population you would compute <m>s^2</m> as follows:
+      </p>
+      
+      <me>
+        \bar{X} = (1 + 2 + 4 + 5)/4 = 12/4 = 3
+      </me>
+      
+      <md>
+        <mrow>s^2 \amp = [(1-3)^2 + (2-3)^2 + (4-3)^2 + (5-3)^2]/(4-1)</mrow>
+        <mrow>\amp = (4 + 1 + 1 + 4)/3 = 10/3 = 3.333</mrow>
+      </md>
+    </subsection>
+    
+    <subsection xml:id="subsec-standard-deviation">
+      <title>Standard Deviation</title>
+      
+      <p>
+        The <term>standard deviation</term> is simply the square root of the variance. This makes the standard deviations of the two quiz distributions 1.225 and 2.588. We can interpret the standard deviation of X as approximating the typical distance between a given value of X and the mean of X. For example, suppose I tell you about a prison where the prisoners have a mean age of 42 years with a standard deviation of 8 years. If I randomly select one prisoner and ask you to guess their age, you should probably guess 42 since I've told you that is the mean. But even though 42 is your best guess, you can expect your guess to be off by about 8 years since the standard deviation is 8 (meaning the typical distance between a random prisoner's age and the mean age is approximately 8). You can't say ahead of time which direction your guess is likely to be off (guessing too old versus too young), just that you are likely to miss the reality for a randomly-selected individual by about 8 years on a typical guess (though any one guess may happen to be closer or further than 8 years).
+      </p>
+    </subsection>
+  </section>
+  
+  <section xml:id="sec-transforming-variables">
+    <title>Transforming Variables</title>
+    <fn>The initial part of this section is adapted from David M. Lane. "Linear Transformations." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/introduction/linear_transforms.html"/>. There is also material adapted from David M. Lane. "Standard Normal Distribution." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/normal_distribution/standard_normal.html"/>.</fn>
+    
+    <introduction>
+      <p>
+        Often it is necessary to transform data from one measurement scale to another. For example, you might want to convert height measured in feet to height measured in inches. <xref ref="table-heightconversion"/> shows the heights of four people measured in both feet and inches. To transform feet to inches, you simply multiply by 12. Similarly, to transform inches to feet, you divide by 12.
+      </p>
+    
+    <table xml:id="table-heightconversion">
+      <title>Converting between feet and inches.</title>
+      <tabular>
+        <row header="yes">
+          <cell><term>Feet</term></cell>
+          <cell><term>Inches</term></cell>
+        </row>
+        <row>
+          <cell>5.00</cell>
+          <cell>60</cell>
+        </row>
+        <row>
+          <cell>6.25</cell>
+          <cell>75</cell>
+        </row>
+        <row>
+          <cell>5.50</cell>
+          <cell>66</cell>
+        </row>
+        <row>
+          <cell>5.75</cell>
+          <cell>69</cell>
+        </row>
+      </tabular>
+    </table>
+    
+    <p>
+      Some conversions require that you multiply by a number and then add a second number. A good example of this is the transformation between degrees Centigrade and degrees Fahrenheit. <xref ref="table-temp5cities"/> shows the temperatures of 5 US cities in the early afternoon of November 16, 2002.
+    </p>
+    
+    <table xml:id="table-temp5cities">
+      <title>Temperatures in 5 cities on 11/16/2002.</title>
+      <tabular>
+        <row header="yes">
+          <cell><term>City</term></cell>
+          <cell><term>Degrees Fahrenheit</term></cell>
+          <cell><term>Degrees Centigrade</term></cell>
+        </row>
+        <row>
+          <cell>Houston</cell>
+          <cell>54</cell>
+          <cell>12.22</cell>
+        </row>
+        <row>
+          <cell>Chicago</cell>
+          <cell>37</cell>
+          <cell>2.78</cell>
+        </row>
+        <row>
+          <cell>Minneapolis</cell>
+          <cell>31</cell>
+          <cell>-0.56</cell>
+        </row>
+        <row>
+          <cell>Miami</cell>
+          <cell>78</cell>
+          <cell>25.56</cell>
+        </row>
+        <row>
+          <cell>Phoenix</cell>
+          <cell>70</cell>
+          <cell>21.11</cell>
+        </row>
+      </tabular>
+    </table>
+    
+    <p>
+      The formula to transform Centigrade to Fahrenheit is:
+    </p>
+    
+    <me>
+      F = 1.8C + 32
+    </me>
+    
+    <p>
+      The formula for converting from Fahrenheit to Centigrade is
+    </p>
+    
+    <me>
+      C = 0.5556F - 17.778
+    </me>
+    
+    <p>
+      The transformation consists of multiplying by a constant and then adding a second constant. For the conversion from Centigrade to Fahrenheit, the first constant is 1.8 and the second is 32.
+    </p>
+    
+      <p>
+        <xref ref="fig-cfunctionf"/> shows a plot of degrees Centigrade as a function of degrees Fahrenheit. Notice that the points form a straight line. This will always be the case if the transformation from one scale to another consists of multiplying by one constant and then adding a second constant. Such transformations are therefore called <term>linear transformations</term>.
+      </p>
+      
+      <figure xml:id="fig-cfunctionf">
+        <caption>Degrees Centigrade as a function of degrees Fahrenheit.</caption>
+        <image source="Images/describing-one-variable/cfunctionf.png" width="50%"/>
+      </figure>
+    </introduction>
+    
+    <subsection xml:id="subsec-standardization">
+      <title>Standardization (Z Scores)</title>
+      
+      <p>
+        So far, we've discussed transformations that are probably familiar to you. A type of transformation that may be new to you is <term>standardization</term> or creating <m>Z</m> scores. A value from any distribution can be transformed into a <m>Z</m> score using the following formula:
+      </p>
+      
+      <me>
+        Z = \frac{(X - \mu)}{\sigma}
+      </me>
+      
+      <p>
+        where <m>Z</m> is the new value, <m>X</m> is the value on the original distribution, <m>\mu</m> is the mean of the original distribution, and <m>\sigma</m> is the standard deviation of the original distribution.
+      </p>
+      
+      <p>
+        As a simple application, suppose you want the <m>Z</m> score for a value of 26 taken from a distribution with a mean of 50 and a standard deviation of 10. Applying the formula, we obtain:
+      </p>
+      
+      <me>
+        Z = (26 - 50)/10 = -2.4
+      </me>
+      
+      <p>
+        If all the values in a distribution are transformed to <m>Z</m> scores, then the new distribution will have a mean of 0 and a standard deviation of 1. This process of transforming a distribution to one with a mean of 0 and a standard deviation of 1 is called standardizing the distribution. Sometimes it will be easier to work with a standardized version of a variable.
+      </p>
+    </subsection>
+    
+    <subsection xml:id="subsec-log-transformations">
+      <title>Log Transformations</title>
+      <fn>This subsection is adapted from David M. Lane. "Log Transformations." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/transformations/log.html"/></fn>
+      
+      <p>
+        Sometimes it is also useful to use transformations that are not linear. For example, the log transformation can be used to make highly skewed distributions less skewed. This can be valuable both for making patterns in the data more interpretable and for helping to meet the assumptions of inferential statistics (see <xref ref="ch04-estimation">Chapter 4</xref>).
+      </p>
+      
+      <p>
+        <xref ref="fig-scatterplotbrainweight"/> shows an example of how a log transformation can make patterns more visible. Both graphs plot the brain weight of animals as a function of their body weight. The raw weights are shown in the upper panel; the log-transformed weights are plotted in the lower panel.
+      </p>
+      
+      <figure xml:id="fig-scatterplotbrainweight">
+        <caption>Scatter plots of brain weight as a function of body weight in terms of both raw data (upper panel) and log-transformed data (lower panel).</caption>
+        <image source="Images/describing-one-variable/scatterplotbrainweight.jpg" width="70%"/>
+      </figure>
+      
+      <p>
+        It is hard to discern a pattern in the upper panel whereas the strong relationship is shown clearly in the lower panel.
+      </p>
+    </subsection>
   </section>
 
 </chapter>
