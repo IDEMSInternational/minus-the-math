@@ -2,18 +2,717 @@
 <chapter xml:id="ch03-relationship-two-quantitative" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Tools for Describing the Relationship Between Two Quantitative Variables</title>
   
-  <introduction>
-    <p>
-      <!-- Introduction content to be added -->
-    </p>
-  </introduction>
-
-  <section xml:id="sec-ch03-section1">
-    <title>Section Title</title>
+  <section xml:id="sec-introduction-bivariate-data">
+    <title>Introduction to Bivariate Data</title>
     
     <p>
-      <!-- Section content to be added -->
+      Measures of central tendency, variability, and spread summarize a single variable by providing important information about its distribution. Often, more than one variable is collected on each individual. For example, in large health studies of populations it is common to obtain variables such as age, sex, height, weight, blood pressure, and total cholesterol on each individual. Economic studies may be interested in, among other things, personal income and years of education. As a third example, most university admissions committees ask for an applicant's high school grade point average and standardized admission test scores (e.g., SAT). In this chapter we consider bivariate data, which for now consists of two quantitative variables for each individual. Our first interest is in summarizing such data in a way that is analogous to summarizing univariate (single variable) data.
     </p>
+
+    <p>
+      By way of illustration, let's consider something with which we are all familiar: age. Let's begin by asking if people tend to marry other people of about the same age. Our experience tells us <q>yes,</q> but how good is the correspondence? One way to address the question is to look at pairs of ages for a sample of married couples. <xref ref="table-spousal-age"/> below shows the ages of 10 married couples. Going across the columns we see that, yes, husbands and wives tend to be of about the same age, with men having a tendency to be slightly older than their wives. This is no big surprise, but at least the data bear out our experiences, which is not always the case.
+    </p>
+
+    <table xml:id="table-spousal-age">
+      <title>Sample of spousal ages of 10 White American Couples</title>
+      <tabular>
+        <row>
+          <cell><term>Husband</term></cell>
+          <cell>36</cell>
+          <cell>72</cell>
+          <cell>37</cell>
+          <cell>36</cell>
+          <cell>51</cell>
+          <cell>50</cell>
+          <cell>47</cell>
+          <cell>50</cell>
+          <cell>37</cell>
+          <cell>41</cell>
+        </row>
+        <row>
+          <cell><term>Wife</term></cell>
+          <cell>35</cell>
+          <cell>67</cell>
+          <cell>33</cell>
+          <cell>35</cell>
+          <cell>50</cell>
+          <cell>46</cell>
+          <cell>47</cell>
+          <cell>42</cell>
+          <cell>36</cell>
+          <cell>41</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The pairs of ages in <xref ref="table-spousal-age"/> are from a dataset consisting of 282 pairs of spousal ages, too many to make sense of from a table. What we need is a way to summarize the 282 pairs of ages. We know that each variable can be summarized by a histogram (see <xref ref="fig-hist-spousal-age"/>) and by a mean and standard deviation (See <xref ref="table-spousal-age-stats"/>).
+    </p>
+
+    <figure xml:id="fig-hist-spousal-age">
+      <caption>Histograms of spousal ages</caption>
+      <image source="Images/correlations/histspousalage.jpg" width="70%">
+        <description>Side-by-side histograms showing the distribution of ages for husbands and wives</description>
+      </image>
+    </figure>
+
+    <table xml:id="table-spousal-age-stats">
+      <title>Means and standard deviations of spousal ages</title>
+      <tabular>
+        <row header="yes">
+          <cell></cell>
+          <cell>Mean</cell>
+          <cell>Standard Deviation</cell>
+        </row>
+        <row>
+          <cell>Husbands</cell>
+          <cell>49</cell>
+          <cell>11</cell>
+        </row>
+        <row>
+          <cell>Wives</cell>
+          <cell>47</cell>
+          <cell>11</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Each distribution is fairly skewed with a long right tail. From <xref ref="table-spousal-age"/> we see that not all husbands are older than their wives and it is important to see that this fact is lost when we separate the variables. That is, even though we provide summary statistics on each variable, the pairing within couple is lost by separating the variables. We cannot say, for example, based on the means alone what percentage of couples has younger husbands than wives. We have to count across pairs to find this out. Only by maintaining the pairing can meaningful answers be found about couples per se. Another example of information not available from the separate descriptions of husbands and wives' ages is the mean age of husbands with wives of a certain age. For instance, what is the average age of husbands with 45-year-old wives? Finally, we do not know the relationship between the husband's age and the wife's age.
+    </p>
+
+    <figure xml:id="fig-scatter-spousal-age">
+      <caption>Scatter plot showing wife's age as a function of husband's age, <m>r = 0.97</m></caption>
+      <image source="Images/correlations/scatterplotspousalage.jpg" width="50%">
+        <description>Scatter plot with husband's age on x-axis and wife's age on y-axis, showing a strong positive linear relationship</description>
+      </image>
+    </figure>
+
+    <p>
+      We can learn much more by displaying the bivariate data in a graphical form that maintains the pairing. <xref ref="fig-scatter-spousal-age"/> shows a scatter plot of the paired ages. The x-axis represents the age of the husband and the y-axis the age of the wife.
+    </p>
+
+    <p>
+      There are two important characteristics of the data revealed by <xref ref="fig-scatter-spousal-age"/>. First, it is clear that there is a strong relationship between the husband's age and the wife's age: the older the husband, the older the wife. When one variable (<m>Y</m>) increases with the second variable (<m>X</m>), we say that <m>X</m> and <m>Y</m> have a <term>positive association</term>. Conversely, when <m>Y</m> decreases as <m>X</m> increases, we say that they have a <term>negative association</term>.
+    </p>
+
+    <p>
+      Second, the points cluster along a straight line. When this occurs, the relationship is called a <term>linear relationship</term>.
+    </p>
+
+    <figure xml:id="fig-scatter-strength">
+      <caption>Scatter plot of Grip Strength and Arm Strength, <m>r = 0.63</m></caption>
+      <image source="Images/correlations/scatterplotstrength.jpg" width="55%">
+        <description>Scatter plot showing the relationship between arm strength and grip strength</description>
+      </image>
+    </figure>
+
+    <p>
+      <xref ref="fig-scatter-strength"/> shows a scatter plot of Arm Strength and Grip Strength from 149 individuals working in physically demanding jobs including electricians, construction and maintenance workers, and auto mechanics. Not surprisingly, the stronger someone's grip, the stronger their arm tends to be. There is therefore a positive association between these variables. Although the points cluster along a line, they are not clustered quite as closely as they are for the scatter plot of spousal age.
+    </p>
+
+    <figure xml:id="fig-scatter-galileo">
+      <caption>Galileo's data showing a non-linear relationship</caption>
+      <image source="Images/correlations/scatterplotgalileo.jpg" width="60%">
+        <description>Scatter plot of Galileo's projectile motion experiment showing a curved relationship</description>
+      </image>
+    </figure>
+
+    <p>
+      Not all scatter plots show linear relationships. <xref ref="fig-scatter-galileo"/> shows the results of an experiment conducted by Galileo on projectile motion. In the experiment, Galileo rolled balls down an incline and measured how far they traveled as a function of the release height. It is clear from <xref ref="fig-scatter-galileo"/> that the relationship between <q>Release Height</q> and <q>Distance Traveled</q> is not described well by a straight line: If you drew a line connecting the lowest point and the highest point, all of the remaining points would be above the line. The data are better fit by a parabola (a type of curved line).
+    </p>
+
+    <p>
+      Scatter plots that show linear relationships between variables can differ in several ways including the slope of the line about which they cluster and how tightly the points cluster about the line. We now turn our attention to a statistical measure of the strength of the relationship between two quantitative variables.
+    </p>
+  </section>
+
+  <section xml:id="sec-what-is-correlation">
+    <title>What is Correlation?</title>
+    
+    <p>
+      The Pearson product-moment correlation coefficient is a measure of the strength of the linear relationship between two variables. It is referred to as Pearson's correlation or simply as the <term>correlation coefficient</term>. If the relationship between the variables is not linear, then the correlation coefficient does not adequately represent the strength of the relationship between the variables.
+    </p>
+
+    <p>
+      The symbol for Pearson's correlation is <q><m>\rho</m></q> when it is measured in the population and <q>r</q> when it is measured in a sample. Because we will be dealing almost exclusively with samples, we will use r to represent Pearson's correlation unless otherwise noted.
+    </p>
+
+    <p>
+      Pearson's r can range from -1 to 1. An r of -1 indicates a perfect negative linear relationship between variables, an r of 0 indicates no linear relationship between variables, and an r of 1 indicates a perfect positive linear relationship between variables. <xref ref="fig-pos-linear"/> shows a scatter plot for which <m>r = 1</m>.
+    </p>
+
+    <figure xml:id="fig-pos-linear">
+      <caption>A perfect positive linear relationship, <m>r = 1</m></caption>
+      <image source="Images/correlations/poslinearrel.jpg" width="50%">
+        <description>Scatter plot showing a perfect positive linear relationship where all points fall exactly on a line</description>
+      </image>
+    </figure>
+
+    <figure xml:id="fig-neg-linear">
+      <caption>A perfect negative linear relationship, <m>r = -1</m></caption>
+      <image source="Images/correlations/neglinearrel.jpg" width="50%">
+        <description>Scatter plot showing a perfect negative linear relationship where all points fall exactly on a downward sloping line</description>
+      </image>
+    </figure>
+
+    <figure xml:id="fig-no-relation">
+      <caption>A scatter plot for which <m>r = 0</m>. Notice that there is no relationship between <m>X</m> and <m>Y</m></caption>
+      <image source="Images/correlations/scatterplotnorel.jpg" width="50%">
+        <description>Scatter plot showing no relationship between variables, with points scattered randomly</description>
+      </image>
+    </figure>
+
+    <p>
+      With real data, you would not expect to get values of r of exactly -1, 0, or 1. The data for spousal ages shown earlier in this chapter in <xref ref="fig-scatter-spousal-age"/> has an r of 0.97.
+    </p>
+
+    <p>
+      The relationship between grip strength and arm strength depicted in <xref ref="fig-scatter-strength"/> (also described in the introductory section) is 0.63.
+    </p>
+  </section>
+
+  <section xml:id="sec-how-correlation-calculated">
+    <title>How Correlation is Calculated</title>
+    
+    <p>
+      There are several formulas that can be used to compute Pearson's correlation. Some formulas make more conceptual sense whereas others are easier to actually compute. We are going to begin with a formula that makes more conceptual sense.
+    </p>
+
+    <p>
+      We are going to compute the correlation between the variables <m>X</m> and <m>Y</m> shown in <xref ref="table-r-calculation"/>. We begin by computing the mean for <m>X</m> and subtracting this mean from all values of <m>X</m>. The new variable is called <q>x.</q> The variable <q>y</q> is computed similarly. The variables x and y are said to be deviation scores because each score is a deviation from the mean. Notice that the means of x and y are both 0. Next we create a new column by multiplying x and y.
+    </p>
+
+    <p>
+      Before proceeding with the calculations, let's consider why the sum of the xy column reveals the relationship between <m>X</m> and <m>Y</m>. If there were no relationship between <m>X</m> and <m>Y</m>, then positive values of x would be just as likely to be paired with negative values of y as with positive values. This would make negative values of xy as likely as positive values and the sum would be small. On the other hand, consider <xref ref="table-r-calculation"/> in which high values of <m>X</m> are associated with high values of <m>Y</m> and low values of <m>X</m> are associated with low values of <m>Y</m>. You can see that positive values of x are associated with positive values of y and negative values of x are associated with negative values of y. In all cases, the product of x and y is positive, resulting in a high total for the xy column. Finally, if there were a negative relationship then positive values of x would be associated with negative values of y and negative values of x would be associated with positive values of y. This would lead to negative values for xy.
+    </p>
+
+    <table xml:id="table-r-calculation">
+      <title>Calculation of r</title>
+      <tabular>
+        <row header="yes">
+          <cell><m>X</m></cell>
+          <cell><m>Y</m></cell>
+          <cell><m>x</m></cell>
+          <cell><m>y</m></cell>
+          <cell><m>xy</m></cell>
+          <cell><m>x^2</m></cell>
+          <cell><m>y^2</m></cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>4</cell>
+          <cell>-3</cell>
+          <cell>-5</cell>
+          <cell>15</cell>
+          <cell>9</cell>
+          <cell>25</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>6</cell>
+          <cell>-1</cell>
+          <cell>-3</cell>
+          <cell>3</cell>
+          <cell>1</cell>
+          <cell>9</cell>
+        </row>
+        <row>
+          <cell>5</cell>
+          <cell>10</cell>
+          <cell>1</cell>
+          <cell>1</cell>
+          <cell>1</cell>
+          <cell>1</cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>5</cell>
+          <cell>12</cell>
+          <cell>1</cell>
+          <cell>3</cell>
+          <cell>3</cell>
+          <cell>1</cell>
+          <cell>9</cell>
+        </row>
+        <row>
+          <cell>6</cell>
+          <cell>13</cell>
+          <cell>2</cell>
+          <cell>4</cell>
+          <cell>8</cell>
+          <cell>4</cell>
+          <cell>16</cell>
+        </row>
+        <row>
+          <cell>Total: 20</cell>
+          <cell>45</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>30</cell>
+          <cell>16</cell>
+          <cell>60</cell>
+        </row>
+        <row>
+          <cell>Mean: 4</cell>
+          <cell>9</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>6</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Pearson's r is designed so that the correlation between height and weight is the same whether height is measured in inches or in feet. To achieve this property, Pearson's correlation is computed by dividing the sum of the xy column (<m>\sum xy</m>) by the square root of the product of the sum of the <m>x^2</m> column (<m>\sum x^2</m>) and the sum of the <m>y^2</m> column (<m>\sum y^2</m>). The resulting formula is:
+    </p>
+
+    <me>
+      r = \frac{\sum xy}{\sqrt{\sum x^2 \sum y^2}}
+    </me>
+
+    <p>
+      and therefore:
+    </p>
+
+    <me>
+      r = \frac{30}{\sqrt{(16)(60)}} = \frac{30}{\sqrt{960}} = \frac{30}{30.984} = 0.968
+    </me>
+
+    <p>
+      An alternative computational formula that avoids the step of computing deviation scores is:
+    </p>
+
+    <me>
+      r = \frac{\sum XY - \frac{\sum X \sum Y}{n}}{\sqrt{\left(\sum X^2 - \frac{(\sum X)^2}{n}\right)} \sqrt{\left(\sum Y^2 - \frac{(\sum Y)^2}{n}\right)}}
+    </me>
+  </section>
+
+  <section xml:id="sec-introduction-linear-regression">
+    <title>Introduction to Linear Regression</title>
+    
+    <introduction>
+      <p>
+        In simple linear regression, we predict scores on one variable from the scores on a second variable. The variable we are predicting is called the <term>dependent variable</term> and is referred to as <m>Y</m>. The variable we are basing our predictions on is called the <term>independent variable</term> and is referred to as <m>X</m>. When there is only one predictor variable, the prediction method is called simple regression. In simple linear regression, the topic of this section, the predictions of <m>Y</m> when plotted as a function of <m>X</m> form a straight line.
+      </p>
+
+      <p>
+        The example data in <xref ref="table-example-data-regression"/> are plotted in <xref ref="fig-scatter-example-data"/>. You can see that there is a positive relationship between <m>X</m> and <m>Y</m>. If you were going to predict <m>Y</m> from <m>X</m>, the higher the value of <m>X</m>, the higher your prediction of <m>Y</m>.
+      </p>
+    </introduction>
+
+    <table xml:id="table-example-data-regression">
+      <title>Example data</title>
+      <tabular>
+        <row header="yes">
+          <cell><m>X</m></cell>
+          <cell><m>Y</m></cell>
+        </row>
+        <row>
+          <cell>1.00</cell>
+          <cell>1.00</cell>
+        </row>
+        <row>
+          <cell>2.00</cell>
+          <cell>2.00</cell>
+        </row>
+        <row>
+          <cell>3.00</cell>
+          <cell>1.30</cell>
+        </row>
+        <row>
+          <cell>4.00</cell>
+          <cell>3.75</cell>
+        </row>
+        <row>
+          <cell>5.00</cell>
+          <cell>2.25</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <figure xml:id="fig-scatter-example-data">
+      <caption>A scatter plot of the example data</caption>
+      <image source="Images/correlations/splotexampledata.jpg" width="40%">
+        <description>Scatter plot of example data showing a positive relationship</description>
+      </image>
+    </figure>
+
+    <p>
+      Linear regression consists of finding the best-fitting straight line through the points. The best-fitting line is called a regression line. The black diagonal line in <xref ref="fig-scatter-example-detail"/> is the regression line and consists of the predicted score on <m>Y</m> for each possible value of <m>X</m>. The vertical lines from the points to the regression line represent the errors of prediction. As you can see, the red point is very near the regression line; its error of prediction is small. By contrast, the yellow point is much higher than the regression line and therefore its error of prediction is large.
+    </p>
+
+    <figure xml:id="fig-scatter-example-detail">
+      <caption>A scatter plot of the example data. The black line consists of the predictions, the points are the actual data, and the vertical lines between the points and the black line represent errors of prediction</caption>
+      <image source="Images/correlations/splotexampledatadetail.jpg" width="50%">
+        <description>Scatter plot with regression line showing prediction errors for each data point</description>
+      </image>
+    </figure>
+
+    <p>
+      The error of prediction for a point is the value of the point minus the predicted value (the value on the line). <xref ref="table-example-data-predictions"/> shows the predicted values (<m>\hat{Y}</m>) and the errors of prediction (<m>Y - \hat{Y}</m>). For example, the first point has a <m>Y</m> of 1.00 and a predicted <m>Y</m> (called <m>\hat{Y}</m>) of 1.21. Therefore, its error of prediction is -0.21.
+    </p>
+
+    <table xml:id="table-example-data-predictions">
+      <title>Example data with predictions and errors</title>
+      <tabular>
+        <row header="yes">
+          <cell><m>X</m></cell>
+          <cell><m>Y</m></cell>
+          <cell><m>\hat{Y}</m></cell>
+          <cell><m>Y - \hat{Y}</m></cell>
+          <cell><m>(Y - \hat{Y})^2</m></cell>
+        </row>
+        <row>
+          <cell>1.00</cell>
+          <cell>1.00</cell>
+          <cell>1.210</cell>
+          <cell>-0.210</cell>
+          <cell>0.044</cell>
+        </row>
+        <row>
+          <cell>2.00</cell>
+          <cell>2.00</cell>
+          <cell>1.635</cell>
+          <cell>0.365</cell>
+          <cell>0.133</cell>
+        </row>
+        <row>
+          <cell>3.00</cell>
+          <cell>1.30</cell>
+          <cell>2.060</cell>
+          <cell>-0.760</cell>
+          <cell>0.578</cell>
+        </row>
+        <row>
+          <cell>4.00</cell>
+          <cell>3.75</cell>
+          <cell>2.485</cell>
+          <cell>1.265</cell>
+          <cell>1.600</cell>
+        </row>
+        <row>
+          <cell>5.00</cell>
+          <cell>2.25</cell>
+          <cell>2.910</cell>
+          <cell>-0.660</cell>
+          <cell>0.436</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      You may have noticed that we did not specify what is meant by <q>best-fitting line.</q> By far, the most commonly-used criterion for the best-fitting line is the line that minimizes the sum of the squared errors of prediction. That is the criterion that was used to find the line in <xref ref="fig-scatter-example-detail"/>. The last column in <xref ref="table-example-data-predictions"/> shows the squared errors of prediction. The sum of the squared errors of prediction shown in <xref ref="table-example-data-predictions"/> is lower than it would be for any other regression line.
+    </p>
+
+    <p>
+      The formula for a regression line is
+    </p>
+
+    <me>
+      \hat{Y} = \alpha + \beta X
+    </me>
+
+    <p>
+      where <m>\hat{Y}</m> is the predicted score, <m>\alpha</m> is the <m>Y</m>-intercept, and <m>\beta</m> is the slope of the line. The equation for the line in <xref ref="fig-scatter-example-detail"/> is
+    </p>
+
+    <me>
+      \hat{Y} = 0.785 + 0.425X
+    </me>
+
+    <p>
+      Using this equation, we can calculate predictions for <m>Y</m> based on the value of <m>X</m>. For <m>X = 1</m>,
+    </p>
+
+    <me>
+      \hat{Y} = 0.785 + (0.425)(1) = 1.21
+    </me>
+
+    <p>
+      For <m>X = 2</m>,
+    </p>
+
+    <me>
+      \hat{Y} = 0.785 + (0.425)(2) = 1.64
+    </me>
+
+    <subsection xml:id="subsec-real-example">
+      <title>A Real Example</title>
+      
+      <p>
+        The case study <q>SAT and College GPA</q> contains high school and university grades for 105 computer science majors at a local state school. We now consider how we could predict a student's university GPA if we knew his or her high school GPA.
+      </p>
+
+      <p>
+        <xref ref="fig-uni-high-school-gpa"/> shows a scatter plot of University GPA as a function of High School GPA. You can see from the figure that there is a strong positive relationship. The correlation is 0.78. The regression equation is
+      </p>
+
+      <me>
+        \widehat{\text{University GPA}} = (0.675)(\text{High School GPA}) + 1.097
+      </me>
+
+      <p>
+        Therefore, a student with a high school GPA of 3 would be predicted to have a university GPA of
+      </p>
+
+      <me>
+        \widehat{\text{University GPA}} = (0.675)(3) + 1.097 = 3.12
+      </me>
+
+      <figure xml:id="fig-uni-high-school-gpa">
+        <caption>University GPA as a function of High School GPA</caption>
+        <image source="Images/correlations/unihighschoolgpa.jpg" width="60%">
+          <description>Scatter plot showing the relationship between high school GPA and university GPA with regression line</description>
+        </image>
+      </figure>
+    </subsection>
+  </section>
+
+  <section xml:id="sec-quick-guide-interpreting-regression">
+    <title>Quick Guide to Interpreting Regression Results</title>
+    
+    <p>
+      Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            <term>Significance</term>: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable? To assess this, check the p-value. For now, you can use the following rule-of-thumb:
+          </p>
+          <p>
+            <ul>
+              <li><p>If <m>p \lt 0.05</m>: the relationship is statistically significant; proceed to evaluating sign and size</p></li>
+              <li><p>If <m>p \gt 0.05</m>: results are somewhat indeterminate; any association detected between the two variables could easily be caused by coincidence or random <q>noise</q> (so you may want to skip evaluating sign and size)</p></li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Sign</term>: Is the relationship positive or negative? Check whether the coefficient has a negative value.
+          </p>
+          <p>
+            <ul>
+              <li><p>Positive coefficient: as the independent variable <em>increases</em>, the dependent variable is predicted to <em>increase</em></p></li>
+              <li><p>Negative coefficient: as the independent variable <em>increases</em>, the dependent variable is predicted to <em>decrease</em></p></li>
+              <li><p>Note about odds ratios: For certain types of (non-linear) regression, odds ratios (which always take on positive values) are sometimes displayed instead of coefficients; with an odds ratio, a value greater than one indicates a positive relationship while a value smaller than one indicates a negative relationship</p></li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Size</term>: How big is the (predictive) effect? This S is often the most difficult to make sense of, and sometimes you may not have enough information to meaningfully evaluate it (e.g., if the units of measurement for a variable are not clearly explained).
+          </p>
+          <p>
+            <ul>
+              <li><p>For linear models: A one-unit increase in the independent variable predicts a <m>\hat{\beta_i}</m>-unit change in the dependent variable (where <m>\hat{\beta_i}</m> represents the value of the coefficient estimate)</p></li>
+              <li><p>For non-linear models: Interpreting the size of a coefficient is typically more complicated than for a linear model; look for the authors' explanation of effect size or <q>magnitude</q> of association</p></li>
+            </ul>
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <xref ref="table-regression-cs-gpa"/> provides an example of regression results in a format similar to what you may encounter in many research publications. Note, however, that many publications do not list exact p-values; instead, they often use one or more asterisks (*) to denote coefficients with p-values smaller than 0.05 (sometimes also flagging p-values falling below various other thresholds).
+    </p>
+
+    <table xml:id="table-regression-cs-gpa">
+      <title>Results for a regression with computer science GPA as the dependent variable</title>
+      <tabular>
+        <row header="yes">
+          <cell></cell>
+          <cell>Coef.</cell>
+          <cell>Std. err.</cell>
+          <cell>p-value</cell>
+        </row>
+        <row>
+          <cell>verb_sat</cell>
+          <cell>0.0017</cell>
+          <cell>0.0010</cell>
+          <cell>0.10</cell>
+        </row>
+        <row>
+          <cell>math_sat</cell>
+          <cell>0.0048</cell>
+          <cell>0.0012</cell>
+          <cell>0.00014</cell>
+        </row>
+        <row>
+          <cell>(intercept)</cell>
+          <cell>-0.91</cell>
+          <cell>0.42</cell>
+          <cell>0.033</cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>n</cell>
+          <cell>105</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>r^2</m></cell>
+          <cell>0.487</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Up until now, we have only discussed simple regression, in which we have a single independent variable. But in <xref ref="table-regression-cs-gpa"/>, we find results for a regression where two independent variables<mdash/>SAT scores on the verbal section (verb_sat) and SAT scores on the math section (math_sat)<mdash/>are jointly used to predict students' GPA in computer science classes. It turns out that regression can easily be performed with multiple independent variables, as described in the appendix to this chapter. When we have multiple independent variables, we evaluate each one on its own terms when working through the three S's. For the results in <xref ref="table-regression-cs-gpa"/>, we can interpret the results as follows:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            verb_sat: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. Therefore, we don't necessarily need to interpret the sign or size. We might simply say that we could not establish a reliable link between verbal SAT scores and computer science GPA in this model.
+          </p>
+        </li>
+        <li>
+          <p>
+            math_sat: The p-value (0.00014) is smaller than 0.05, so math_sat is a statistically significant predictor of computer science GPA. The coefficient (0.0048) has a positive sign, so students with higher math SAT scores are predicted to have higher computer science GPAs. When it comes to size, a one-point increase in the math SAT (e.g., getting a 501 instead of a 500) predicts that the computer science GPA will be 0.0048 points higher. That seems very small, but a one-point increase on an SAT is barely noticeable (and not actually possible if scores are always multiples of ten). In this case, we can get a better sense of size if we consider an increase of 100 points in the math SAT, which requires multiplying the coefficient by 100. A 100-point increase in the math SAT (e.g., getting a 600 instead of a 500) predicts a computer science GPA that is 0.48 points higher (<m>0.0048 \times 100 = 0.48</m>). This is nearly half a grade point higher and would be quite noticeable to most students. Thus, the size of predictive effect now seems reasonably large.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Note that we do not need to apply the three S's to the intercept (which can also be labeled the <q>constant</q>) because it is not a variable. <xref ref="table-regression-cs-gpa"/> also contains some additional information frequently shown in regression tables: standard errors (which we will learn more about in Chapter 6), the sample size (n=105), and r-squared (a statistic often used to describe how well the regression model overall explains variation in the dependent variable).
+    </p>
+
+    <p>
+      Remember that the three S's are just a starting point. But they should be enough to help you follow along a little easier when reading the results sections of many research publications. If you've started working with a statistical software package by now, you can also try running your own regression models and seeing if you can use the three S's to help you understand the results.
+    </p>
+  </section>
+
+  <section xml:id="sec-correlation-appendix-multiple-regression">
+    <title>Chapter 3 Appendix: Multiple Regression</title>
+    
+    <introduction>
+      <p>
+        In simple linear regression, a dependent variable is predicted from one independent variable. In multiple regression, the dependent variable is predicted by two or more variables. For example, in the SAT case study, you might want to predict a student's university grade point average on the basis of their High-School GPA (HSGPA) and their total SAT score (verbal + math). The basic idea is to find a linear combination of HSGPA and SAT that best predicts University GPA (UGPA). That is, the problem is to find the values of <m>\beta_1</m> and <m>\beta_2</m> in the equation shown below that give the best predictions of UGPA. As in the case of simple linear regression, we define the best predictions as the predictions that minimize the squared errors of prediction.
+      </p>
+
+      <me>
+        \widehat{UGPA} = \alpha + \beta_1 HSGPA + \beta_2 SAT
+      </me>
+
+      <p>
+        where <m>\widehat{UGPA}</m> is the predicted value of University GPA and <m>\alpha</m> is a constant. For these data, the best prediction equation is shown below:
+      </p>
+
+      <me>
+        \widehat{UGPA} = 0.540 + 0.541 \times HSGPA + 0.008 \times SAT
+      </me>
+
+      <p>
+        In other words, to compute the prediction of a student's University GPA, you add up (a) 0.540, (b) their High-School GPA multiplied by 0.541, and (c) their SAT multiplied by 0.008. <xref ref="table-multiple-regression"/> shows the data and predictions for the first five students in the dataset.
+      </p>
+    </introduction>
+
+    <table xml:id="table-multiple-regression">
+      <title>Data and Predictions</title>
+      <tabular>
+        <row header="yes">
+          <cell><m>HSGPA</m></cell>
+          <cell><m>SAT</m></cell>
+          <cell><m>\widehat{UGPA}</m></cell>
+        </row>
+        <row>
+          <cell>3.45</cell>
+          <cell>1232</cell>
+          <cell>3.38</cell>
+        </row>
+        <row>
+          <cell>2.78</cell>
+          <cell>1070</cell>
+          <cell>2.89</cell>
+        </row>
+        <row>
+          <cell>2.52</cell>
+          <cell>1086</cell>
+          <cell>2.76</cell>
+        </row>
+        <row>
+          <cell>3.67</cell>
+          <cell>1287</cell>
+          <cell>3.55</cell>
+        </row>
+        <row>
+          <cell>3.24</cell>
+          <cell>1130</cell>
+          <cell>3.19</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The values of <m>\beta</m> (<m>\beta_1</m> and <m>\beta_2</m>) are called <q>regression coefficients.</q>
+    </p>
+
+    <p>
+      The multiple correlation (R) is equal to the correlation between the predicted scores and the actual scores. In this example, it is the correlation between <m>\widehat{UGPA}</m> and <m>UGPA</m>, which turns out to be 0.79. That is, <m>R = 0.79</m>. Note that R will never be negative since if there are negative correlations between the predictor variables and the criterion, the regression coefficients will be negative so that the correlation between the predicted and actual scores will be positive.
+    </p>
+
+    <subsection xml:id="subsec-interpretation-regression-coefficients">
+      <title>Interpretation of Regression Coefficients</title>
+      
+      <p>
+        A regression coefficient in multiple regression is the slope of the linear relationship between the criterion variable and the part of a predictor variable that is independent of all other predictor variables. In this example, the regression coefficient for HSGPA can be computed by first predicting HSGPA from SAT and saving the errors of prediction (the differences between <m>HSGPA</m> and <m>\widehat{HSGPA}</m>). These errors of prediction are called <q>residuals</q> since they are what is left over in HSGPA after the predictions from SAT are subtracted, and represent the part of HSGPA that is independent of SAT. These residuals are referred to as HSGPA.SAT, which means they are the residuals in HSGPA after having been predicted by SAT. The correlation between HSGPA.SAT and SAT is necessarily 0.
+      </p>
+
+      <p>
+        The final step in computing the regression coefficient is to find the slope of the relationship between these residuals and UGPA. This slope is the regression coefficient for HSGPA. The following equation is used to predict HSGPA from SAT:
+      </p>
+
+      <me>
+        \widehat{HSGPA} = -1.314 + 0.0036 \times SAT
+      </me>
+
+      <p>
+        The residuals are then computed as:
+      </p>
+
+      <me>
+        HSGPA.SAT = HSGPA - \widehat{HSGPA}
+      </me>
+
+      <p>
+        The linear regression equation for the prediction of UGPA by the residuals is
+      </p>
+
+      <me>
+        \widehat{UGPA} = 3.173 + 0.541 \times HSGPA.SAT
+      </me>
+
+      <p>
+        Notice that the slope (0.541) is the same value given previously for the estimate of <m>\beta_1</m> in the multiple regression equation.
+      </p>
+
+      <p>
+        This means that the regression coefficient for HSGPA is the slope of the relationship between the dependent variable and the part of HSGPA that is independent of (uncorrelated with) the other independent variables. It represents the change in the dependent variable associated with a change of one in the independent variable when all other independent variables are held constant. Since the regression coefficient for HSGPA is 0.54, this means that, holding SAT constant, a change of one in HSGPA is associated with a change of 0.54 in <m>\widehat{UGPA}</m>. If two students had the same SAT and differed in HSGPA by 2, then you would predict they would differ in UGPA by <m>(2)(0.54) = 1.08</m>. Similarly, if they differed by 0.5, then you would predict they would differ by <m>(0.50)(0.54) = 0.27</m>.
+      </p>
+
+      <p>
+        The slope of the relationship between the dependent variable and the part of an independent variable that is unique from (independent of) other independent variables is its partial slope. Thus, the regression coefficient of 0.541 for HSGPA and the regression coefficient of 0.008 for SAT are partial slopes. Each partial slope represents the relationship between the independent variable and the dependent variable holding constant all of the other independent variables.
+      </p>
+
+      <p>
+        It is difficult to compare the coefficients for different variables directly because they are measured on different scales. A difference of 1 in HSGPA is a fairly large difference, whereas a difference of 1 on the SAT is negligible. Therefore, it can be advantageous to transform the variables so that they are on the same scale. The most straightforward approach is to standardize the variables (see Section 2.4.1) so that they each have a standard deviation of 1. A regression coefficient for standardized variables is called a <q>standardized coefficient</q> or <q>beta coefficient.</q> For these data, the standardized coefficients are 0.625 and 0.198. These values represent the change in the dependent variable (in standard deviations) associated with a change of one standard deviation on an independent variable (holding constant the value(s) on the other independent variable(s)). Clearly, a change of one standard deviation on HSGPA is associated with a larger difference than a change of one standard deviation of SAT. In practical terms, this means that if you know a student's HSGPA, knowing the student's SAT does not aid the prediction of UGPA much. However, if you do not know the student's HSGPA, his or her SAT can aid in the prediction since the standardized coefficient in the simple regression predicting UGPA from SAT is 0.68. For comparison purposes, the standardized coefficient in the simple regression predicting UGPA from HSGPA is 0.78. As is typically the case, the partial slopes are smaller than the slopes in simple regression.
+      </p>
+    </subsection>
   </section>
 
 </chapter>
