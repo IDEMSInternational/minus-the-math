@@ -102,7 +102,7 @@
       </table>
       
       <p>
-        Notice that all the means are either 1.0, 1.5, 2.0, 2.5, or 3.0. The frequencies of these means are shown in Table 6-2. The relative frequencies are equal to the frequencies divided by nine because there are nine possible outcomes.
+        Notice that all the means are either 1.0, 1.5, 2.0, 2.5, or 3.0. The frequencies of these means are shown in <xref ref="tbl-meansfreqs"/>. The relative frequencies are equal to the frequencies divided by nine because there are nine possible outcomes.
       </p>
       
       <table xml:id="tbl-meansfreqs">
@@ -634,7 +634,7 @@
       </figure>
       
       <p>
-        Since the t distribution has more area in the tails, the percentage of the distribution within 1.96 standard deviations of the mean is less than the 95% for the normal distribution. <xref ref="tbl-abbrevttable"/> shows the number of standard deviations from the mean required to contain 95% and 99% of the area of the t distribution for various degrees of freedom. These are the values of t that you use in a confidence interval. The corresponding values for the normal distribution are 1.96 and 2.58 respectively. Notice that with few degrees of freedom, the values of t are much higher than the corresponding values for a normal distribution and that the difference decreases as the degrees of freedom increase. , since the critical t value for probability 0.95 got closer and closer to 1.96 (the critical value for 0.95 in the normal distribution) as the degrees of freedom incrased. The values shown in Table 6-7 can be obtained from statistical software or an online calculator.
+        Since the t distribution has more area in the tails, the percentage of the distribution within 1.96 standard deviations of the mean is less than the 95% for the normal distribution. <xref ref="tbl-abbrevttable"/> shows the number of standard deviations from the mean required to contain 95% and 99% of the area of the t distribution for various degrees of freedom. These are the values of t that you use in a confidence interval. The corresponding values for the normal distribution are 1.96 and 2.58 respectively. Notice that with few degrees of freedom, the values of t are much higher than the corresponding values for a normal distribution and that the difference decreases as the degrees of freedom increase. In fact, the critical t value for probability 0.95 gets closer and closer to 1.96 (the critical value for 0.95 in the normal distribution) as the degrees of freedom increase. The values shown in <xref ref="tbl-abbrevttable"/> can be obtained from statistical software or an online calculator.
       </p>
       
       <table xml:id="tbl-abbrevttable">
