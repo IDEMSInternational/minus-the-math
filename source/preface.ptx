@@ -2,8 +2,99 @@
 <preface xml:id="preface" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Preface</title>
   
-  <p>
-    <!-- Content to be added -->
-  </p>
+  <introduction>
+    <p>
+      <url href="https://lilyclements.github.io/minus-the-math/Statistics-Minus-The-Math.pdf">Click here for a PDF version</url> of this book. An <url href="https://lilyclements.github.io/minus-the-math/Statistics-Minus-The-Math.epub">EPUB version (for e-readers)</url> is also available, although the formatting has not been optimized for this format, so some sections do not display well.
+    </p>
+
+    <p>
+      This book was largely adapted from the public domain resource <em>Online Statistics Education: A Multimedia Course of Study</em> (<url href="https://onlinestatbook.com"/>, Project Leader: David M. Lane, Rice University). A huge thanks to David Lane and his colleagues at Rice University for their creation of this wonderful resource. I use footnotes throughout to indicate precisely where the various sections of each chapter came from. Chapters 11-13 (as well as Section 3.5 Quick Guide to Interpreting Regression Results, Section 4.2.2 Introducing Confidence Intervals for Regression, most of Section 4.2.3 Interpreting Confidence Intervals Correctly, and Section 9.3.1 Drawing Substantive Conclusions from a Contingency Table) were written by me (Nathan).
+    </p>
+
+    <p>
+      This book is meant to be a free resource and is licensed under <url href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1">CC BY 4.0</url>. You're welcome to share or adapt it, as long as you provide attribution to any work of mine that you use. This book was made using <url href="https://quarto.org/">Quarto</url> and is hosted using <url href="https://pages.github.com/">GitHub Pages</url>.
+    </p>
+
+    <p>
+      There are still formatting inconsistencies, and this is ever a work in progress. If you find errors, feel free to reach out (find updated contact info here: <url href="https://nathanfavero.com"/>) so I can correct them for the next version I publish.
+    </p>
+  </introduction>
+
+  <section xml:id="sec-whats-unique">
+    <title>What's Unique About This Text?</title>
+    
+    <p>
+      <ol>
+        <li>
+          <p>
+            It is a true introduction, not assuming any prior training in statistics.
+          </p>
+        </li>
+        <li>
+          <p>
+            I try to minimize use of math (beyond the very elementary) in initial explanations, instead focusing on conceptual description and interpretation.
+          </p>
+        </li>
+        <li>
+          <p>
+            I introduce regression very early on (Ch. 3) so that students (especially PhD students) can quickly get started on their term papers and better understand any quantitative articles they're reading. The treatment of regression is further built out in the final chapters (11-13). Regression is, after all, the workhorse of applied statistics for the social sciences.
+          </p>
+        </li>
+        <li>
+          <p>
+            I skip a traditional treatment of probability theory because I don't find traditional treatments to be very useful for students interested in applied statistics. Instead, I've written a brief chapter (11) on the logic and practice of building models that account for uncertainty.
+          </p>
+        </li>
+        <li>
+          <p>
+            There is a bit of Stata code in the final chapter, but otherwise all examples are presented apart from any statistical software package.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </section>
+
+  <section xml:id="sec-lecture-slides">
+    <title>Lecture Slides/Videos</title>
+    
+    <p>
+      While they do not directly correspond to this text, there are some (Stata-based) lecture slides and videos I created to use alongside this book when I teach. They track thematically with the first 10 chapters of this book and are currently available here: <url href="https://github.com/favero-nate/minus-the-math/tree/main/lecture_slides"/>
+    </p>
+  </section>
+
+  <section xml:id="sec-for-instructors">
+    <title>For Instructors</title>
+    
+    <p>
+      If you're using this text, I'd love to know. You can fill out this brief form (<url href="https://forms.gle/qBUFdb4vEuDUkzBu6"/>), where you can also sign up to receive emails when I post updated versions or related materials.
+    </p>
+
+    <p>
+      This version (1.3) was updated July 31, 2024. PDFs of past versions are currently available at <url href="https://github.com/favero-nate/minus-the-math/tree/main/past_versions"/>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            <term>Version 1.3 updates:</term> New material on multiple regression (end of Chapter 3 Tools for Describing the Relationship Between Two Quantitative Variables, Section 4.2.2 Introducing Confidence Intervals for Regression, Section 6.3.3 Confidence Intervals for a Regression Slope Coefficient, and Section 7.7 Significance Test for a Regression Slope Coefficient). Expanded discussion of confidence intervals (Chapter 4 Estimation), including new Section 4.2.3 Interpreting Confidence Intervals Correctly on interpreting confidence intervals. Expanded discussion of ANOVA (end of Chapter 8 Comparing Means (How a Qualitative Variable Relates to a Quantitative One)) and of contingency tables (Section 9.3 Contingency Tables). Notation updated in line with conventions: regression parameters are redone, and <m>\bar{X}</m> is now used for the sample mean and <m>n</m> for sample size. Slight extension of section on the standard normal distribution (Section 5.2.3 The Standard Normal Distribution). Section on degrees of freedom moved to an appendix (end of Chapter 6 Sampling Distributions). Various formatting updates (book was recreated using Quarto) and minor (mostly non-substantive) edits throughout.
+          </p>
+        </li>
+        <li>
+          <p>
+            <term>Version 1.2 updates:</term> The discussion of transforming variables now appears in Chapter 2 Statistics for Describing One Variable at a Time (rather than Chapter 3 Tools for Describing the Relationship Between Two Quantitative Variables).
+          </p>
+        </li>
+      </ul>
+    </p>
+  </section>
+
+  <section xml:id="sec-acknowledgements">
+    <title>Acknowledgements</title>
+    
+    <p>
+      I would like to thank Natasha Kallish for help transforming this text from Word to a Quarto document.
+    </p>
+  </section>
 
 </preface>
