@@ -5,6 +5,8 @@
   <section xml:id="sec-various-types-distributions">
     <title>Various Types of Distributions</title>
     
+    <p><fn>This section is adapted from David M. Lane and Heidi Ziemer. "Distributions." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/introduction/distributions.html">https://onlinestatbook.com/2/introduction/distributions.html</url></fn></p>
+
     <subsection xml:id="subsec-distributions-qualitative-discrete">
       <title>Distributions of Qualitative or Discrete Variables</title>
       
@@ -270,6 +272,8 @@
     <title>Normal Distributions</title>
     
     <introduction>
+      <p><fn>The initial part of this section is adapted from David M. Lane. "Introduction to Normal Distributions." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/normal_distribution/intro.html">https://onlinestatbook.com/2/normal_distribution/intro.html</url></fn></p>
+
       <p>
         The normal distribution is the most important and most widely used distribution in statistics. It is sometimes called the <q>bell curve,</q> although the tonal qualities of such a bell would be less than pleasing. It is also called the <q>Gaussian curve</q> after the mathematician Karl Friedrich Gauss. Although Gauss played an important role in its history, Abraham de Moivre first discovered the normal distribution.
       </p>
@@ -305,6 +309,8 @@
     <subsection xml:id="subsec-importance-normal-distributions">
       <title>Importance of Normal Distributions</title>
       
+      <p><fn>This subsection is adapted from David M. Lane. "History of the Normal Distribution." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/normal_distribution/history_normal.html">https://onlinestatbook.com/2/normal_distribution/history_normal.html</url></fn></p>
+
       <p>
         The importance of the normal curve stems primarily from the fact that the distributions of many natural phenomena are at least approximately normally distributed. One of the first applications of the normal distribution was to the analysis of errors of measurement made in astronomical observations, errors that occurred because of imperfect instruments and imperfect observers. Galileo in the 17th century noted that these errors were symmetric and that small errors occurred more frequently than large errors. This led to several hypothesized distributions of errors, but it was not until the early 19th century that it was discovered that these errors followed a normal distribution. Independently, the mathematicians Adrain in 1808 and Gauss in 1809 developed the formula for the normal distribution and showed that errors were fit well by this distribution.
       </p>
@@ -321,6 +327,8 @@
     <subsection xml:id="subsec-areas-normal-distributions">
       <title>Areas Under Normal Distributions</title>
       
+      <p><fn>This subsection is adapted from David M. Lane. "Areas Under Normal Distributions." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/normal_distribution/areas_normal.html">https://onlinestatbook.com/2/normal_distribution/areas_normal.html</url></fn></p>
+
       <p>
         Areas under portions of a normal distribution can be computed by using calculus. Since this is a non-mathematical treatment of statistics, we will rely on computer programs and tables to determine these areas.
       </p>
@@ -388,6 +396,8 @@
     <subsection xml:id="subsec-standard-normal-distribution">
       <title>The Standard Normal Distribution</title>
       
+      <p><fn>This subsection is adapted from David M. Lane. "Standard Normal Distribution." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/normal_distribution/standard_normal.html">https://onlinestatbook.com/2/normal_distribution/standard_normal.html</url></fn></p>
+
       <p>
         As discussed above, normal distributions do not necessarily have the same means and standard deviations. A normal distribution with a mean of 0 and a standard deviation of 1 is called a <term>standard normal distribution</term>.
       </p>
