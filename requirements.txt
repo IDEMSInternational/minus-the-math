@@ -1,3 +1,0 @@
-# This file was automatically generated with PreTeXt 2.32.0.
-# Using PreTeXt 2.32.0 - compatible with the image setup in this project.
-pretext == 2.32.0

@@ -1,8 +1,5 @@
 # PreTeXt build output
 output/
-generated-assets/
-external/
-logs/
 *.log
 
 # Python
