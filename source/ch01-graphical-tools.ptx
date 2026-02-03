@@ -13,7 +13,8 @@
 
     <subsection xml:id="subsec-qualitative-quantitative">
       <title>Qualitative and Quantitative Variables</title>
-      
+
+<p> test </p>
       <p>
         An important distinction between variables is between qualitative variables and quantitative variables. <term>Qualitative variables</term> are those that express a qualitative attribute such as hair color, eye color, religion, favorite movie, gender, and so on. The values of a qualitative variable do not imply a numerical ordering. Values of the variable <q>religion</q> differ qualitatively; no ordering of religions is implied. Qualitative variables are also sometimes referred to as categorical or nominal variables. <term>Quantitative variables</term> are those variables that are measured in terms of numbers. Some examples of quantitative variables are height, weight, and shoe size.
       </p>
