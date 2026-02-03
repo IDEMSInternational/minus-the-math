@@ -20,6 +20,7 @@ INFO    :
 Now building HTML into /home/runner/work/minus-the-math/minus-the-math/output/html
 
 INFO    : discovering source file's directory name: /home/runner/work/minus-the-math/minus-the-math/source
+INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmpx4lk6sl3
 INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmpzr8xnzvd
 INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmp_1vzknej
 INFO    : XSL conversion of /home/runner/work/minus-the-math/minus-the-math/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
@@ -32,6 +33,8 @@ INFO    :     * PTX:WARNING: A section containing subsections needs to have othe
 INFO    :     *              located within: "sec-intro-sampling-distributions" (xml:id), "Introduction to Sampling Distributions" (title)
 INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
 INFO    :     *              located within: "sec-sampling-distribution-of-the-mean" (xml:id), "Sampling Distribution of the Mean" (title)
+INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
+INFO    :     *              located within: "sec-contingency-tables" (xml:id), "Contingency Tables" (title)
 INFO    :     * PTX:WARNING: A subsection containing subsubsections needs to have other content inside an <introduction> and/or  <conclusion>.
 INFO    :     *              located within: "subsec-confidence-intervals-mean" (xml:id), "Confidence Intervals for the Mean" (title)
 INFO    :     * PTX:WARNING: A subsection containing subsubsections needs to have other content inside an <introduction> and/or  <conclusion>.
@@ -44,6 +47,10 @@ INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-con
 INFO    :     *              located within: "sec-significance-test-regression-slope" (xml:id), "Significance Test for a Regression Slope Coefficient" (title)
 INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-confidence-interval-regression-slope] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
 INFO    :     *              located within: "sec-significance-test-regression-slope" (xml:id), "Significance Test for a Regression Slope Coefficient" (title)
+INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-comparing-distributions] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+INFO    :     *              located within: "ch09-comparing-groups" (xml:id), "Comparing Groups (How Two Qualitative Variables Relate to One Another)" (title)
+INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-the-standard-normal-distribution] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+INFO    :     *              located within: "sec-one-way-tables" (xml:id), "One-Way Tables" (title)
 INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-more-about-t-distribution] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
 INFO    :     *              located within: "sec-testing-single-mean" (xml:id), "Testing a Single Mean" (title)
 INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-interpreting-regression-results] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
@@ -52,6 +59,10 @@ INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-con
 INFO    :     *              located within: "sec-significance-test-regression-slope" (xml:id), "Significance Test for a Regression Slope Coefficient" (title)
 INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-confidence-interval-regression-slope] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
 INFO    :     *              located within: "sec-significance-test-regression-slope" (xml:id), "Significance Test for a Regression Slope Coefficient" (title)
+INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-comparing-distributions] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+INFO    :     *              located within: "ch09-comparing-groups" (xml:id), "Comparing Groups (How Two Qualitative Variables Relate to One Another)" (title)
+INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-the-standard-normal-distribution] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
+INFO    :     *              located within: "sec-one-way-tables" (xml:id), "One-Way Tables" (title)
 INFO    :     *              located within: "sec-difference-between-two-means" (xml:id), "Difference between Two Means" (title)
 INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
 INFO    :     *              located within: "pairwise-comparisons-among-multiple-meanscomparing-means-6" (xml:id), "Pairwise Comparisons Among Multiple Means" (title)
