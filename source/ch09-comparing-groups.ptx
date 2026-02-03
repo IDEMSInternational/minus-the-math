@@ -304,19 +304,19 @@
         </row>
         <row>
           <cell>AHA</cell>
-          <cell>15<line/>(11.02)</cell>
-          <cell>24<line/>(19.03)</cell>
-          <cell>25<line/>(16.53)</cell>
-          <cell>239<line/>(256.42)</cell>
+          <cell><line>15</line><line>(11.02)</line></cell>
+          <cell><line>24</line><line>(19.03)</line></cell>
+          <cell><line>25</line><line>(16.53)</line></cell>
+          <cell><line>239</line><line>(256.42)</line></cell>
         </row>
         <row>
           <cell>Mediterranean</cell>
-          <cell>7<line/>(10.98)</cell>
-          <cell>14<line/>(18.97)</cell>
-          <cell>8<line/>(16.47)</cell>
-          <cell>273<line/>(255.58)</cell>
+          <cell><line>7</line><line>(10.98)</line></cell>
+          <cell><line>14</line><line>(18.97)</line></cell>
+          <cell><line>8</line><line>(16.47)</line></cell>
+          <cell><line>273</line><line>(255.58)</line></cell>
         </row>
-        <row header="yes">
+        <row>
           <cell>Total</cell>
           <cell>22</cell>
           <cell>38</cell>
