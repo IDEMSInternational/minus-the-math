@@ -127,7 +127,7 @@ tab race, gen(race_)
     </men>
 
     <p>
-      For non-Hispanic White respondents, race_1 equals one and all other race dummy variables equal zero, so we get:
+      For non-Hispanic White respondents (the omitted category), all the included race dummy variables (race_2 through race_6) equal zero, so we get:
     </p>
 
     <me>
