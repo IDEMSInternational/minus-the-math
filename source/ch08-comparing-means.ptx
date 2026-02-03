@@ -7,9 +7,7 @@
   </introduction>
 
   <section xml:id="sec-difference-between-two-means">
-    <title>Difference between Two Means</title>
-
-    <p><fn>This section is adapted from David M. Lane. “Difference between Two Means (Independent Groups).” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/tests_of_means/difference_means.html</fn></p>
+    <title>Difference between Two Means<fn>This section is adapted from David M. Lane. “Difference between Two Means (Independent Groups).” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/tests_of_means/difference_means.html</fn></title>
 
     <p>This section covers how to test for differences between means from two separate groups of subjects, using an independent-groups t test.</p>
 
@@ -221,9 +219,7 @@
   </section>
 
   <section xml:id="pairwise-comparisons-among-multiple-meanscomparing-means-6">
-    <title>Pairwise Comparisons Among Multiple Means</title>
-
-    <p><fn>This section is adapted from David M. Lane. “All Pairwise Comparisons Among Means.” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/tests_of_means/pairwise.html</fn></p>
+    <title>Pairwise Comparisons Among Multiple Means<fn>This section is adapted from David M. Lane. “All Pairwise Comparisons Among Means.” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/tests_of_means/pairwise.html</fn></title>
 
     <p>Many experiments are designed to compare more than two conditions. We will take as an example the case study “Smiles and Leniency.”In this study, the effect of different smiles on the leniency shown to a person was investigated. Four different types of smiles (neutral, false, felt, and miserable) were shown. “Type of Smile” is the independent variable, and the dependent variable is a leniency rating given by the subject to a fictional student (depicted with one of the four smiles) in an academic misconduct case. An obvious way to proceed would be to do a t test of the difference between each group mean and each of the other group means. This procedure would lead to the six comparisons shown in <url href="#tbl-feltmisneutral">Table 8.4</url>.</p>
 

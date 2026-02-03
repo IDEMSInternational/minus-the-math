@@ -3,9 +3,7 @@
   <title>Probability Distributions</title>
   
   <section xml:id="sec-various-types-distributions">
-    <title>Various Types of Distributions</title>
-    
-    <p><fn>This section is adapted from David M. Lane and Heidi Ziemer. "Distributions." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/introduction/distributions.html">https://onlinestatbook.com/2/introduction/distributions.html</url></fn></p>
+    <title>Various Types of Distributions<fn>This section is adapted from David M. Lane and Heidi Ziemer. "Distributions." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/introduction/distributions.html">https://onlinestatbook.com/2/introduction/distributions.html</url></fn></title>
 
     <subsection xml:id="subsec-distributions-qualitative-discrete">
       <title>Distributions of Qualitative or Discrete Variables</title>
