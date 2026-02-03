@@ -21,6 +21,8 @@ Now building HTML into /home/runner/work/minus-the-math/minus-the-math/output/ht
 
 INFO    : discovering source file's directory name: /home/runner/work/minus-the-math/minus-the-math/source
 INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmpx4lk6sl3
+INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmpzr8xnzvd
+INFO    : converting /home/runner/work/minus-the-math/minus-the-math/source/main.ptx to HTML in /tmp/tmp_1vzknej
 INFO    : XSL conversion of /home/runner/work/minus-the-math/minus-the-math/source/main.ptx by /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : comprehensive messages, warnings, and errors:
 INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
@@ -61,6 +63,9 @@ INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-com
 INFO    :     *              located within: "ch09-comparing-groups" (xml:id), "Comparing Groups (How Two Qualitative Variables Relate to One Another)" (title)
 INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-the-standard-normal-distribution] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
 INFO    :     *              located within: "sec-one-way-tables" (xml:id), "One-Way Tables" (title)
+INFO    :     *              located within: "sec-difference-between-two-means" (xml:id), "Difference between Two Means" (title)
+INFO    :     * PTX:WARNING: A section containing subsections needs to have other content inside an <introduction> and/or  <conclusion>.
+INFO    :     *              located within: "pairwise-comparisons-among-multiple-meanscomparing-means-6" (xml:id), "Pairwise Comparisons Among Multiple Means" (title)
 INFO    : successful application of /home/runner/.ptx/xsl/pretext-html.xsl
 INFO    : 
 Success! Run `pretext view html` to see the results.
