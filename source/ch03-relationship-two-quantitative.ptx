@@ -5,6 +5,8 @@
   <section xml:id="sec-introduction-bivariate-data">
     <title>Introduction to Bivariate Data</title>
     
+    <p><fn>This section is adapted from Rudy Guerra and David M. Lane. "Introduction to Bivariate Data." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/describing_bivariate_data/intro.html">https://onlinestatbook.com/2/describing_bivariate_data/intro.html</url></fn></p>
+
     <p>
       Measures of central tendency, variability, and spread summarize a single variable by providing important information about its distribution. Often, more than one variable is collected on each individual. For example, in large health studies of populations it is common to obtain variables such as age, sex, height, weight, blood pressure, and total cholesterol on each individual. Economic studies may be interested in, among other things, personal income and years of education. As a third example, most university admissions committees ask for an applicant's high school grade point average and standardized admission test scores (e.g., SAT). In this chapter we consider bivariate data, which for now consists of two quantitative variables for each individual. Our first interest is in summarizing such data in a way that is analogous to summarizing univariate (single variable) data.
     </p>
@@ -119,7 +121,7 @@
     </figure>
 
     <p>
-      Not all scatter plots show linear relationships. <xref ref="fig-scatter-galileo"/> shows the results of an experiment conducted by Galileo on projectile motion. In the experiment, Galileo rolled balls down an incline and measured how far they traveled as a function of the release height. It is clear from <xref ref="fig-scatter-galileo"/> that the relationship between <q>Release Height</q> and <q>Distance Traveled</q> is not described well by a straight line: If you drew a line connecting the lowest point and the highest point, all of the remaining points would be above the line. The data are better fit by a parabola (a type of curved line).
+      Not all scatter plots show linear relationships. <xref ref="fig-scatter-galileo"/> shows the results of an experiment conducted by Galileo on projectile motion.<fn><url href="https://www.amstat.org/publications/jse/v3n1/datasets.dickey.html">https://www.amstat.org/publications/jse/v3n1/datasets.dickey.html</url></fn> In the experiment, Galileo rolled balls down an incline and measured how far they traveled as a function of the release height. It is clear from <xref ref="fig-scatter-galileo"/> that the relationship between <q>Release Height</q> and <q>Distance Traveled</q> is not described well by a straight line: If you drew a line connecting the lowest point and the highest point, all of the remaining points would be above the line. The data are better fit by a parabola (a type of curved line).
     </p>
 
     <p>
@@ -130,6 +132,8 @@
   <section xml:id="sec-what-is-correlation">
     <title>What is Correlation?</title>
     
+    <p><fn>This section is adapted from David M. Lane. "Values of the Pearson Correlation." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/describing_bivariate_data/pearson.html">https://onlinestatbook.com/2/describing_bivariate_data/pearson.html</url></fn></p>
+
     <p>
       The Pearson product-moment correlation coefficient is a measure of the strength of the linear relationship between two variables. It is referred to as Pearson's correlation or simply as the <term>correlation coefficient</term>. If the relationship between the variables is not linear, then the correlation coefficient does not adequately represent the strength of the relationship between the variables.
     </p>
@@ -175,6 +179,8 @@
   <section xml:id="sec-how-correlation-calculated">
     <title>How Correlation is Calculated</title>
     
+    <p><fn>This section is adapted from David M. Lane. "Computing Pearson's r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/describing_bivariate_data/calculation.html">https://onlinestatbook.com/2/describing_bivariate_data/calculation.html</url></fn></p>
+
     <p>
       There are several formulas that can be used to compute Pearson's correlation. Some formulas make more conceptual sense whereas others are easier to actually compute. We are going to begin with a formula that makes more conceptual sense.
     </p>
@@ -294,6 +300,8 @@
     <title>Introduction to Linear Regression</title>
     
     <introduction>
+      <p><fn>This section is adapted from David M. Lane. "Introduction to Linear Regression." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/regression/intro.html">https://onlinestatbook.com/2/regression/intro.html</url></fn></p>
+
       <p>
         In simple linear regression, we predict scores on one variable from the scores on a second variable. The variable we are predicting is called the <term>dependent variable</term> and is referred to as <m>Y</m>. The variable we are basing our predictions on is called the <term>independent variable</term> and is referred to as <m>X</m>. When there is only one predictor variable, the prediction method is called simple regression. In simple linear regression, the topic of this section, the predictions of <m>Y</m> when plotted as a function of <m>X</m> form a straight line.
       </p>
@@ -443,7 +451,7 @@
       <title>A Real Example</title>
       
       <p>
-        The case study <q>SAT and College GPA</q> contains high school and university grades for 105 computer science majors at a local state school. We now consider how we could predict a student's university GPA if we knew his or her high school GPA.
+        The case study <q>SAT and College GPA</q><fn><url href="https://onlinestatbook.com/2/case_studies/sat.html">https://onlinestatbook.com/2/case_studies/sat.html</url></fn> contains high school and university grades for 105 computer science majors at a local state school. We now consider how we could predict a student's university GPA if we knew his or her high school GPA.
       </p>
 
       <p>
@@ -474,15 +482,17 @@
   <section xml:id="sec-quick-guide-interpreting-regression">
     <title>Quick Guide to Interpreting Regression Results</title>
     
+    <p><fn>This section is written by Nathan Favero.</fn></p>
+
     <p>
-      Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:
+      Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:<fn>Wheelan, C. (2010.) <em>Introduction to Public Policy</em>. New York: W. W. Norton <ampersand/> Company.</fn>
     </p>
 
     <p>
       <ul>
         <li>
           <p>
-            <term>Significance</term>: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable? To assess this, check the p-value. For now, you can use the following rule-of-thumb:
+            <term>Significance</term>: Is the relationship between the two variables strong enough (relative to the precision of the estimate) to be considered statistically reliable?<fn>In other words, can we conclude it is signal rather than noise? See: Fricker Jr, R. D., Burke, K., Han, X., <ampersand/> Woodall, W. H. (2019). Assessing the statistical analyses used in basic and applied social psychology after their p-value ban. <em>The American Statistician</em>, <em>73</em>(sup1), 374-390.</fn> To assess this, check the p-value. For now, you can use the following rule-of-thumb:
           </p>
           <p>
             <ul>
@@ -509,7 +519,7 @@
           </p>
           <p>
             <ul>
-              <li><p>For linear models: A one-unit increase in the independent variable predicts a <m>\hat{\beta_i}</m>-unit change in the dependent variable (where <m>\hat{\beta_i}</m> represents the value of the coefficient estimate)</p></li>
+              <li><p>For linear models: A one-unit increase in the independent variable predicts a <m>\hat{\beta_i}</m>-unit change in the dependent variable (where <m>\hat{\beta_i}</m> represents the value of the coefficient estimate)<fn>Why <m>\hat{\beta_i}</m> and not simply <m>\beta_i</m>? We use the hat symbol (<m>\hat{~}</m>) to indicate an estimate or prediction. So by including the hat, we are implying that our coefficient is an estimate of the true population parameter.</fn></p></li>
               <li><p>For non-linear models: Interpreting the size of a coefficient is typically more complicated than for a linear model; look for the authors' explanation of effect size or <q>magnitude</q> of association</p></li>
             </ul>
           </p>
@@ -577,7 +587,7 @@
       <ul>
         <li>
           <p>
-            verb_sat: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. Therefore, we don't necessarily need to interpret the sign or size. We might simply say that we could not establish a reliable link between verbal SAT scores and computer science GPA in this model.
+            verb_sat: The p-value for this variable (0.10) is greater than 0.05, so this variable is not statistically significant. Therefore, we don't necessarily need to interpret the sign or size. We might simply say that we could not establish a reliable link between verbal SAT scores and computer science GPA in this model.<fn>Note, however, that the absence of evidence is not necessarily evidence of absence. There could very well be a link between verbal SAT scores and computer science GPA—just one that we cannot reliably detect with this analysis (e.g., because our sample is too small to precisely estimate the association).</fn>
           </p>
         </li>
         <li>
@@ -601,8 +611,10 @@
     <title>Chapter 3 Appendix: Multiple Regression</title>
     
     <introduction>
+      <p><fn>This section is adapted from Rudy Guerra and David M. Lane. "Introduction to Multiple Regression." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/regression/multiple_regression.html">https://onlinestatbook.com/2/regression/multiple_regression.html</url></fn></p>
+
       <p>
-        In simple linear regression, a dependent variable is predicted from one independent variable. In multiple regression, the dependent variable is predicted by two or more variables. For example, in the SAT case study, you might want to predict a student's university grade point average on the basis of their High-School GPA (HSGPA) and their total SAT score (verbal + math). The basic idea is to find a linear combination of HSGPA and SAT that best predicts University GPA (UGPA). That is, the problem is to find the values of <m>\beta_1</m> and <m>\beta_2</m> in the equation shown below that give the best predictions of UGPA. As in the case of simple linear regression, we define the best predictions as the predictions that minimize the squared errors of prediction.
+        In simple linear regression, a dependent variable is predicted from one independent variable. In multiple regression, the dependent variable is predicted by two or more variables. For example, in the SAT case study, you might want to predict a student's university grade point average on the basis of their High-School GPA (HSGPA) and their total SAT score (verbal + math). The basic idea is to find a linear combination<fn>A linear combination of variables is a way of creating a new variable by combining other variables. A linear combination is one in which each variable is multiplied by a coefficient and the products are summed. For example, if <m>Y = 3X_1 + 2X_2 + .5X_3</m> then Y is a linear combination of <m>X_1</m>, <m>X_2</m>, and <m>X_3</m>.</fn> of HSGPA and SAT that best predicts University GPA (UGPA). That is, the problem is to find the values of <m>\beta_1</m> and <m>\beta_2</m> in the equation shown below that give the best predictions of UGPA. As in the case of simple linear regression, we define the best predictions as the predictions that minimize the squared errors of prediction.
       </p>
 
       <me>
