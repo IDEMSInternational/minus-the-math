@@ -3,6 +3,7 @@ output/
 generated-assets/
 external/
 logs/
+*.log
 
 # Python
 __pycache__/

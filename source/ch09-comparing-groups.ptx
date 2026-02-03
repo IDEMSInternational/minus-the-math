@@ -4,7 +4,7 @@
   
   <introduction>
     <p>
-      We previously learned how to graphically depict the relationship between two qualitative variables with a bar chart (<xref ref="sec-comparing-distributions"/>). To make a comparison that includes a significance test, we will need to use the chi square distribution, together with a contingency table.
+      We previously learned how to graphically depict the relationship between two qualitative variables with a bar chart (<xref ref="subsec-bar-charts"/>). To make a comparison that includes a significance test, we will need to use the chi square distribution, together with a contingency table.
     </p>
   </introduction>
 
@@ -168,7 +168,7 @@
     </p>
 
     <p>
-      The first column in <xref ref="tbl-universitygpascores"/> shows the standard normal distribution divided into four ranges. The second column shows the proportions of a standard normal distribution falling in the ranges specified in the first column. For example, we see that for the range 0 to 1, the proportion is 0.341 (or 34.1%). This follows directly from what we learned in <xref ref="ch05-probability-distributions"/>; 68% of the area under the standard normal distribution lies between -1 and 1, so naturally 34% (half of 68%) will be covered by [0, 1]. The expected frequencies (E) are calculated by multiplying the number of scores (105) by the proportion expected according to the standard normal distribution. The final column shows the observed number of scores (O) in each range, after standardizing the University GPA variable so that it will map onto the standard normal distribution (see <xref ref="sec-the-standard-normal-distribution"/>). It is clear from the table that the observed frequencies vary greatly from the expected frequencies. Note that if the distribution were normal, we would expect only about 35 scores between 0 and 1, whereas 60 were observed.
+      The first column in <xref ref="tbl-universitygpascores"/> shows the standard normal distribution divided into four ranges. The second column shows the proportions of a standard normal distribution falling in the ranges specified in the first column. For example, we see that for the range 0 to 1, the proportion is 0.341 (or 34.1%). This follows directly from what we learned in <xref ref="ch05-probability-distributions"/>; 68% of the area under the standard normal distribution lies between -1 and 1, so naturally 34% (half of 68%) will be covered by [0, 1]. The expected frequencies (E) are calculated by multiplying the number of scores (105) by the proportion expected according to the standard normal distribution. The final column shows the observed number of scores (O) in each range, after standardizing the University GPA variable so that it will map onto the standard normal distribution (see <xref ref="subsec-standard-normal-distribution"/>). It is clear from the table that the observed frequencies vary greatly from the expected frequencies. Note that if the distribution were normal, we would expect only about 35 scores between 0 and 1, whereas 60 were observed.
     </p>
 
     <table xml:id="tbl-universitygpascores">
