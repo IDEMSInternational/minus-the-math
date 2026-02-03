@@ -3,9 +3,7 @@
   <title>Tools for Describing the Relationship Between Two Quantitative Variables</title>
   
   <section xml:id="sec-introduction-bivariate-data">
-    <title>Introduction to Bivariate Data</title>
-    
-    <p><fn>This section is adapted from Rudy Guerra and David M. Lane. "Introduction to Bivariate Data." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/describing_bivariate_data/intro.html">https://onlinestatbook.com/2/describing_bivariate_data/intro.html</url></fn></p>
+    <title>Introduction to Bivariate Data<fn>This section is adapted from Rudy Guerra and David M. Lane. "Introduction to Bivariate Data." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/describing_bivariate_data/intro.html">https://onlinestatbook.com/2/describing_bivariate_data/intro.html</url></fn></title>
 
     <p>
       Measures of central tendency, variability, and spread summarize a single variable by providing important information about its distribution. Often, more than one variable is collected on each individual. For example, in large health studies of populations it is common to obtain variables such as age, sex, height, weight, blood pressure, and total cholesterol on each individual. Economic studies may be interested in, among other things, personal income and years of education. As a third example, most university admissions committees ask for an applicant's high school grade point average and standardized admission test scores (e.g., SAT). In this chapter we consider bivariate data, which for now consists of two quantitative variables for each individual. Our first interest is in summarizing such data in a way that is analogous to summarizing univariate (single variable) data.
@@ -130,9 +128,7 @@
   </section>
 
   <section xml:id="sec-what-is-correlation">
-    <title>What is Correlation?</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "Values of the Pearson Correlation." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/describing_bivariate_data/pearson.html">https://onlinestatbook.com/2/describing_bivariate_data/pearson.html</url></fn></p>
+    <title>What is Correlation?<fn>This section is adapted from David M. Lane. "Values of the Pearson Correlation." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/describing_bivariate_data/pearson.html">https://onlinestatbook.com/2/describing_bivariate_data/pearson.html</url></fn></title>
 
     <p>
       The Pearson product-moment correlation coefficient is a measure of the strength of the linear relationship between two variables. It is referred to as Pearson's correlation or simply as the <term>correlation coefficient</term>. If the relationship between the variables is not linear, then the correlation coefficient does not adequately represent the strength of the relationship between the variables.
@@ -177,9 +173,7 @@
   </section>
 
   <section xml:id="sec-how-correlation-calculated">
-    <title>How Correlation is Calculated</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "Computing Pearson's r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/describing_bivariate_data/calculation.html">https://onlinestatbook.com/2/describing_bivariate_data/calculation.html</url></fn></p>
+    <title>How Correlation is Calculated<fn>This section is adapted from David M. Lane. "Computing Pearson's r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/describing_bivariate_data/calculation.html">https://onlinestatbook.com/2/describing_bivariate_data/calculation.html</url></fn></title>
 
     <p>
       There are several formulas that can be used to compute Pearson's correlation. Some formulas make more conceptual sense whereas others are easier to actually compute. We are going to begin with a formula that makes more conceptual sense.
@@ -480,9 +474,7 @@
   </section>
 
   <section xml:id="sec-quick-guide-interpreting-regression">
-    <title>Quick Guide to Interpreting Regression Results</title>
-    
-    <p><fn>This section is written by Nathan Favero.</fn></p>
+    <title>Quick Guide to Interpreting Regression Results<fn>This section is written by Nathan Favero.</fn></title>
 
     <p>
       Many social science papers report their main results in the form of a regression table. It's fairly easy to get started interpreting these results using the three S's:<fn>Wheelan, C. (2010.) <em>Introduction to Public Policy</em>. New York: W. W. Norton <ampersand/> Company.</fn>

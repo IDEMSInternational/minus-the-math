@@ -9,9 +9,7 @@
   </introduction>
 
   <section xml:id="sec-intro-sampling-distributions">
-    <title>Introduction to Sampling Distributions</title>
-    
-    <p><fn>This subsection is adapted from David M. Lane. "Introduction to Sampling Distributions." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/sampling_distributions/intro_samp_dist.html">https://onlinestatbook.com/2/sampling_distributions/intro_samp_dist.html</url></fn></p>
+    <title>Introduction to Sampling Distributions<fn>This subsection is adapted from David M. Lane. "Introduction to Sampling Distributions." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/sampling_distributions/intro_samp_dist.html">https://onlinestatbook.com/2/sampling_distributions/intro_samp_dist.html</url></fn></title>
 
     <p>
       Suppose you randomly sampled 10 people from the population of women in Houston, Texas, between the ages of 21 and 35 years and computed the mean height of your sample. You would not expect your sample mean to be equal to the mean of all women in Houston. It might be somewhat lower or it might be somewhat higher, but it would not equal the population mean exactly. Similarly, if you took a second sample of 10 people from the same population, you would not expect the mean of this second sample to equal the mean of the first sample.
@@ -301,9 +299,7 @@
   </section>
   
   <section xml:id="sec-sampling-distribution-of-the-mean">
-    <title>Sampling Distribution of the Mean</title>
-    
-    <p><fn>This subsection is adapted from David M. Lane. "Sampling Distribution of the Mean." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html">https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html</url></fn></p>
+    <title>Sampling Distribution of the Mean<fn>This subsection is adapted from David M. Lane. "Sampling Distribution of the Mean." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html">https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html</url></fn></title>
 
     <p>
       As we learned in the prior section, the sampling distribution of the mean refers to the probability distribution describing all possible values of the sample mean we could obtain in repeated sampling. This section goes over some important properties of the sampling distribution of the mean.
@@ -811,9 +807,7 @@
   </section>
   
   <section xml:id="sec-appendix-degrees-freedom">
-    <title>Appendix I: Degrees of Freedom</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "Degrees of Freedom." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/estimation/df.html">https://onlinestatbook.com/2/estimation/df.html</url></fn></p>
+    <title>Appendix I: Degrees of Freedom<fn>This section is adapted from David M. Lane. "Degrees of Freedom." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/estimation/df.html">https://onlinestatbook.com/2/estimation/df.html</url></fn></title>
 
     <p>
       Some estimates are based on more information than others. For example, an estimate of the variance based on a sample size of 100 is based on more information than an estimate of the variance based on a sample size of 5. The <term>degrees of freedom (df)</term> of an estimate is the number of independent pieces of information on which the estimate is based.
@@ -873,9 +867,7 @@
   </section>
   
   <section xml:id="sec-appendix-standard-error-regression-slope">
-    <title>Appendix II: Estimating the Standard Error of a Regression Slope</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "Inferential Statistics for b and r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferential.html</url></fn></p>
+    <title>Appendix II: Estimating the Standard Error of a Regression Slope<fn>This section is adapted from David M. Lane. "Inferential Statistics for b and r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferential.html</url></fn></title>
 
     <p>
       This appendix shows how to compute the estimated standard error for the slope of a simple linear regression. The estimated standard error of <m>\beta</m> is computed using the following formula:

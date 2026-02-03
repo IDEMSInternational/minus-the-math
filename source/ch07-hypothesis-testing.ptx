@@ -119,9 +119,7 @@
   </section>
 
   <section xml:id="sec-steps-in-hypothesis-testing">
-    <title>Steps in Hypothesis Testing</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "Steps in Hypothesis Testing." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/steps.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/steps.html</url></fn></p>
+    <title>Steps in Hypothesis Testing<fn>This section is adapted from David M. Lane. "Steps in Hypothesis Testing." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/steps.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/steps.html</url></fn></title>
 
     <p>
       There's much to learn about hypothesis testing, but before going any further, here's an overview of the four basic steps of any hypothesis test. Some of the details won't make sense yet, but we'll explain them in more detail in the following sections.
@@ -157,9 +155,7 @@
   </section>
 
   <section xml:id="sec-one-two-tailed-tests">
-    <title>One- and Two-Tailed Tests</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "One- and Two-Tailed Tests." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/tails.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/tails.html</url></fn></p>
+    <title>One- and Two-Tailed Tests<fn>This section is adapted from David M. Lane. "One- and Two-Tailed Tests." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/tails.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/tails.html</url></fn></title>
 
     <p>
       In the James Bond case study,<fn><url href="https://onlinestatbook.com/2/case_studies/bond.html">https://onlinestatbook.com/2/case_studies/bond.html</url></fn> Mr. Bond was given 16 trials on which he judged whether a martini had been shaken or stirred. He was correct on 13 of the trials. From the binomial distribution, we know that the probability of being correct 13 or more times out of 16 if one is only guessing is 0.0106. <xref ref="fig-binomialdistredtail" /> shows a graph of the binomial distribution. The red bars show the values greater than or equal to 13. As you can see in the figure, the probabilities are calculated for the upper tail of the distribution. A probability calculated in only one tail of the distribution is called a <q>one-tailed probability.</q>
@@ -205,9 +201,7 @@
   </section>
 
   <section xml:id="sec-significance-testing">
-    <title>Significance Testing</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "Significance Testing." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/significance.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/significance.html</url></fn></p>
+    <title>Significance Testing<fn>This section is adapted from David M. Lane. "Significance Testing." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/significance.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/significance.html</url></fn></title>
 
     <p>
       A low probability value casts doubt on the null hypothesis. How low must the probability value be in order to conclude that the null hypothesis is false? Although there is clearly no right or wrong answer to this question, it is conventional to conclude the null hypothesis is false if the probability value is less than 0.05. More conservative researchers conclude the null hypothesis is false only if the probability value is less than 0.01. When a researcher concludes that the null hypothesis is false, the researcher is said to have rejected the null hypothesis. The probability value below which the null hypothesis is rejected is called the <m>\alpha</m> (alpha) level or simply <m>\alpha</m>. It is also called the significance level.
@@ -239,9 +233,7 @@
   </section>
 
   <section xml:id="sec-testing-single-mean">
-    <title>Testing a Single Mean</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "Testing a Single Mean." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/tests_of_means/single_mean.html">https://onlinestatbook.com/2/tests_of_means/single_mean.html</url></fn></p>
+    <title>Testing a Single Mean<fn>This section is adapted from David M. Lane. "Testing a Single Mean." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/tests_of_means/single_mean.html">https://onlinestatbook.com/2/tests_of_means/single_mean.html</url></fn></title>
 
     <p>
       The way we calculate the probability (<m>p</m>) value for a hypothesis test depends on what type of statement is made in our null hypothesis. Normally, statistical software will automatically compute a p value behind the scenes, but we still want to learn a bit about how the software comes up with this value. To illustrate what these calculations can look like, this section will focus on what to do if we want to test a null hypothesis stating that the population mean is equal to some hypothesized value. For example, suppose an experimenter wanted to know if people are influenced by a subliminal message and performed the following experiment. Each of nine subjects is presented with a series of 100 pairs of pictures, and for each pair they are asked to select one. As a pair of pictures is presented, a subliminal message is presented suggesting the picture that the subject should choose. The question is whether the (population) mean number of times the suggested picture is chosen is equal to 50 (the number we would expect if subliminal messages have no effect). In other words, the null hypothesis is that the population mean (<m>\mu</m>) is 50. The (hypothetical) data are shown in <xref ref="table-scoredist" />. The data in <xref ref="table-scoredist" /> have a sample mean (<m>\bar{X}</m>) of 51. Thus the sample mean differs from the hypothesized population mean by 1.
@@ -584,9 +576,7 @@
   </section>
 
   <section xml:id="sec-type-i-type-ii-errors">
-    <title>Type I and Type II Errors</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "Type I and Type II Errors." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/errors.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/errors.html</url></fn></p>
+    <title>Type I and Type II Errors<fn>This section is adapted from David M. Lane. "Type I and Type II Errors." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/errors.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/errors.html</url></fn></title>
 
     <p>
       In the Physicians' Reactions case study,<fn><url href="https://onlinestatbook.com/2/case_studies/weight.html">https://onlinestatbook.com/2/case_studies/weight.html</url></fn> the probability value associated with the significance test is 0.0057. Therefore, the null hypothesis was rejected, and it was concluded that physicians intend to spend less time with obese patients. Despite the low probability value, it is possible that the null hypothesis of no true difference between obese and average-weight patients is true and that the large difference between sample means occurred by chance. If this is the case, then the conclusion that physicians intend to spend less time with obese patients is in error. This type of error is called a Type I error. More generally, a <term>Type I error</term> occurs when a significance test results in the rejection of a true null hypothesis.
@@ -610,9 +600,7 @@
   </section>
 
   <section xml:id="sec-significance-test-regression-slope">
-    <title>Significance Test for a Regression Slope Coefficient</title>
-    
-    <p><fn>This section is adapted from David M. Lane. "Inferential Statistics for b and r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferential.html</url></fn></p>
+    <title>Significance Test for a Regression Slope Coefficient<fn>This section is adapted from David M. Lane. "Inferential Statistics for b and r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferential.html</url></fn></title>
 
     <p>
       To conclude this chapter, let's briefly revisit the very first type of hypothesis test we encountered in this textbook (though we did not call it that at the time): testing for the significance of a regression slope coefficient (<xref ref="sec-quick-guide-interpreting-regression" />). Now that we know more about hypothesis testing, let's fill in some of the details of how to calculate the p-values we rely upon to determine the significance of these coefficients.
