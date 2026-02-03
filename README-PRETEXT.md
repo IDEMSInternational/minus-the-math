@@ -6,7 +6,7 @@ This repository contains a PreTeXt version of "Statistics Minus the Maths" textb
 
 The book is organized in a standard PreTeXt structure:
 
-- **project.ptx** - Main project configuration file (using PreTeXt version 2 format)
+- **project.ptx** - Main project configuration file
 - **publication/** - Contains publication settings
   - **publication.ptx** - Publication configuration for HTML, LaTeX, and PDF output
 - **source/** - Contains all source files for the book
@@ -25,9 +25,6 @@ The book is organized in a standard PreTeXt structure:
   - **ch11-models-uncertainty.ptx** - Chapter 11: Models and Uncertainty
   - **ch12-regression-qual-independent.ptx** - Chapter 12: Regression with Qualitative Independent Variables
   - **ch13-regression-qual-dependent.ptx** - Chapter 13: Regression with Qualitative Dependent Variables
-- **external/** - External assets directory containing images
-  - **Images/** - All images used in the book (copied from docs/Images before building)
-- **docs/** - Contains the source images for the book
 
 ## Building the Book
 
@@ -35,20 +32,14 @@ To build the book, you'll need to have PreTeXt installed. Visit [PreTeXt Guide](
 
 ### Prerequisites
 
-1. Install PreTeXt CLI from requirements.txt:
+1. Install PreTeXt CLI:
    ```bash
-   pip install -r requirements.txt
+   pip install pretextbook
    ```
 
-2. Set up PreTeXt cache (workaround for known bug in PreTeXt 2.32.0):
+2. Install dependencies (if needed):
    ```bash
-   bash .github/scripts/setup-pretext-cache.sh
-   ```
-
-3. Copy images to external directory:
-   ```bash
-   mkdir -p external
-   cp -r docs/Images external/
+   pretext install
    ```
 
 ### Build Commands

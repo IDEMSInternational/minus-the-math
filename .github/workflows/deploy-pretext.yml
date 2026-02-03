@@ -32,16 +32,7 @@ jobs:
 
       - name: Install PreTeXt
         run: |
-          pip install -r requirements.txt
-
-      - name: Setup PreTeXt cache
-        run: |
-          bash .github/scripts/setup-pretext-cache.sh
-
-      - name: Setup images for PreTeXt
-        run: |
-          mkdir -p external
-          cp -r docs/Images external/
+          pip install pretextbook
 
       - name: Build HTML
         run: |
