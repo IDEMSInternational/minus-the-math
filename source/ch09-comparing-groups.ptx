@@ -304,19 +304,19 @@
         </row>
         <row>
           <cell>AHA</cell>
-          <cell>15<line/>(11.02)</cell>
-          <cell>24<line/>(19.03)</cell>
-          <cell>25<line/>(16.53)</cell>
-          <cell>239<line/>(256.42)</cell>
+          <cell><line>15</line><line>(11.02)</line></cell>
+          <cell><line>24</line><line>(19.03)</line></cell>
+          <cell><line>25</line><line>(16.53)</line></cell>
+          <cell><line>239</line><line>(256.42)</line></cell>
         </row>
         <row>
           <cell>Mediterranean</cell>
-          <cell>7<line/>(10.98)</cell>
-          <cell>14<line/>(18.97)</cell>
-          <cell>8<line/>(16.47)</cell>
-          <cell>273<line/>(255.58)</cell>
+          <cell><line>7</line><line>(10.98)</line></cell>
+          <cell><line>14</line><line>(18.97)</line></cell>
+          <cell><line>8</line><line>(16.47)</line></cell>
+          <cell><line>273</line><line>(255.58)</line></cell>
         </row>
-        <row header="yes">
+        <row>
           <cell>Total</cell>
           <cell>22</cell>
           <cell>38</cell>
@@ -330,11 +330,15 @@
       <title>Drawing Substantive Conclusions from a Contingency Table</title>
       
       <p>
-        The finding that there is a significant relationship between diet and outcome does not tell us the nature of the relationship. We therefore need to look at the data. The expected frequencies shown in <xref ref="tbl-observedstudyfreqs"/> can help. Recall that the expected frequencies show the frequencies expected if there were no relationship. Therefore, to assess the relationship, it is useful to compare the observed frequencies to the expected frequencies. In our example, we see that people on the AHA diet had more cancers and heart disease than expected whereas people on the Mediterranean diet had fewer occurrences of these diseases than expected.
+        Now that we know there is a statistically significant relationship between diet and health outcome (since we rejected the null hypothesis of no relationship), we will naturally wonder what kind of relationship exists. Specifically, which diet is associated with better health? To answer this, we must look to the specific values within the cells and describe the patterns we observe. One straightforward way to do this is to make note of where the observed frequency differs notably from the expected frequency.
       </p>
 
       <p>
-        Another approach is to compute percentages. Consider <xref ref="tbl-studyfreqsrows"/>, which shows the frequencies and the percentage of people in each diet condition who developed cancer, developed fatal heart disease, developed non-fatal heart disease, or stayed healthy. Percentages allow us to see that 4.95% of those on the AHA diet developed cancers as compared to 2.32% on the Mediterranean diet. Similarly, 7.92% of those on the AHA diet developed fatal heart disease compared to 4.64% on the Mediterranean diet, and 8.25% on the AHA diet developed non-fatal heart disease compared to 2.65% on the Mediterranean diet.
+        From <xref ref="tbl-observedstudyfreqs"/>, we can see that for those on the AHA diet, the frequencies for cancers, fatal heart disease, and non-fatal heart disease are all higher than expected. At the same time, the frequency for <q>healthy</q> is lower than expected on the AHA diet. Results for the Mediterranean diet are the exact opposite: cancers and both types of heart disease occur less frequently than expected, and the healthy outcome occurs more than expected. Thus, the Mediterranean diet is unambiguously associated with better outcomes than the AHA diet.
+      </p>
+
+      <p>
+        Though it is easy to make sense of results in this manner based on a comparison of observe to expected frequencies, the typical contingency table you encounter will probably not display expected frequencies. Instead, it is common to include percentages by row or by column, which can also be used to draw conclusions about the nature of a relationship between variables. For example, in <xref ref="tbl-studyfreqsrows"/>, the expected frequencies from the prior table have been replaced by percentages. The percentages shown in this table are calculated by row, meaning that they are found by dividing the frequency in each cell by the total for that row, shown in the final column.
       </p>
 
       <table xml:id="tbl-studyfreqsrows">
@@ -343,6 +347,7 @@
           <row header="yes">
             <cell></cell>
             <cell colspan="4">Outcome</cell>
+            <cell></cell>
           </row>
           <row header="yes">
             <cell>Diet</cell>
@@ -350,26 +355,45 @@
             <cell>Fatal Heart Disease</cell>
             <cell>Non-Fatal Heart Disease</cell>
             <cell>Healthy</cell>
+            <cell>Total</cell>
           </row>
           <row>
             <cell>AHA</cell>
-            <cell>15<line/>(4.95%)</cell>
-            <cell>24<line/>(7.92%)</cell>
-            <cell>25<line/>(8.25%)</cell>
-            <cell>239<line/>(78.88%)</cell>
+            <cell><line>15</line><line>4.95%</line></cell>
+            <cell><line>24</line><line>7.92%</line></cell>
+            <cell><line>25</line><line>8.25%</line></cell>
+            <cell><line>239</line><line>78.88%</line></cell>
+            <cell><line>303</line><line>100%</line></cell>
           </row>
           <row>
             <cell>Mediterranean</cell>
-            <cell>7<line/>(2.32%)</cell>
-            <cell>14<line/>(4.64%)</cell>
-            <cell>8<line/>(2.65%)</cell>
-            <cell>273<line/>(90.40%)</cell>
+            <cell><line>7</line><line>2.32%</line></cell>
+            <cell><line>14</line><line>4.64%</line></cell>
+            <cell><line>8</line><line>2.65%</line></cell>
+            <cell><line>273</line><line>90.40%</line></cell>
+            <cell><line>302</line><line>100%</line></cell>
+          </row>
+          <row header="yes">
+            <cell>Total</cell>
+            <cell><line>22</line><line>3.64%</line></cell>
+            <cell><line>38</line><line>6.28%</line></cell>
+            <cell><line>33</line><line>5.45%</line></cell>
+            <cell><line>512</line><line>84.63%</line></cell>
+            <cell><line>605</line><line>100%</line></cell>
           </row>
         </tabular>
       </table>
 
       <p>
-        Yet another approach is to show the percentage of people within each health outcome who were on the AHA diet and what percentage were on the Mediterranean diet. This is shown in <xref ref="tbl-studyfreqscols"/>.
+        Drawing conclusions based on column or row percentages takes some care, and it is easy to make mistakes if you are not careful. For example, consider the AHA/Cancers cell, which shows 4.95%. Because this seems like a small percentage, it is tempting to conclude that being on the AHA diet is not associated with having cancer. However, that conclusion would be wrong. Since the percentages have been calculated by row, the key to finding meaningful patterns will be to compare across the percentages found within the same column. In this case, we see that the 4.95% in the AHA-Cancers cell is over twice as large as the 2.32% shown in the Mediterranean/Cancers cell right below it. To make sense of these percentages, remember that we have calculated percentages by row, meaning that the frequency in the cell is divided by the total at the far right of the table. So the 4.95% means that among all those on the AHA diet (303 individuals in total), 4.95% have cancer. By comparison, only around 2% (2.32% to be precise) of those on a Mediterranean diet have cancer. Both percentages are small, because cancer is (fortunately) a relatively rare outcome; at the bottom of the table we see that only 3.64% of participants overall have cancer. Still, since the percentage is higher among those on the AHA diet than on the Mediterranean diet, we can say that the AHA diet is positively associated with having cancer.
+      </p>
+
+      <p>
+        If we continue moving down the table column by column, we see that rates of heart disease are higher among those on the AHA diet (7.92% for fatal and 8.25% for non-fatal) than among those on the Mediterranean diet (4.64% and 2.65%). Finally, around 90% of those on the Mediterranean diet are healthy, while just under 79% of those on the AHA diet are.
+      </p>
+
+      <p>
+        We can reach an equivalent conclusion by examining percentages that are calculated by column, as shown in <xref ref="tbl-studyfreqscols"/>. Here, percentages are calculated by dividing the frequency in each cell by the total shown at the bottom of the column.
       </p>
 
       <table xml:id="tbl-studyfreqscols">
@@ -378,6 +402,7 @@
           <row header="yes">
             <cell></cell>
             <cell colspan="4">Outcome</cell>
+            <cell></cell>
           </row>
           <row header="yes">
             <cell>Diet</cell>
@@ -385,30 +410,45 @@
             <cell>Fatal Heart Disease</cell>
             <cell>Non-Fatal Heart Disease</cell>
             <cell>Healthy</cell>
+            <cell>Total</cell>
           </row>
           <row>
             <cell>AHA</cell>
-            <cell>15<line/>(68.18%)</cell>
-            <cell>24<line/>(63.16%)</cell>
-            <cell>25<line/>(75.76%)</cell>
-            <cell>239<line/>(46.68%)</cell>
+            <cell><line>15</line><line>68.18%</line></cell>
+            <cell><line>24</line><line>63.16%</line></cell>
+            <cell><line>25</line><line>75.76%</line></cell>
+            <cell><line>239</line><line>46.68%</line></cell>
+            <cell><line>303</line><line>50.08%</line></cell>
           </row>
           <row>
             <cell>Mediterranean</cell>
-            <cell>7<line/>(31.82%)</cell>
-            <cell>14<line/>(36.84%)</cell>
-            <cell>8<line/>(24.24%)</cell>
-            <cell>273<line/>(53.32%)</cell>
+            <cell><line>7</line><line>31.82%</line></cell>
+            <cell><line>14</line><line>36.84%</line></cell>
+            <cell><line>8</line><line>24.24%</line></cell>
+            <cell><line>273</line><line>53.32%</line></cell>
+            <cell><line>302</line><line>49.92%</line></cell>
+          </row>
+          <row header="yes">
+            <cell>Total</cell>
+            <cell><line>22</line><line>100%</line></cell>
+            <cell><line>38</line><line>100%</line></cell>
+            <cell><line>33</line><line>100%</line></cell>
+            <cell><line>512</line><line>100%</line></cell>
+            <cell><line>605</line><line>100%</line></cell>
           </row>
         </tabular>
       </table>
 
       <p>
-        Looking at <xref ref="tbl-studyfreqscols"/>, we see that 68.18% of people who developed cancer had been on the AHA diet whereas only 31.82% of people who developed cancer had been on the Mediterranean diet. This compares with roughly 50% of healthy people being on each diet.
+        The AHA/Cancers cell shows 68.18%, indicating that around 68% of those who have cancer are on the AHA diet. In the case of this particular dataset, the split of participants between the two diets is approximately 50-50 (as shown by the percentages in the final column), so finding that the percentage of those with cancer who are on the AHA diet is well above 50% actually does indicate that individuals on the AHA diet are overrepresented among those with cancer. But remember, you cannot generally assume that 50% is a reasonable baseline for comparison; if, for example, 80% of study participants were on the AHA diet, seeing any percentage smaller than 80% for the AHA-Cancers would indicate that those on the AHA diet were underrepresented among those with cancer.
       </p>
 
       <p>
-        Although all three approaches lead to the same conclusion about the direction of the relationship, they differ in terms of the particular comparisons they highlight. It is useful to keep in mind that any cell in <xref ref="tbl-studyfreqs"/> or <xref ref="tbl-studyfreqsrows"/> can be easily computed from any other. Once we specify a diet group, we can compare across outcomes. Or, alternatively, once we specify an outcome, we can compare across diet groups. Therefore, the choice of approach comes down mainly to which type of comparison is most relevant to your goals.
+        As a general rule, when percentages are calculated by columns, the key to finding meaningful patterns is making comparisons across the columns (within the same row), such as noticing that the 68.18% in the AHA-Cancers cell is greater than the 50.08% in the AHA Total cell. One can also see that while people on the AHA diet make up a clear majority of those with heart disease (both fatal and non-fatal), among those who are healthy only around 47% are on the AHA diet. As a clear contrast, those on the Mediterranean diet make up around 53% of the healthy subjects but just 32% of those with cancer, 37% of those with fatal heart disease, and 24% of those with non-fatal heart disease. Thus, we see consistent indication that outcomes are better for subjects on the Mediterranean diet, as opposed to the AHA one.
+      </p>
+
+      <p>
+        As you can now see, regardless of whether we examine (1) expected versus observed outcomes, (2) percentages by row, or (3) percentages by column, we reach the same conclusion: health outcomes are uniformly better for those on the Mediterranean diet. All three approaches are equally valid ways of evaluating associations from a contingency table, and you normally need use only one. We examined all three here for illustrative purposes since each approach is one you may encounter in your own analysis or in a research report.
       </p>
     </subsection>
 
@@ -416,11 +456,7 @@
       <title>Key Assumption of the Chi Square Test</title>
       
       <p>
-        There is an important assumption that is sometimes violated. The assumption is that each subject contributes data to only one cell. Therefore, the sum of all cell frequencies in the table must be the same as the number of subjects in the experiment. A common error is to compute Chi Square on the total number of responses rather than on the total number of subjects. An example will help illustrate the distinction.
-      </p>
-
-      <p>
-        Suppose a group of 16 subjects is given two types of anagram problems: (1) problems that can be solved by rearranging the letters to form a word related to the field of psychology and (2) problems that can be solved by rearranging the letters to form a word unrelated to psychology. The question of interest is whether problem type (psychology related or not) is related to whether or not the subject can solve the anagram. <xref ref="tbl-anagramdata"/> shows some fictitious data. Looking at the table, it is tempting to conclude that 9 + 8 = 17 out of 32 anagrams were solved. However, this conclusion is not justified because each subject contributed two anagrams, one of each type. Therefore, it is not correct to conclude that 17 out of 32 anagrams were solved; it is only correct to say that 17 out of 32 responses were correct. The chance that the two responses from a given subject would both be correct is certainly higher than the chance that two responses from two different subjects would both be correct. The dependencies among responses render the assumption that each observation is independent invalid. And when we violate this assumption, we get distorted estimates of significance.
+        A key assumption of this Chi Square test is that each subject contributes data to only one cell. Therefore, the sum of all cell frequencies in the table must be the same as the number of subjects in the experiment. Consider an experiment in which each of 16 subjects attempted two anagram problems. The data are shown in <xref ref="tbl-anagramdata"/>.
       </p>
 
       <table xml:id="tbl-anagramdata">
@@ -428,24 +464,24 @@
         <tabular halign="center">
           <row header="yes">
             <cell></cell>
+            <cell>Anagram 1</cell>
+            <cell>Anagram 2</cell>
+          </row>
+          <row>
             <cell>Solved</cell>
+            <cell>10</cell>
+            <cell>4</cell>
+          </row>
+          <row>
             <cell>Did not Solve</cell>
-          </row>
-          <row>
-            <cell>Psychology</cell>
-            <cell>9</cell>
-            <cell>7</cell>
-          </row>
-          <row>
-            <cell>Not Psychology</cell>
-            <cell>8</cell>
-            <cell>8</cell>
+            <cell>6</cell>
+            <cell>12</cell>
           </row>
         </tabular>
       </table>
 
       <p>
-        The problem is that the table gives the impression that there were 32 observations when in fact there were only 16 observations (each contributing two data points).
+        It would not be valid to use the Chi Square test on these data since each subject contributed data to two cells: one cell based on their performance on Anagram 1 and one cell based on their performance on Anagram 2. The total of the cell frequencies in the table is 32, but the total number of subjects is only 16.
       </p>
     </subsection>
   </section>
@@ -454,19 +490,15 @@
     <title>Appendix: More about the Chi Square Distribution</title>
     
     <p>
-      In the discussion of the Chi Square distribution, we introduced the Chi Square distribution as the distribution of the sum of squared standard normal deviates. To get a feeling for this definition, consider the Chi Square distribution with one degree of freedom. This is the distribution of the sum of one squared standard normal deviate; the distribution of a single standard normal deviate squared. Consider what the distribution would look like. The square of a number is always positive, so all values of the Chi Square distribution are positive. If a standard normal deviate is close to 0, then its square will be close to 0. Therefore, low values of Chi Square occur frequently with high values occurring rarely. The median of the Chi Square distribution with one degree of freedom is 0.45.
+      As noted in the main text, the degrees of freedom of the distribution is equal to the number of standard normal deviates being summed. Therefore, Chi Square with one degree of freedom, written as <m>\chi^2(1)</m>, is simply the distribution of a single normal deviate squared. The area of the <m>\chi^2(1)</m> distribution below 4 is the same as the area of a standard normal distribution below 2, since 4 is <m>2^2</m>.
     </p>
 
     <p>
-      Since the Chi Square distribution with one degree of freedom is the distribution of a single squared standard normal deviate, the area under the Chi Square distribution below 4 equals the area under the standard normal distribution below 2 plus the area above 2. This is because a Chi Square of 4 or less is obtained if the standard normal deviate is between -2 and 2 (that is, if the deviate is less than or equal to 2 in absolute value). The total area under the standard normal distribution between -2 and 2 equals 0.9544.
+      Consider the following problem: you sample two scores from a standard normal distribution, square each score, and sum the squares. What is the probability that the sum of these two squares will be six or higher? Since two scores are sampled, the answer can be found using the Chi Square distribution with two degrees of freedom. A Chi Square calculator can be used to find that the probability of a Chi Square (with 2 df) being six or higher is 0.050.
     </p>
 
     <p>
-      Now suppose two standard normal deviates are sampled and squared. What is the probability that their sum is 6 or more? The <q>Chi Square Probability Calculator</q> shows that the probability of a Chi Square with 2 degrees of freedom being greater than or equal to 6 is 0.050. You can use the <q>Normal Calculator</q> to verify that the probability that two squared standard normal deviates are both greater than 3 is equal to 0.000032. However, it is not obvious how the <q>Normal Calculator</q> can be used to determine the probability that the sum of two squared normal deviates is greater than or equal to 6.
-    </p>
-
-    <p>
-      It is straightforward to show that the mean of a Chi Square distribution is the number of degrees of freedom. Recall that if a single score is sampled from a standard normal distribution, the mean of that distribution is 0 and its variance is 1. The variance of a squared standard normal deviate is 2. If k independent squared standard normal deviates are summed, then the variance of the sum is k times 2, which is 2k. For the Chi Square distribution with k degrees of freedom, the mean equals k and the variance equals 2k.
+      The mean of a Chi Square distribution is its degrees of freedom.
     </p>
   </section>
 
