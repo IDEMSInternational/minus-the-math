@@ -4,9 +4,6 @@ WARNING : Try `pretext init --refresh` to produce a compatible file.
 INFO    : 
 ERROR   : Publication file does not specify asset directories.
 ERROR   : Publication file does not specify asset directories.
-WARNING : Assets like latex-images will not be regenerated for this build
-WARNING : (previously generated assets will be used if they exist).
-WARNING : To generate these assets before building, run `pretext build -g`.
 ERROR   : Publication file does not specify asset directories.
 ERROR   : Publication file does not specify asset directories.
 ERROR   : Publication file does not specify asset directories.
@@ -66,7 +63,13 @@ INFO    :     *              located within: "ch09-comparing-groups" (xml:id), "
 INFO    :     * PTX:ERROR:   a cross-reference ("xref") uses references [sec-the-standard-normal-distribution] that do not point to any target, or perhaps point to multiple targets.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source, or maybe an auxiliary file contains a duplicate.  Your output will contain some placeholder text that you will not want to distribute to your readers.
 INFO    :     *              located within: "sec-one-way-tables" (xml:id), "One-Way Tables" (title)
 INFO    : successful application of /home/runner/.ptx/xsl/pretext-html.xsl
+INFO    : Now preparing local server to preview directory `/home/runner/work/minus-the-math/minus-the-math/output/html`.
+INFO    :   (Reminder: use `pretext deploy` to deploy your built project to a public
+INFO    :   GitHub Pages site that can be shared with readers who cannot access your
+INFO    :   personal computer.)
 INFO    : 
-Success! Run `pretext view html` to see the results.
+INFO    : Success! The most recent build of your project can be viewed in a web browser at the following url:
+INFO    :     http://10.1.0.85:8000
+INFO    : This page should open in a new tab automatically.
+INFO    : Use [Ctrl]+[C] to halt the server.
 
-INFO    : 
