@@ -1,19 +1,810 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:id="ch08-comparing-means" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Comparing Means (How a Qualitative Variable Relates to a Quantitative One)</title>
-  
+
   <introduction>
-    <p>
-      <!-- Introduction content to be added -->
-    </p>
+    <p>It is much more common for a researcher to be interested in the difference between means—the focus of this chapter—than in the specific values of the means themselves. Note that we already learned in the chapter on graphing how to visually depict a comparison of means/medians using boxplots (<url href="graphing.html#sec-box-plots">Section 1.4.2</url>). The formal analyses described in this chapter pair well with that sort of graph, since the formal tests allow one to make statements that explicitly account for the uncertainty and imprecision inherent in statistical inference.</p>
   </introduction>
 
-  <section xml:id="sec-ch08-section1">
-    <title>Section Title</title>
-    
-    <p>
-      <!-- Section content to be added -->
-    </p>
+  <section xml:id="sec-difference-between-two-means">
+    <title>Difference between Two Means</title>
+
+    <p><fn>This section is adapted from David M. Lane. “Difference between Two Means (Independent Groups).” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/tests_of_means/difference_means.html</fn></p>
+
+    <p>This section covers how to test for differences between means from two separate groups of subjects, using an independent-groups t test.</p>
+
+    <p>We take as an example the data from the “Animal Research” case study, previously described when discussing confidence intervals (<url href="estimation.html#sec-using-confidence-intervals">Section 4.2.1</url>). As a reminder, students rated (on a 7-point scale) whether they thought animal research is wrong.</p>
+
+    <table xml:id="tbl-meansvaranimalresearch">
+      <title>Means and Variances in Animal Research study.</title>
+      <tabular>
+        <row header="yes">
+          <cell></cell>
+          <cell><term>Group</term></cell>
+          <cell></cell>
+          <cell><term>n</term></cell>
+          <cell></cell>
+          <cell><term>Mean</term></cell>
+          <cell></cell>
+          <cell><term>Variance</term></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>Females</cell>
+          <cell></cell>
+          <cell>17</cell>
+          <cell></cell>
+          <cell>5.353</cell>
+          <cell></cell>
+          <cell>2.743</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>Males</cell>
+          <cell></cell>
+          <cell>17</cell>
+          <cell></cell>
+          <cell>3.882</cell>
+          <cell></cell>
+          <cell>2.985</cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>As we noted previously, the female mean is 1.47 units higher than the male mean (<url href="#tbl-meansvaranimalresearch">Table 8.1</url>). This is just the difference in our sample, however, and we wish to draw an inference about the difference in the <em>population</em> means.</p>
+
+    <p>In order to test whether there is a difference between population means, we are going to make three assumptions (just as we did when constructing a confidence interval):</p>
+
+    <ol>
+      <li><p>The two populations have the same variance. This assumption is called the assumption of homogeneity of variance.</p></li>
+      <li><p>The populations are normally distributed.</p></li>
+      <li><p>Each value is sampled independently <fn>Two variables are said to be independent if the value of one variable provides no information about the value of the other variable. In this case, if knowing the value of the X variable for one observation could help us predict the value of X for another observation, the two values of X are not independent. For example, if there is clustered sampling, such that selecting an individual into the sample implies that neighbors with similar X values are also likely to be in the sample, the observations are not independent.</fn> . This assumption requires that each subject provide only one value. If a subject provides two scores, then the scores are not independent.</p></li>
+    </ol>
+
+    <p>One could look at these assumptions in much more detail, but suffice it to say that small-to-moderate violations of assumptions 1 and 2 do not make much difference. It is important not to violate assumption 3.</p>
+
+    <p>In practice, most researchers use software to automate calculation with all formulas we encounter in this chapter. Nonetheless, your ability to understand the output of the software may improve if you have some idea of what’s happening under the hood. As we saw in the previous chapter, the following general formula is used for significance testing based on the t distribution:</p>
+
+    <me>\text{t} = \frac{\text{statistic} - \text{hypothesized value}}{\text{estimated standard error of the statistic}}</me>
+
+    <p>In this case, our statistic is the difference between sample means and our hypothesized value is 0 because the null hypothesis states that the difference between population means is 0.</p>
+
+    <p>We continue to use the data from the “Animal Research” case study and will compute a significance test on the difference between the mean score of the females and the mean score of the males.</p>
+
+    <p>The first step is to compute the statistic, which is simply the difference between means.</p>
+
+    <me>\bar{X}_1 - \bar{X}_2 = 5.3529 - 3.8824 = 1.4705</me>
+
+    <p>Since the hypothesized value is 0, we do not need to subtract it from the statistic.</p>
+
+    <p>The next step is to compute the estimate of the standard error of the statistic. In this case, the statistic is the difference between means, so the estimated standard error of the statistic is <m>s_{\text{diff}}</m> (which can also be written as <m>s_{\bar{X}_1 - \bar{X}_2}</m>). The formula<fn>For a more detailed discussion, see https://onlinestatbook.com/2/sampling_distributions/samplingdist_diff_means.html</fn> for the standard error of the difference between means is:</p>
+
+    <me>\sigma_{\text{diff}} = \sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}} = \sqrt{\frac{\sigma^2}{n}+\frac{\sigma^2}{n}} = \sqrt{\frac{2\sigma^2}{n}}</me>
+
+    <p>where <m>\sigma^2_1</m> and <m>n_1</m> are the variance and sample size of the first group, and <m>\sigma^2_2</m> and <m>n_2</m> are the variance and sample size of the second group. Note that since we assumed <m>\sigma^2_1 = \sigma^2_2</m> (as our first of the three assumptions listed above), we can represent both of these variances as simply <m>\sigma^2</m>. Likewise, when <m>n_1</m> = <m>n_2</m> (as in our example with equal numbers of females and males), it is conventional to use “<m>n</m>” to refer to the sample size of each group.</p>
+
+    <p>Because the value of <m>\sigma^2</m> is unknown, we estimate it by averaging our two sample variances, relying again on our assumption that the two population variances are the same (and thus each sample’s variance should be an equally valid estimate of <m>\sigma^2</m>). This estimate of variance is can be written as follows:</p>
+
+    <me>\text{MSE}= \frac{s^2_1+s^2_2}{2}</me>
+
+    <p>where MSE is our estimate of <m>\sigma^2</m>. In this example,</p>
+
+    <me>\text{MSE} = (2.743 + 2.985)/2 = 2.864.</me>
+
+    <p>We can now estimate <m>\sigma_{\text{diff}}</m> with <m>s_{\text{diff}}</m>, substituting in MSE where we previously saw <m>\sigma^2</m> in the formula for <m>\sigma_{\text{diff}}</m>. Since n (the number of scores in each group) is 17,</p>
+
+    <me>s_{\text{diff}} = \sqrt{\frac{2MSE}{n}} = \sqrt{\frac{(2)(2.864)}{17}} = 0.5805.</me>
+
+    <p>The next step is to compute t by plugging these values into the formula:</p>
+
+    <me>t = \frac{1.4705}{0.5805} = 2.533.</me>
+
+    <p>Finally, we compute the probability of getting a <m>t</m> as large or larger than 2.533 or as small or smaller than -2.533. To do this, we need to know the degrees of freedom. The degrees of freedom is the number of independent estimates of variance on which <m>MSE</m> is based. This is equal to (<m>n_1</m>- 1) + (<m>n_2</m>- 1), and for this example,<m>n_1</m> = <m>n_2</m>= 17. Therefore, the degrees of freedom is 16 + 16 = 32.</p>
+
+    <p>Once we have the degrees of freedom, we can use a t distribution calculator to find the probability. <url href="#fig-2tailprob">Figure 8.1</url> shows that the probability value (p) for a two-tailed test is 0.0164. The two-tailed test is used when the null hypothesis can be rejected regardless of the direction of the effect. As shown in <url href="#fig-2tailprob">Figure 8.1</url>, it is the probability of a t &lt; -2.533 or a t &gt; 2.533.</p>
+
+    <figure xml:id="fig-2tailprob">
+      <caption>The two-tailed probability.</caption>
+      <image source="Images/comparing-means/2tailprob.png" width="60%"/>
+    </figure>
+
+    <p>The results of a one-tailed test are shown in<url href="#fig-1tailprob">Figure 8.2</url>. As you can see, the probability value of 0.0082 is half the value for the two-tailed test.</p>
+
+    <figure xml:id="fig-1tailprob">
+      <caption>The one-tailed probability.</caption>
+      <image source="Images/comparing-means/1tailprob.png" width="60%"/>
+    </figure>
+
+    <subsection xml:id="formatting-data-for-computer-analysis">
+      <title>Formatting Data for Computer Analysis</title>
+
+      <p>Most computer programs that compute t tests require your data to be in a specific form. Consider the data in<url href="#tbl-exampledata">Table 8.2</url>.</p>
+
+      <table xml:id="tbl-exampledata">
+        <title>Example data in “wide” form.</title>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell><term>Group 1</term></cell>
+            <cell></cell>
+            <cell><term>Group 2</term></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>3</cell>
+            <cell></cell>
+            <cell>2</cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>4</cell>
+            <cell></cell>
+            <cell>6</cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>5</cell>
+            <cell></cell>
+            <cell>8</cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>Here there are two groups, each with three observations. To format these data for a computer program, you normally have to use two variables: the first specifies the group the subject is in and the second is the score itself. The reformatted version of the data in<url href="#tbl-exampledata">Table 8.2</url>is shown in<url href="#tbl-reformatdata">Table 8.3</url>. We sometimes describe the original format as “wide” form and the reformatted data as “long” form.</p>
+
+      <table xml:id="tbl-reformatdata">
+        <title>Reformatted data (now in “long” form).</title>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell><term>Group</term></cell>
+            <cell></cell>
+            <cell><term>Y</term></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>1</cell>
+            <cell></cell>
+            <cell>3</cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>1</cell>
+            <cell></cell>
+            <cell>4</cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>1</cell>
+            <cell></cell>
+            <cell>5</cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>2</cell>
+            <cell></cell>
+            <cell>2</cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>2</cell>
+            <cell></cell>
+            <cell>6</cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>2</cell>
+            <cell></cell>
+            <cell>8</cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>Using statistical software, we’d find that the t value is -0.718, the df = 4, and p = 0.512.</p>
+
+    </subsection>
+
+  </section>
+
+  <section xml:id="pairwise-comparisons-among-multiple-meanscomparing-means-6">
+    <title>Pairwise Comparisons Among Multiple Means</title>
+
+    <p><fn>This section is adapted from David M. Lane. “All Pairwise Comparisons Among Means.” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/tests_of_means/pairwise.html</fn></p>
+
+    <p>Many experiments are designed to compare more than two conditions. We will take as an example the case study “Smiles and Leniency.”In this study, the effect of different smiles on the leniency shown to a person was investigated. Four different types of smiles (neutral, false, felt, and miserable) were shown. “Type of Smile” is the independent variable, and the dependent variable is a leniency rating given by the subject to a fictional student (depicted with one of the four smiles) in an academic misconduct case. An obvious way to proceed would be to do a t test of the difference between each group mean and each of the other group means. This procedure would lead to the six comparisons shown in<url href="#tbl-feltmisneutral">Table 8.4</url>.</p>
+
+    <table xml:id="tbl-feltmisneutral">
+      <title>Six Comparisons among Means.</title>
+      <tabular>
+        <row>
+          <cell>false vs. felt</cell>
+          <cell><image source="Images/comparing-means/false.png" width="40%"/></cell>
+          <cell><image source="Images/comparing-means/felt.png" width="40%"/></cell>
+        </row>
+        <row>
+          <cell>false vs. miserable</cell>
+          <cell><image source="Images/comparing-means/false.png" width="40%"/></cell>
+          <cell><image source="Images/comparing-means/miserable.png" width="40%"/></cell>
+        </row>
+        <row>
+          <cell>false vs. neutral</cell>
+          <cell><image source="Images/comparing-means/false.png" width="40%"/></cell>
+          <cell><image source="Images/comparing-means/neutral.png" width="40%"/></cell>
+        </row>
+        <row>
+          <cell>felt vs. miserable</cell>
+          <cell><image source="Images/comparing-means/felt.png" width="40%"/></cell>
+          <cell><image source="Images/comparing-means/miserable.png" width="40%"/></cell>
+        </row>
+        <row>
+          <cell>felt vs. neutral</cell>
+          <cell><image source="Images/comparing-means/felt.png" width="40%"/></cell>
+          <cell><image source="Images/comparing-means/neutral.png" width="40%"/></cell>
+        </row>
+        <row>
+          <cell>miserable vs. neutral</cell>
+          <cell><image source="Images/comparing-means/miserable.png" width="40%"/></cell>
+          <cell><image source="Images/comparing-means/neutral.png" width="40%"/></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>The problem with this approach is that if you did this analysis, you would have six chances to make a Type I error. Therefore, if you were using the 0.05 significance level, the probability that you would make a Type I error on at least one of these comparisons is greater than 0.05. <fn>When discussing probability of Type I errors, we assume all null hypotheses are true, since a Type I error can’t occur if the null hypothesis is false.</fn> The more means that are compared, the more the Type I error rate is inflated. <url href="#fig-pairwisecompfmean">Figure 8.3</url> shows the number of possible comparisons between pairs of means (pairwise comparisons) as a function of the number of means. If there are only two means, then only one comparison can be made. If there are 12 means, then there are 66 possible comparisons.</p>
+
+    <figure xml:id="fig-pairwisecompfmean">
+      <caption>Number of pairwise comparisons as a function of the number of means.</caption>
+      <image source="Images/comparing-means/pairwisecompfmean.png" width="60%"/>
+    </figure>
+
+    <p><url href="#fig-type1error">Figure 8.4</url>shows the probability of a Type I error as a function of the number of means. As you can see, if you have an experiment with 12 means, the probability is about 0.70 that at least one of the 66 comparisons among means would be significant even if all 12 population means were the same.</p>
+
+    <figure xml:id="fig-type1error">
+      <caption>Probability of a Type I error as a function of the number of means.</caption>
+      <image source="Images/comparing-means/type1error.png" width="60%"/>
+    </figure>
+
+    <p>The Type I error rate can be controlled using a test called the Tukey Honestly Significant Difference test or Tukey HSD for short. The Tukey HSD test is one example of a multiple comparison test, but several alternatives are frequently used, such as the Bonferroni correction. Regardless of the exact method used for a multiple comparison test, the interpretation of results is similar. The Tukey HSD is based on a variation of the t distribution that takes into account the number of means being compared. This distribution is called the studentized range distribution.</p>
+
+    <p>Normally, statistical software will make all the necessary calculations for you in the background. But to illustrate what sorts of calculations the software is relying on, let’s return to the leniency study to see how to compute the Tukey HSD test. You will see that the computations are very similar to those of an independent-groups t test. The steps are outlined below:</p>
+
+    <ol>
+      <li><p>Compute the means and variances of each group. For our example, they are shown in<url href="#tbl-sum-stats-leniency">Table 8.5</url>.</p></li>
+    </ol>
+
+    <table xml:id="tbl-sum-stats-leniency">
+      <title>Means and Variances from the “Smiles and Leniency” Study.</title>
+      <tabular>
+        <row header="yes">
+          <cell></cell>
+          <cell><term>Condition</term></cell>
+          <cell></cell>
+          <cell><term>Mean</term></cell>
+          <cell></cell>
+          <cell><term>Variance</term></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>False</cell>
+          <cell></cell>
+          <cell>5.37</cell>
+          <cell></cell>
+          <cell>3.34</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>Felt</cell>
+          <cell></cell>
+          <cell>4.91</cell>
+          <cell></cell>
+          <cell>2.83</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>Miserable</cell>
+          <cell></cell>
+          <cell>4.91</cell>
+          <cell></cell>
+          <cell>2.11</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>Neutral</cell>
+          <cell></cell>
+          <cell>4.12</cell>
+          <cell></cell>
+          <cell>2.32</cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <ol>
+      <li><p>Compute MSE, which is simply the mean of the variances. It is equal to 2.65.</p></li>
+      <li><p>Compute Q (using the formula below) for each pair of means, where <m>\bar{X}_i</m> is one mean,<m>\bar{X}_j</m> is the other mean, and <m>n</m> is the number of scores in each group. For these data, there are 34 observations per group. The value in the denominator is 0.279.</p>
+      <me>Q=\frac{\bar{X}_i-\bar{X}_j}{\sqrt{\frac{MSE}{n}}}</me>
+      <p></p></li>
+      <li><p>Compute p for each comparison using a Studentized Range Calculator. <fn>https://onlinestatbook.com/2/calculators/studentized_range_dist.html</fn> The degrees of freedom is equal to the total number of observations minus the number of means. For this experiment, df = 136 - 4 = 132.</p></li>
+    </ol>
+
+    <p>The tests for these data are shown in<url href="#tbl-6pairwisecomp">Table 8.6</url>.</p>
+
+    <table xml:id="tbl-6pairwisecomp">
+      <title>Six Pairwise Comparisons.</title>
+      <tabular>
+        <row header="yes">
+          <cell>Comparison</cell>
+          <cell><m>\bar{X}_i - \bar{X}_j</m></cell>
+          <cell><m>Q</m></cell>
+          <cell><m>p</m></cell>
+        </row>
+        <row>
+          <cell>False - Felt</cell>
+          <cell>0.46</cell>
+          <cell>1.65</cell>
+          <cell>0.649</cell>
+        </row>
+        <row>
+          <cell>False - Miserable</cell>
+          <cell>0.46</cell>
+          <cell>1.65</cell>
+          <cell>0.649</cell>
+        </row>
+        <row>
+          <cell>False - Neutral</cell>
+          <cell>1.25</cell>
+          <cell>4.48</cell>
+          <cell>0.010</cell>
+        </row>
+        <row>
+          <cell>Felt - Miserable</cell>
+          <cell>0.00</cell>
+          <cell>0.00</cell>
+          <cell>1.000</cell>
+        </row>
+        <row>
+          <cell>Felt - Neutral</cell>
+          <cell>0.79</cell>
+          <cell>2.83</cell>
+          <cell>0.193</cell>
+        </row>
+        <row>
+          <cell>Miserable - Neutral</cell>
+          <cell>0.79</cell>
+          <cell>2.83</cell>
+          <cell>0.193</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>The only significant comparison is between the false smile and the neutral smile.</p>
+
+    <p>It is not unusual to obtain results that on the surface appear paradoxical. For example, these results appear to indicate that (a) the false smile is the same as the miserable smile, (b) the miserable smile is the same as the neutral control, and (c) the false smile is different from the neutral control. This apparent contradiction is avoided if you are careful not to accept the null hypothesis when you fail to reject it. The finding that the false smile is not significantly different from the miserable smile does not mean that they are really the same. Rather it means that there is not convincing evidence that they are different. Similarly, the non-significant difference between the miserable smile and the control does not mean that they are the same. The proper conclusion is that the false smile is higher than the control and that the miserable smile is either (a) equal to the false smile, (b) equal to the control, or (c) somewhere in-between.</p>
+
+    <p>The assumptions of the Tukey test are essentially the same as for an independent-groups t test: normality, homogeneity of variance, and independent observations. The test is quite robust to violations of normality. Violating homogeneity of variance can be more problematical than in the two-sample case since the MSE is based on data from all groups. The assumption of independence of observations is important and should not be violated.</p>
+
+    <subsection xml:id="computer-analysis">
+      <title>Computer Analysis</title>
+
+      <p>For most computer programs, you should format your data the same way you do for an independent-groups t test. The only difference is that if you have, say, four groups, you would code each group as 1, 2, 3, or 4 rather than just 1 or 2.</p>
+
+    </subsection>
+
+    <subsection xml:id="tukeys-test-need-not-be-a-follow-up-to-anova">
+      <title>Tukey’s Test Need Not be a Follow-Up to ANOVA</title>
+
+      <p>Some textbooks introduce the Tukey test only as a follow-up to an analysis of variance (ANOVA), a technique introduced in the following section. There is no logical or statistical reason why you should not use the Tukey test even if you do not compute an ANOVA (or even know what one is). If you or your instructor do not wish to take our word for this, see the excellent article on this and other issues in statistical analysis by Leland Wilkinson and the APA Board of Scientific Affairs’ Task Force on Statistical Inference, published in the<em>American Psychologist</em>, August 1999, Vol. <em>54</em>, No. 8, 594–604.</p>
+
+    </subsection>
+
+  </section>
+
+  <section xml:id="analysis-of-variance-anova">
+    <title>Analysis of Variance (ANOVA)</title>
+
+    <subsection xml:id="introductioncomparing-means-10">
+      <title>Introduction</title>
+
+      <p><fn>This subsection is adapted from David M. Lane. “Introduction.” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/analysis_of_variance/intro.html</fn></p>
+
+      <p><term>Analysis of Variance (ANOVA)</term>is a statistical method used to test differences between two or more means. It may seem odd that the technique is called “Analysis of Variance” rather than “Analysis of Means.” The name is appropriate because inferences about means are made by analyzing variance, as outlined in this chapter’s appendix.</p>
+
+      <p>ANOVA is used to test general rather than specific differences among means. This can be seen best by example, so we will continue considering the data on leniency and smiles we examined in the prior section on the Tukey HSD test.</p>
+
+      <p>ANOVA tests the non-specific null hypothesis that all four population means are equal. That is,</p>
+
+      <me>\mu_{false} = \mu_{felt} = \mu_{miserable} = \mu_{neutral}</me>
+
+      <p>in our example. More generally, the null hypothesis tested by ANOVA is that the population means for all conditions are the same. For whatever data is being examined, this can be written as:</p>
+
+      <me>H_0: \mu_1 = \mu_2 = ... = \mu_k</me>
+
+      <p>where <m>H_0</m> is the null hypothesis and k is the number of conditions (k = 4 in our example).</p>
+
+      <p>This non-specific null hypothesis is sometimes called the omnibus null hypothesis. When the omnibus null hypothesis is rejected, the conclusion is that at least one population mean is different from at least one other mean. However, since the ANOVA does not reveal which means are different from which, it offers less specific information than the Tukey HSD test. The Tukey HSD is therefore preferable to ANOVA in this situation.</p>
+
+      <p>You might be wondering why you should learn about ANOVA when the Tukey test is better. One reason is that there are complex types of analyses that can be done with ANOVA and not with the Tukey test. A second is that ANOVA is one of the most commonly-used technique for comparing means, and it is important to understand ANOVA in order to understand research reports.</p>
+
+    </subsection>
+
+    <subsection xml:id="sec-the-critical-step-calculating-an-f-ratio">
+      <title>The Critical Step: Calculating an F Ratio</title>
+
+      <p><fn>This subsection and the following are adapted from David M. Lane. “One-Factor ANOVA (Between Subjects).” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/analysis_of_variance/one-way.html</fn></p>
+
+      <p>There are many types of ANOVA, but for our example, we will use what is called a one-factor between-subjects design. Other types of ANOVA are beyond the scope of what is covered in this text.</p>
+
+      <p>More details are provided in this chapter’s appendix, but the critical step in an ANOVA is comparing what is called the mean square error (MSE) to the mean square between (MSB). MSB estimates a larger quantity than MSE only when the population means are not equal, so finding a larger MSB than an MSE is a sign that the population means are not equal. But since MSB could be larger than MSE by chance even if the population means are equal, MSB must be much larger than MSE in order to justify the conclusion that the population means differ. But how much larger must MSB be? For the “Smiles and Leniency” data, the MSB and MSE are 9.179 and 2.649, respectively. Is that difference big enough? To answer, we would need to know the probability of getting that big a difference or a bigger difference if the population means were all equal. The mathematics necessary to answer this question were worked out by the statistician R. Fisher. Although Fisher’s original formulation took a slightly different form, the standard method for determining the probability is based on the ratio of MSB to MSE. This ratio is named after Fisher and is called the F ratio.</p>
+
+      <p>For these data, the F ratio is</p>
+
+      <me>F = \frac{9.179}{2.649} = 3.465.</me>
+
+      <p>Therefore, the MSB is 3.465 times higher than MSE. Would this have been likely to happen if all the population means were equal? That depends on the sample size. With a small sample size, it would not be too surprising because results from small samples are unstable. However, with a very large sample, the MSB and MSE are almost always about the same (assuming the null hypothesis is true), and an F ratio of 3.465 or larger would be very unusual.<url href="#fig-fdist">Figure 8.5</url>shows the sampling distribution of F for the sample size in the “Smiles and Leniency” study. As you can see, it has a positive skew.</p>
+
+      <figure xml:id="fig-fdist">
+        <caption>Distribution of F.</caption>
+        <image source="Images/comparing-means/fdist_smiles.png" width="60%"/>
+      </figure>
+
+      <p>From<url href="#fig-fdist">Figure 8.5</url>, you can see that F ratios of 3.465 or above are unusual occurrences. The area to the right of 3.465 represents the probability of an F that large or larger and is equal to 0.018. In other words, given the null hypothesis that all the population means are equal, the probability value (p) is 0.018 and therefore the null hypothesis can be rejected. The conclusion that at least one of the population means is different from at least one of the others is justified.</p>
+
+      <p>The shape of the F distribution depends on the sample size. More precisely, it depends on two degrees of freedom (df) parameters: one for the numerator (MSB) and one for the denominator (MSE). Recall that the degrees of freedom for an estimate of variance is equal to the number of observations minus one. Since the MSB is the variance of k means (where k is the number of groups), it has k - 1 df. The MSE is an average of k variances, each with n - 1 df. Therefore, the df for MSE is k(n - 1) = N - k, where N is the total number of observations, n is the number of observations in each group, and k is the number of groups. To summarize:</p>
+
+      <me>df_{\text{numerator}} = k-1</me>
+      <me>df_{\text{denominator}} = N-k</me>
+
+      <p>For the “Smiles and Leniency” data,</p>
+
+      <me>df_{\text{numerator}} = k-1 = 4-1 = 3</me>
+      <me>df_{\text{denominator}} = N-k = 136-4 = 132</me>
+      <me>F = 3.465</me>
+
+      <p>An F distribution calculator shows that p = 0.018. Again, because this value is less than 0.05, one would generally reject the null hypothesis and conclude that average leniency varies depending on type of smile. The p-value from an ANOVA is sometimes reported in a larger table of summary results such as <url href="#tbl-anova-results-summary">Table 8.7</url>.</p>
+
+      <table xml:id="tbl-anova-results-summary">
+        <title>ANOVA Summary Table.</title>
+        <tabular>
+          <row header="yes">
+            <cell>Source</cell>
+            <cell>df</cell>
+            <cell>SSQ</cell>
+            <cell>MS</cell>
+            <cell>F</cell>
+            <cell>p</cell>
+          </row>
+          <row>
+            <cell>Condition</cell>
+            <cell>3</cell>
+            <cell>27.5349</cell>
+            <cell>9.1783</cell>
+            <cell>3.465</cell>
+            <cell>0.0182</cell>
+          </row>
+          <row>
+            <cell>Error</cell>
+            <cell>132</cell>
+            <cell>349.6544</cell>
+            <cell>2.6489</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Total</cell>
+            <cell>135</cell>
+            <cell>377.1893</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
+
+    </subsection>
+
+    <subsection xml:id="relationship-to-t-tests-and-regression">
+      <title>Relationship to T Tests and Regression</title>
+
+      <p>Since an ANOVA and an independent-groups t test can both test the difference between two means, you might be wondering which one to use. Fortunately, it does not matter since the results will always be the same. When there are only two groups, the following relationship between F and t will always hold:</p>
+
+      <me>F(1,dfd) = t^2(df)</me>
+
+      <p>where dfd is the degrees of freedom for the denominator of the F test and df is the degrees of freedom for the t test. dfd will always equal df. And because of how their probability distributions are constructed, these values of F and t will yield identical p-values for the (two tailed) null hypothesis of no difference between the two means.</p>
+
+      <p>There is also a third equivalent way to compare two means: using regression, as described in<url href="regression-qual-predictors.html">Chapter 12</url>. More generally, regression and ANOVA are two sides of the same coin and will yield equivalent results (assuming the same data/assumptions), even when testing for differences among more than two means. Statistical software will generally include a model F statistic among the results shown for a regression, and in the case of a model a single qualitative independent variable, the regression model F statistic will be the same F ratio used in an ANOVA. Because of this equivalence, whether one reports results as an ANOVA or regression is usually a matter of habit and familiarity. In some social science literatures, ANOVA results are rarely reported because researchers typically default to using regression instead.</p>
+
+    </subsection>
+
+  </section>
+
+  <section xml:id="sec-ch08-appendix">
+    <title>Appendix: More about ANOVA</title>
+
+    <subsection xml:id="terminology-for-various-designscomparing-means-13">
+      <title>Terminology for Various Designs</title>
+
+      <p><fn>This subsection is adapted from David M. Lane. “Analysis of Variance Designs.” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/analysis_of_variance/anova_designs.html</fn></p>
+
+      <p>There are many types of experimental designs that can be analyzed by ANOVA. This section discusses many of these designs and defines several key terms used.</p>
+
+      <p><term>Factors and Levels</term></p>
+
+      <p>In describing an ANOVA design, the term factor is a synonym of independent variable. Therefore, in the case study “Smiles and Leniency,” “Type of Smile” is the factor in this experiment. Since four types of smiles were compared, the factor “Type of Smile” has four levels.</p>
+
+      <p>An ANOVA conducted on a design in which there is only one factor is called a one-way ANOVA. If an experiment has two factors, then the ANOVA is called a two-way ANOVA. For example, suppose an experiment on the effects of age and gender on reading speed were conducted using three age groups (8 years, 10 years, and 12 years) and the two genders (male and female). The factors would be age and gender. Age would have three levels and gender would have two levels.</p>
+
+      <p><term>Between- and Within-Subjects Factors</term></p>
+
+      <p>In the “Smiles and Leniency” study, the four levels of the factor “Type of Smile” were represented by four separate groups of subjects. When different subjects are used for the levels of a factor, the factor is called a between-subjects factor or a between-subjects variable. The term “between subjects” reflects the fact that comparisons are between different groups of subjects.</p>
+
+      <p>In the “ADHD Treatment” study,in which every subject was tested with each of four dosage levels (0, 0.15, 0.30, 0.60 mg/kg) of a drug. Therefore there was only one group of subjects, and comparisons were not between different groups of subjects but between conditions within the same subjects. When the same subjects are used for the levels of a factor, the factor is called a within-subjects factor or a within-subjects variable. Within-subjects variables are sometimes referred to as repeated-measures variables since there are repeated measurements of the same subjects.</p>
+
+      <p><term>Multi-Factor Designs</term></p>
+
+      <p>It is common for designs to have more than one factor. For example, consider a hypothetical study of the effects of age and gender on reading speed in which males and females from the age levels of 8 years, 10 years, and 12 years are tested. There would be a total of six different groups as shown in<url href="#tbl-factorial-design">Table 8.8</url>.</p>
+
+      <table xml:id="tbl-factorial-design">
+        <title>Gender x Age Design.</title>
+        <tabular>
+          <row header="yes">
+            <cell>Group</cell>
+            <cell>Gender</cell>
+            <cell>Age</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>Female</cell>
+            <cell>8</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>Female</cell>
+            <cell>10</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>Female</cell>
+            <cell>12</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>Male</cell>
+            <cell>8</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>Male</cell>
+            <cell>10</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>Male</cell>
+            <cell>12</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>This design has two factors: age and gender. Age has three levels and gender has two levels. When all combinations of the levels are included (as they are here), the design is called a<em>factorial design</em>. A concise way of describing this design is as a Gender (2) x Age (3) factorial design where the numbers in parentheses indicate the number of levels. Complex designs frequently have more than two factors and may have combinations of between- and within-subjects factors.</p>
+
+    </subsection>
+
+    <subsection xml:id="details-of-one-factor-anova-between-subjectscomparing-means-15">
+      <title>Details of One-Factor ANOVA (Between Subjects)</title>
+
+      <p><fn>This subsection is adapted from David M. Lane. “One-Factor ANOVA (Between Subjects).” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/analysis_of_variance/one-way.html</fn></p>
+
+      <p>This section shows how ANOVA can be used to analyze a one-factor between-subjects design.</p>
+
+      <p>Analysis of variance is a method for testing differences among means by analyzing variance. The test is based on two estimates of the population variance (<m>\sigma^2</m>). One estimate is called the mean square error (MSE) and is based on differences among scores within the groups. MSE estimates <m>\sigma^2</m> regardless of whether the null hypothesis is true (the population means are equal). The second estimate is called the mean square between (MSB) and is based on differences among the sample means. MSB only estimates <m>\sigma^2</m> if the population means are equal. If the population means are not equal, then MSB estimates a quantity larger than <m>\sigma^2</m>. Therefore, if the MSB is much larger than the MSE, then the population means are unlikely to be equal. On the other hand, if the MSB is about the same as MSE, then the data are consistent with the null hypothesis that the population means are equal.</p>
+
+      <p>Before proceeding with the calculation of MSE and MSB, it is important to consider the assumptions made by ANOVA:</p>
+
+      <ol>
+        <li><p>The populations have the same variance. This assumption is called the assumption of homogeneity of variance.</p></li>
+        <li><p>The populations are normally distributed.</p></li>
+        <li><p>Each value is sampled independently from each other value. This assumption requires that each subject provide only one value. If a subject provides two scores, then the values are not independent; to accomodate such data, one must use within-subjects ANOVA (a type of ANOVA which is easily implemented but which lies beyond the scope of this text).</p></li>
+      </ol>
+
+      <p>These assumptions are the same as for a t test of differences between groups (<url href="#sec-difference-between-two-means">Section 8.1</url>) except that they apply to two or more groups, not just to two groups.</p>
+
+      <p><term>Sample Sizes</term></p>
+
+      <p>As in the main part of the chapter, we will use as our example the “Smiles and Leniency” case study. The first calculations in this section all assume that there is an equal number of observations in each group (unequal sample size calculations are shown later in this appendix). We will refer to the number of observations in each group as n and the total number of observations as N. For these data there are four groups of 34 observations. Therefore, n = 34 and N = 136.</p>
+
+      <p><term>Computing MSE</term></p>
+
+      <p>Recall that the assumption of homogeneity of variance states that the variance within each of the populations (<m>\sigma^2</m>) is the same. This variance,<m>\sigma^2</m>, is the quantity estimated by MSE and is computed as the mean of the sample variances. For these data, the MSE is equal to 2.6489.</p>
+
+      <p><term>Computing MSB</term></p>
+
+      <p>The formula for MSB is based on the fact that the variance of the sampling distribution of the mean is</p>
+
+      <me>\sigma^2_\mu = \frac{\sigma^2}{n}</me>
+
+      <p>where n is the sample size of each group. Rearranging this formula, we have</p>
+
+      <me>\sigma^2 = n\sigma^2_\mu.</me>
+
+      <p>Therefore, if we knew the variance of the sampling distribution of the mean, we could compute <m>\sigma^2</m> by multiplying it by n. Although we do not know the variance of the sampling distribution of the mean, we can estimate it with the variance of the sample means. For the leniency data, the variance of the four sample means is 0.270. To estimate <m>\sigma^2</m>, we multiply the variance of the sample means (0.270) by n (the number of observations in each group, which is 34). We find that MSB = 9.179.</p>
+
+      <p>To sum up these steps:</p>
+
+      <ol>
+        <li><p>Compute the means.</p></li>
+        <li><p>Compute the variance of the means.</p></li>
+        <li><p>Multiply the variance of the means by n.</p></li>
+      </ol>
+
+      <p><term>Recap</term></p>
+
+      <p>If the population means are equal, then both MSE and MSB are estimates of <m>\sigma^2</m> and should therefore be about the same. Naturally, they will not be exactly the same since they are just estimates and are based on different aspects of the data: The MSB is computed from the sample means and the MSE is computed from the sample variances.</p>
+
+      <p>If the population means are not equal, then MSE will still estimate <m>\sigma^2</m> because differences in population means do not affect variances. However, differences in population means affect MSB since differences among population means are associated with differences among sample means. It follows that the larger the differences among sample means, the larger the MSB.<em>In short, MSE estimates</em><m>\sigma^2</m><em>whether or not the population means are equal, whereas MSB estimates</em><m>\sigma^2</m><em>only when the population means are equal and estimates a larger quantity when they are not equal.</em></p>
+
+      <p>As shown in<url href="#sec-the-critical-step-calculating-an-f-ratio">Section 8.3.2</url>, we compare the MSE to the MSB by way of an F ratio in order to determine a p-value for the null hypothesis that the population means are all equal.</p>
+
+      <p><term>One-Tailed or Two?</term></p>
+
+      <p>Is the probability value from an F ratio a one-tailed or a two-tailed probability? In the literal sense, it is a one-tailed probability since, as you could see in<url href="#fig-fdist">Figure 8.5</url>earlier in the chapter, the probability is the area in the right-hand tail of the distribution. However, the F ratio is sensitive to any pattern of differences among means. It is, therefore, a test of a two-tailed hypothesis and is best considered a two-tailed test.</p>
+
+      <p><term>Sources of Variation</term></p>
+
+      <p>Why do scores in an experiment differ from one another? Consider the scores of two subjects in the “Smiles and Leniency” study: one from the “False Smile” condition and one from the “Felt Smile” condition. An obvious possible reason that the scores could differ is that the subjects were treated differently (they were in different conditions and saw different stimuli). A second reason is that the two subjects may have differed with regard to their tendency to judge people leniently. A third is that, perhaps, one of the subjects was in a bad mood after receiving a low grade on a test. You can imagine that there are innumerable other reasons why the scores of the two subjects could differ. All of these reasons except the first (subjects were treated differently) are possibilities that were not under experimental investigation and, therefore, all of the differences (variation) due to these possibilities are unexplained. It is traditional to call unexplained variance error even though there is no implication that an error was made. Therefore, the variation in this experiment can be thought of as being either variation due to the condition the subject was in or due to error (the sum total of all reasons the subjects’ scores could differ that were not measured).</p>
+
+      <p>One of the important characteristics of ANOVA is that it partitions the variation into its various sources. In ANOVA, the term sum of squares (SSQ) is used to indicate variation. The total variation is defined as the sum of squared differences between each score and the mean of all subjects. The mean of all subjects is called the grand mean and is designated as GM. (When there is an equal number of subjects in each condition, the grand mean is the mean of the condition means.) The total sum of squares is defined as</p>
+
+      <me>SSQ_\text{total} = \sum(X - GM)^2</me>
+
+      <p>which means to take each score, subtract the grand mean from it, square the difference, and then sum up these squared values. For the “Smiles and Leniency” study,<m>\text{SSQ}_\text{total} = 377.19</m>.</p>
+
+      <p>The sum of squares condition is calculated as shown below.</p>
+
+      <me>SSQ_\text{condition} = n \left[ (\bar{X}_1 - GM)^2 + (\bar{X}_2 - GM)^2 + ... +(\bar{X}_k - GM)^2 \right]</me>
+
+      <p>where n is the number of scores in each group, k is the number of groups,<m>\bar{X}_1</m> is the mean for Condition 1,<m>\bar{X}_2</m> is the mean for Condition 2, and <m>\bar{X}_k</m> is the mean for Condition k. For the Smiles and Leniency study, the values are:</p>
+
+      <me>SSQ_\text{condition} = 34 \left[ (5.37-4.83)^2 + (4.91-4.83)^2 + (4.91-4.83)^2 +(4.12-4.83)^2 \right]</me>
+      <me>= 27.5</me>
+
+      <p>If there are unequal sample sizes, the only change is that the following formula is used for the sum of squares condition:</p>
+
+      <me>SSQ_\text{condition} = n_1 (\bar{X}_1 - GM)^2 + n_2 (\bar{X}_2 - GM)^2 + ... + n_k (\bar{X}_k - GM)^2</me>
+
+      <p>where <m>n_i</m> is the sample size of the <m>i</m> th condition.<m>\text{SSQ}_\text{total}</m> is computed the same way as shown above.</p>
+
+      <p>The sum of squares error is the sum of the squared deviations of each score from its group mean. This can be written as</p>
+
+      <me>SSQ_\text{error} = \sum(X_{i1} - \bar{X}_1)^2 + \sum(X_{i2} - \bar{X}_2)^2 + ...+  \sum(X_{ik} - \bar{X}_k)^2.</me>
+
+      <p>where <m>X_{i1}</m> is the <m>i</m> th score in group 1 and <m>\bar{X}_1</m> is the mean for group 1,<m>X_{i2}</m> is the <m>i</m> th score in group 2 and <m>\bar{X}_2</m> is the mean for group 2, etc. For the “Smiles and Leniency” study, the means are: 5.368, 4.912, 4.912, and 4.118. The <m>SSQ_\text{error}</m> is therefore:</p>
+
+      <me>(2.5-5.368)^2 + (5.5-5.368)^2 + ... + (6.5-4.118)^2 = 349.65</me>
+
+      <p>The sum of squares error can also be computed by subtraction:</p>
+
+      <me>SSQ_\text{error} = SSQ_\text{total} - SSQ_\text{condition}</me>
+      <me>SSQ_\text{error} = 377.189 - 27.535 = 349.65</me>
+
+      <p>Therefore, the total sum of squares of 377.19 can be partitioned into <m>SSQ_\text{condition}</m>(27.53) and <m>SSQ_\text{error}</m>(349.66).</p>
+
+      <p>Once the sums of squares have been computed, the mean squares (MSB and MSE) can be computed easily. The formulas are:</p>
+
+      <me>MSB = \frac{SSQ_\text{condition}}{dfn}</me>
+
+      <p>where dfn is the degrees of freedom numerator and is equal to k - 1 = 3.</p>
+
+      <me>MSB = \frac{27.535}{3} = 9.18</me>
+
+      <p>which is the same value of MSB obtained previously (except for rounding error). Similarly,</p>
+
+      <me>MSE = \frac{SSQ_\text{error}}{dfd}</me>
+
+      <p>where dfd is the degrees of freedom for the denominator and is equal to N - k.</p>
+
+      <me>dfd = 136 - 4 = 132</me>
+      <me>MSE = 349.66/132 = 2.65</me>
+
+      <p>which is the same as obtained previously (except for rounding error). Note that the dfd is often called the dfe for degrees of freedom error.</p>
+
+      <p>As we saw in the main portion of the chapter, SSQ and MSB/MSE can be reported alongside the F statistic and p-value for an ANOVA in a results table (<url href="#tbl-anova-results-summary">Table 8.7</url>). Since most people conducting ANOVA these days do so with automated computer software, you will likely see a results table along these lines in whatever software you use if you conduct ANOVA yourself.</p>
+
+      <p><term>Formatting Data for Computer Analysis</term></p>
+
+      <p>Most computer programs that compute ANOVAs require your data to be in a specific form. Consider the data in<url href="#tbl-reformatting-anova-wide">Table 8.9</url>.</p>
+
+      <table xml:id="tbl-reformatting-anova-wide">
+        <title>Example data in wide form.</title>
+        <tabular>
+          <row header="yes">
+            <cell>Group 1</cell>
+            <cell>Group 2</cell>
+            <cell>Group 3</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>2</cell>
+            <cell>8</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>4</cell>
+            <cell>5</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>6</cell>
+            <cell>5</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>Here there are three groups, each with three observations. To format these data for a computer program, you normally have to use two variables: the first specifies the group the subject is in and the second is the score itself. The reformatted version of the data in<url href="#tbl-reformatting-anova-wide">Table 8.9</url>is shown in<url href="#tbl-reformatting-anova-long">Table 8.10</url>.</p>
+
+      <table xml:id="tbl-reformatting-anova-long">
+        <title>Reformatted data (now in long form).</title>
+        <tabular>
+          <row header="yes">
+            <cell>Group</cell>
+            <cell>Y</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>5</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>2</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>6</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>8</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>5</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>5</cell>
+          </row>
+        </tabular>
+      </table>
+
+    </subsection>
+
   </section>
 
 </chapter>
