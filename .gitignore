@@ -1,5 +1,8 @@
 # PreTeXt build output
 output/
+generated-assets/
+external/
+logs/
 
 # Python
 __pycache__/
