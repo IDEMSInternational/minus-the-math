@@ -534,7 +534,7 @@
     </p>
 
     <me>
-      s_{\bar{X}} = \frac{s}{\sqrt{n}} = \frac{7.5382}{\sqrt{24}} = 1.54
+      s_{\bar{X}} = \frac{s}{\sqrt{n}} = \frac{7.538}{\sqrt{24}} = 1.54
     </me>
 
     <p>
@@ -605,7 +605,7 @@
     </p>
 
     <p>
-      The appropriate type of significance test in the case of the regression coefficients we have learn about is a t test. Recall the general formula for a t test:
+      The appropriate type of significance test in the case of the regression coefficients we have learned about is a t test. Recall the general formula for a t test:
     </p>
 
     <me>
