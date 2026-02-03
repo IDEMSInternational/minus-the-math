@@ -6,16 +6,18 @@
     <title>Introduction to Hypothesis Testing</title>
     
     <introduction>
+      <p><fn>This section is adapted from David M. Lane. "Introduction." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/intro.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/intro.html</url></fn></p>
+
       <p>
         The statistician R. Fisher explained the concept of hypothesis testing with a story of a lady tasting tea. Here we will present an example based on James Bond who insisted that martinis should be shaken rather than stirred. Let's consider a hypothetical experiment to determine whether Mr. Bond can tell the difference between a shaken and a stirred martini. Suppose we gave Mr. Bond a series of 16 taste tests. In each test, we flipped a fair coin to determine whether to stir or shake the martini. Then we presented the martini to Mr. Bond and asked him to decide whether it was shaken or stirred. Let's say Mr. Bond was correct on 13 of the 16 taste tests. Does this prove that Mr. Bond has at least some ability to tell whether the martini was shaken or stirred?
       </p>
 
     <p>
-      This result does not prove that he does; it could be he was just lucky and guessed right 13 out of 16 times. But how plausible is the explanation that he was just lucky? To assess its plausibility, we determine the probability that someone who was just guessing would be correct 13/16 times or more. This probability can be computed from what is called the binomial distribution, and a binomial distribution calculator shows it to be 0.0106. This is a pretty low probability, and therefore someone would have to be very lucky to be correct 13 or more times out of 16 if they were just guessing. So either Mr. Bond was very lucky, or he can tell whether the drink was shaken or stirred. The hypothesis that he was guessing is not proven false, but considerable doubt is cast on it. Therefore, there is strong evidence that Mr. Bond can tell whether a drink was shaken or stirred.
+      This result does not prove that he does; it could be he was just lucky and guessed right 13 out of 16 times. But how plausible is the explanation that he was just lucky? To assess its plausibility, we determine the probability that someone who was just guessing would be correct 13/16 times or more. This probability can be computed from what is called the binomial distribution, and a binomial distribution calculator<fn><url href="https://onlinestatbook.com/2/calculators/binomial_dist.html">https://onlinestatbook.com/2/calculators/binomial_dist.html</url></fn> shows it to be 0.0106. This is a pretty low probability, and therefore someone would have to be very lucky to be correct 13 or more times out of 16 if they were just guessing. So either Mr. Bond was very lucky, or he can tell whether the drink was shaken or stirred. The hypothesis that he was guessing is not proven false, but considerable doubt is cast on it. Therefore, there is strong evidence that Mr. Bond can tell whether a drink was shaken or stirred.
     </p>
 
     <p>
-      Let's consider another example. The case study Physicians' Reactions sought to determine whether physicians spend less time with obese patients. Physicians were sampled randomly and each was shown a chart of a patient complaining of a migraine headache. They were then asked to estimate how long they would spend with the patient. The charts were identical except that for half the charts, the patient was obese and for the other half, the patient was of average weight. The chart a particular physician viewed was determined randomly. Thirty-three physicians viewed charts of average-weight patients and 38 physicians viewed charts of obese patients.
+      Let's consider another example. The case study Physicians' Reactions<fn><url href="https://onlinestatbook.com/2/case_studies/weight.html">https://onlinestatbook.com/2/case_studies/weight.html</url></fn> sought to determine whether physicians spend less time with obese patients. Physicians were sampled randomly and each was shown a chart of a patient complaining of a migraine headache. They were then asked to estimate how long they would spend with the patient. The charts were identical except that for half the charts, the patient was obese and for the other half, the patient was of average weight. The chart a particular physician viewed was determined randomly. Thirty-three physicians viewed charts of average-weight patients and 38 physicians viewed charts of obese patients.
     </p>
 
     <p>
@@ -111,7 +113,7 @@
       </me>
 
       <p>
-        Naturally, the direction of the sample means determines which alternative is adopted. Some textbooks have incorrectly argued that rejecting the null hypothesis that two population means are equal does not justify a conclusion about which population mean is larger. Kaiser (1960) showed how it is justified to draw a conclusion about the direction of the difference.
+        Naturally, the direction of the sample means determines which alternative is adopted. Some textbooks have incorrectly argued that rejecting the null hypothesis that two population means are equal does not justify a conclusion about which population mean is larger. Kaiser (1960)<fn>Kaiser, H. F. (1960) Directional statistical decisions. <em>Psychological Review</em>, <em>67</em>, 160-167.</fn> showed how it is justified to draw a conclusion about the direction of the difference.
       </p>
     </subsection>
   </section>
@@ -119,6 +121,8 @@
   <section xml:id="sec-steps-in-hypothesis-testing">
     <title>Steps in Hypothesis Testing</title>
     
+    <p><fn>This section is adapted from David M. Lane. "Steps in Hypothesis Testing." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/steps.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/steps.html</url></fn></p>
+
     <p>
       There's much to learn about hypothesis testing, but before going any further, here's an overview of the four basic steps of any hypothesis test. Some of the details won't make sense yet, but we'll explain them in more detail in the following sections.
     </p>
@@ -155,8 +159,10 @@
   <section xml:id="sec-one-two-tailed-tests">
     <title>One- and Two-Tailed Tests</title>
     
+    <p><fn>This section is adapted from David M. Lane. "One- and Two-Tailed Tests." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/tails.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/tails.html</url></fn></p>
+
     <p>
-      In the James Bond case study, Mr. Bond was given 16 trials on which he judged whether a martini had been shaken or stirred. He was correct on 13 of the trials. From the binomial distribution, we know that the probability of being correct 13 or more times out of 16 if one is only guessing is 0.0106. <xref ref="fig-binomialdistredtail" /> shows a graph of the binomial distribution. The red bars show the values greater than or equal to 13. As you can see in the figure, the probabilities are calculated for the upper tail of the distribution. A probability calculated in only one tail of the distribution is called a <q>one-tailed probability.</q>
+      In the James Bond case study,<fn><url href="https://onlinestatbook.com/2/case_studies/bond.html">https://onlinestatbook.com/2/case_studies/bond.html</url></fn> Mr. Bond was given 16 trials on which he judged whether a martini had been shaken or stirred. He was correct on 13 of the trials. From the binomial distribution, we know that the probability of being correct 13 or more times out of 16 if one is only guessing is 0.0106. <xref ref="fig-binomialdistredtail" /> shows a graph of the binomial distribution. The red bars show the values greater than or equal to 13. As you can see in the figure, the probabilities are calculated for the upper tail of the distribution. A probability calculated in only one tail of the distribution is called a <q>one-tailed probability.</q>
     </p>
 
     <figure xml:id="fig-binomialdistredtail">
@@ -186,7 +192,7 @@
     </p>
 
     <p>
-      The null hypothesis for the two-tailed test is <m>\pi = 0.5</m>. By contrast, the null hypothesis for the one-tailed test is <m>\pi \leq 0.5</m>. Accordingly, we reject the two-tailed hypothesis if the sample proportion deviates greatly from 0.5 in either direction. The one-tailed hypothesis is rejected only if the sample proportion is much greater than 0.5. The alternative hypothesis in the two-tailed test is <m>\pi \ne 0.5</m>. In the one-tailed test it is <m>\pi \gt 0.5</m>.
+      The null hypothesis for the two-tailed test is <m>\pi = 0.5</m>. By contrast, the null hypothesis for the one-tailed test is <m>\pi \leq 0.5</m>.<fn>Some sources write the null hypothesis of the one-tailed test identically to the two-tailed test (<m>\pi = 0.5</m>). While this alternative notation does not preserve the intuitive logic of the null hypothesis being the strict reverse of the alternative hypothesis, it does no harm as long as we remember that only the upper tail will be used to calculate the p-value.</fn> Accordingly, we reject the two-tailed hypothesis if the sample proportion deviates greatly from 0.5 in either direction. The one-tailed hypothesis is rejected only if the sample proportion is much greater than 0.5. The alternative hypothesis in the two-tailed test is <m>\pi \ne 0.5</m>. In the one-tailed test it is <m>\pi \gt 0.5</m>.
     </p>
 
     <p>
@@ -201,12 +207,14 @@
   <section xml:id="sec-significance-testing">
     <title>Significance Testing</title>
     
+    <p><fn>This section is adapted from David M. Lane. "Significance Testing." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/significance.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/significance.html</url></fn></p>
+
     <p>
       A low probability value casts doubt on the null hypothesis. How low must the probability value be in order to conclude that the null hypothesis is false? Although there is clearly no right or wrong answer to this question, it is conventional to conclude the null hypothesis is false if the probability value is less than 0.05. More conservative researchers conclude the null hypothesis is false only if the probability value is less than 0.01. When a researcher concludes that the null hypothesis is false, the researcher is said to have rejected the null hypothesis. The probability value below which the null hypothesis is rejected is called the <m>\alpha</m> (alpha) level or simply <m>\alpha</m>. It is also called the significance level.
     </p>
 
     <p>
-      When the null hypothesis is rejected, the effect is said to be <term>statistically significant</term>. For example, in the Physicians' Reactions case study, the probability value is 0.0057. Therefore, the effect of obesity is statistically significant and the null hypothesis that obesity makes no difference is rejected. It is very important to keep in mind that statistical significance means only that the null hypothesis of exactly no effect is rejected; it does not mean that the effect is important, which is what <q>significant</q> usually means in contexts outside of statistics. When an effect is statistically significant, you can have confidence the effect is not exactly zero. Finding that an effect is significant does not tell you about how large or important the effect is.
+      When the null hypothesis is rejected, the effect is said to be <term>statistically significant</term>. For example, in the Physicians' Reactions case study,<fn><url href="https://onlinestatbook.com/2/case_studies/weight.html">https://onlinestatbook.com/2/case_studies/weight.html</url></fn> the probability value is 0.0057. Therefore, the effect of obesity is statistically significant and the null hypothesis that obesity makes no difference is rejected. It is very important to keep in mind that statistical significance means only that the null hypothesis of exactly no effect is rejected; it does not mean that the effect is important, which is what <q>significant</q> usually means in contexts outside of statistics. When an effect is statistically significant, you can have confidence the effect is not exactly zero. Finding that an effect is significant does not tell you about how large or important the effect is.
     </p>
 
     <p>
@@ -218,7 +226,7 @@
     </p>
 
     <p>
-      There are two approaches (at least) to conducting significance tests. In one (favored by R. Fisher), a significance test is conducted and the probability value reflects the strength of the evidence against the null hypothesis. If the probability is below 0.01, the data provide strong evidence that the null hypothesis is false. If the probability value is below 0.05 but larger than 0.01, then the null hypothesis is typically rejected, but not with as much confidence as it would be if the probability value were below 0.01. Probability values between 0.05 and 0.10 provide weak evidence against the null hypothesis and, by convention, are not considered low enough to justify rejecting it. Higher probabilities provide less evidence that the null hypothesis is false.
+      There are two approaches (at least) to conducting significance tests. In one (favored by R. Fisher), a significance test is conducted and the probability value reflects the strength of the evidence against the null hypothesis.<fn>See also: Goodman, W. M., Spruill, S. E., <ampersand/> Komaroff, E. (2019). A proposed hybrid effect size plus p-value criterion: empirical evidence supporting its use. <em>The American Statistician</em>, <em>73</em>(sup1), 168-185.</fn> If the probability is below 0.01, the data provide strong evidence that the null hypothesis is false. If the probability value is below 0.05 but larger than 0.01, then the null hypothesis is typically rejected, but not with as much confidence as it would be if the probability value were below 0.01. Probability values between 0.05 and 0.10 provide weak evidence against the null hypothesis and, by convention, are not considered low enough to justify rejecting it. Higher probabilities provide less evidence that the null hypothesis is false.
     </p>
 
     <p>
@@ -233,6 +241,8 @@
   <section xml:id="sec-testing-single-mean">
     <title>Testing a Single Mean</title>
     
+    <p><fn>This section is adapted from David M. Lane. "Testing a Single Mean." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/tests_of_means/single_mean.html">https://onlinestatbook.com/2/tests_of_means/single_mean.html</url></fn></p>
+
     <p>
       The way we calculate the probability (<m>p</m>) value for a hypothesis test depends on what type of statement is made in our null hypothesis. Normally, statistical software will automatically compute a p value behind the scenes, but we still want to learn a bit about how the software comes up with this value. To illustrate what these calculations can look like, this section will focus on what to do if we want to test a null hypothesis stating that the population mean is equal to some hypothesized value. For example, suppose an experimenter wanted to know if people are influenced by a subliminal message and performed the following experiment. Each of nine subjects is presented with a series of 100 pairs of pictures, and for each pair they are asked to select one. As a pair of pictures is presented, a subliminal message is presented suggesting the picture that the subject should choose. The question is whether the (population) mean number of times the suggested picture is chosen is equal to 50 (the number we would expect if subliminal messages have no effect). In other words, the null hypothesis is that the population mean (<m>\mu</m>) is 50. The (hypothetical) data are shown in <xref ref="table-scoredist" />. The data in <xref ref="table-scoredist" /> have a sample mean (<m>\bar{X}</m>) of 51. Thus the sample mean differs from the hypothesized population mean by 1.
     </p>
@@ -356,7 +366,7 @@
     </me>
 
     <p>
-      where <m>Z</m> is the value on the standard normal distribution, <m>\bar{X}</m> is the sample mean, <m>\mu_0</m> is the hypothesized value of the mean (under the null hypothesis), and <m>\sigma_{\bar{X}}</m> is the standard error of the mean. For this example, <m>Z</m> = (51-50)/1.667 = 0.60. Use a normal calculator, with a mean of 0 and a standard deviation of 1, as shown below.
+      where <m>Z</m> is the value on the standard normal distribution, <m>\bar{X}</m> is the sample mean, <m>\mu_0</m> is the hypothesized value of the mean (under the null hypothesis),<fn>The subscript <m>_0</m> in <m>\mu_0</m> (the population mean according to the null hypothesis) corresponds to how we typically represent the null hypothesis: <m>H_0</m>.</fn> and <m>\sigma_{\bar{X}}</m> is the standard error of the mean. For this example, <m>Z</m> = (51-50)/1.667 = 0.60. Use a normal calculator, with a mean of 0 and a standard deviation of 1, as shown below.
     </p>
 
     <figure xml:id="fig-standardnormdistcalc">
@@ -371,7 +381,7 @@
     </p>
 
     <p>
-      As noted, in real-world data analyses it is very rare that you would know <m>\sigma</m> and wish to estimate <m>\mu</m>. Typically <m>\sigma</m> is not known and is estimated in a sample by s, and <m>\sigma_{\bar{X}}</m> is estimated by <m>s_{\bar{X}}</m>. For our next example, we will consider the data in the <q>ADHD Treatment</q> case study. These data consist of the scores of 24 children with ADHD on a delay of gratification (DOG) task. Each child was tested under four dosage levels. <xref ref="table-dogscores" /> shows the data for the placebo (0 mg) and highest dosage level (0.6 mg) of methylphenidate. Of particular interest here is the column labeled <q>Diff</q> that shows the difference in performance between the 0.6 mg (D60) and the 0 mg (D0) conditions. These difference scores are positive for children who performed better in the 0.6 mg condition than in the control condition and negative for those who scored better in the control condition. If methylphenidate has a positive effect, then the mean difference score in the population will be positive. The null hypothesis is that the mean difference score in the population is 0.
+      As noted, in real-world data analyses it is very rare that you would know <m>\sigma</m> and wish to estimate <m>\mu</m>. Typically <m>\sigma</m> is not known and is estimated in a sample by s, and <m>\sigma_{\bar{X}}</m> is estimated by <m>s_{\bar{X}}</m>. For our next example, we will consider the data in the <q>ADHD Treatment</q><fn><url href="https://onlinestatbook.com/2/case_studies/adhd.html">https://onlinestatbook.com/2/case_studies/adhd.html</url></fn> case study. These data consist of the scores of 24 children with ADHD on a delay of gratification (DOG) task. Each child was tested under four dosage levels. <xref ref="table-dogscores" /> shows the data for the placebo (0 mg) and highest dosage level (0.6 mg) of methylphenidate. Of particular interest here is the column labeled <q>Diff</q> that shows the difference in performance between the 0.6 mg (D60) and the 0 mg (D0) conditions. These difference scores are positive for children who performed better in the 0.6 mg condition than in the control condition and negative for those who scored better in the control condition. If methylphenidate has a positive effect, then the mean difference score in the population will be positive. The null hypothesis is that the mean difference score in the population is 0.
     </p>
 
     <table xml:id="table-dogscores">
@@ -576,8 +586,10 @@
   <section xml:id="sec-type-i-type-ii-errors">
     <title>Type I and Type II Errors</title>
     
+    <p><fn>This section is adapted from David M. Lane. "Type I and Type II Errors." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/logic_of_hypothesis_testing/errors.html">https://onlinestatbook.com/2/logic_of_hypothesis_testing/errors.html</url></fn></p>
+
     <p>
-      In the Physicians' Reactions case study, the probability value associated with the significance test is 0.0057. Therefore, the null hypothesis was rejected, and it was concluded that physicians intend to spend less time with obese patients. Despite the low probability value, it is possible that the null hypothesis of no true difference between obese and average-weight patients is true and that the large difference between sample means occurred by chance. If this is the case, then the conclusion that physicians intend to spend less time with obese patients is in error. This type of error is called a Type I error. More generally, a <term>Type I error</term> occurs when a significance test results in the rejection of a true null hypothesis.
+      In the Physicians' Reactions case study,<fn><url href="https://onlinestatbook.com/2/case_studies/weight.html">https://onlinestatbook.com/2/case_studies/weight.html</url></fn> the probability value associated with the significance test is 0.0057. Therefore, the null hypothesis was rejected, and it was concluded that physicians intend to spend less time with obese patients. Despite the low probability value, it is possible that the null hypothesis of no true difference between obese and average-weight patients is true and that the large difference between sample means occurred by chance. If this is the case, then the conclusion that physicians intend to spend less time with obese patients is in error. This type of error is called a Type I error. More generally, a <term>Type I error</term> occurs when a significance test results in the rejection of a true null hypothesis.
     </p>
 
     <p>
@@ -600,6 +612,8 @@
   <section xml:id="sec-significance-test-regression-slope">
     <title>Significance Test for a Regression Slope Coefficient</title>
     
+    <p><fn>This section is adapted from David M. Lane. "Inferential Statistics for b and r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferential.html</url></fn></p>
+
     <p>
       To conclude this chapter, let's briefly revisit the very first type of hypothesis test we encountered in this textbook (though we did not call it that at the time): testing for the significance of a regression slope coefficient (<xref ref="sec-quick-guide-interpreting-regression" />). Now that we know more about hypothesis testing, let's fill in some of the details of how to calculate the p-values we rely upon to determine the significance of these coefficients.
     </p>
