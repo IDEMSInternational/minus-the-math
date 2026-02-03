@@ -11,6 +11,8 @@
   <section xml:id="sec-intro-sampling-distributions">
     <title>Introduction to Sampling Distributions</title>
     
+    <p><fn>This subsection is adapted from David M. Lane. "Introduction to Sampling Distributions." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/sampling_distributions/intro_samp_dist.html">https://onlinestatbook.com/2/sampling_distributions/intro_samp_dist.html</url></fn></p>
+
     <p>
       Suppose you randomly sampled 10 people from the population of women in Houston, Texas, between the ages of 21 and 35 years and computed the mean height of your sample. You would not expect your sample mean to be equal to the mean of all women in Houston. It might be somewhat lower or it might be somewhat higher, but it would not equal the population mean exactly. Similarly, if you took a second sample of 10 people from the same population, you would not expect the mean of this second sample to equal the mean of the first sample.
     </p>
@@ -301,6 +303,8 @@
   <section xml:id="sec-sampling-distribution-of-the-mean">
     <title>Sampling Distribution of the Mean</title>
     
+    <p><fn>This subsection is adapted from David M. Lane. "Sampling Distribution of the Mean." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html">https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html</url></fn></p>
+
     <p>
       As we learned in the prior section, the sampling distribution of the mean refers to the probability distribution describing all possible values of the sample mean we could obtain in repeated sampling. This section goes over some important properties of the sampling distribution of the mean.
     </p>
@@ -329,7 +333,7 @@
       </me>
       
       <p>
-        That is, the variance of the sampling distribution of the mean is the population variance divided by <m>n</m>, the sample size (the number of scores used to compute a mean). Thus, the larger the sample size, the smaller the variance of the sampling distribution of the mean.
+        That is, the variance of the sampling distribution of the mean is the population variance divided by <m>n</m>, the sample size (the number of scores used to compute a mean). Thus, the larger the sample size, the smaller the variance of the sampling distribution of the mean.<fn>This expression can be derived very easily from the variance sum law. Let's begin by computing the variance of the sampling distribution of the sum of three numbers sampled from a population with variance <m>\sigma^2</m>. The variance of the sum would be <m>\sigma^2 + \sigma^2 + \sigma^2 = 3\sigma^2</m>. The variance of the mean is equal to the variance of the sum divided by <m>N^2</m>, which is <m>3\sigma^2/9 = \sigma^2/3</m>. In the general case of N observations, <m>\sigma_M^2 = N\sigma^2/N^2 = \sigma^2/N</m>.</fn>
       </p>
       
       <p>
@@ -384,6 +388,8 @@
     <subsection xml:id="subsec-confidence-intervals-mean">
       <title>Confidence Intervals for the Mean</title>
       
+      <p><fn>This subsubsection is adapted from David M. Lane. "Confidence Interval on the Mean." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/estimation/mean.html">https://onlinestatbook.com/2/estimation/mean.html</url></fn></p>
+
       <p>
         When you compute a confidence interval on the mean, you compute the mean of a sample in order to estimate the mean of the population. Clearly, if you already knew the population mean, there would be no need for a confidence interval. However, to explain how confidence intervals are constructed, we are going to work backwards and begin by assuming characteristics of the population. Then we will show how sample data can be used to construct a confidence interval.
       </p>
@@ -450,7 +456,7 @@
         </me>
         
         <p>
-          Z<m>_{.95}</m> can be found using the normal distribution calculator and specifying that the shaded area is 0.95 and indicating that you want the area to be between the cutoff points. As shown in <xref ref="fig-normaldistcalc"/>, the value is 1.96. If you had wanted to compute the 99% confidence interval, you would have set the shaded area to 0.99 and the result would have been 2.58.
+          Z<m>_{.95}</m> can be found using the normal distribution calculator<fn><url href="https://onlinestatbook.com/2/calculators/normal_dist.html">https://onlinestatbook.com/2/calculators/normal_dist.html</url></fn> and specifying that the shaded area is 0.95 and indicating that you want the area to be between the cutoff points. As shown in <xref ref="fig-normaldistcalc"/>, the value is 1.96. If you had wanted to compute the 99% confidence interval, you would have set the shaded area to 0.99 and the result would have been 2.58.
         </p>
         
         <figure xml:id="fig-normaldistcalc">
@@ -476,7 +482,7 @@
         </p>
         
         <p>
-          The values of t to be used in a confidence interval can be looked up in a table of the t distribution, a small version of which is provided in the following section. You can also use an <q>inverse t distribution</q> calculator to find the t values to use in confidence intervals. With either approach, the t values will vary depending upon the degrees of freedom (df). For confidence intervals on the mean, df is equal to n - 1, where n is the sample size.
+          The values of t to be used in a confidence interval can be looked up in a table of the t distribution, a small version of which is provided in the following section. You can also use an <q>inverse t distribution</q> calculator<fn><url href="https://onlinestatbook.com/2/calculators/inverse_t_dist.html">https://onlinestatbook.com/2/calculators/inverse_t_dist.html</url></fn> to find the t values to use in confidence intervals. With either approach, the t values will vary depending upon the degrees of freedom (df). For confidence intervals on the mean, df is equal to n - 1, where n is the sample size.
         </p>
         
         <p>
@@ -530,7 +536,7 @@
         </p>
         
         <p>
-          We will finish our discussion of confidence intervals for the mean with an analysis of the Stroop Data. Specifically, we will compute a confidence interval on the mean difference score. As mentioned in <xref ref="subsec-box-plots"/>, the study involved 47 subjects naming the color of ink that words were written in. An additional detail that is now relevant to us is that subjects completed similar naming tasks multiple times under different conditions. In the <q>interference</q> condition, the names conflicted so that, for example, they would name the ink color of the word <q>blue</q> written in red ink. The correct response is to say <q>red</q> and ignore the fact that the word is <q>blue.</q> In a second condition, subjects named the ink color of colored rectangles.
+          We will finish our discussion of confidence intervals for the mean with an analysis of the Stroop Data.<fn><url href="https://onlinestatbook.com/2/case_studies/stroop.html">https://onlinestatbook.com/2/case_studies/stroop.html</url></fn> Specifically, we will compute a confidence interval on the mean difference score. As mentioned in <xref ref="subsec-box-plots"/>, the study involved 47 subjects naming the color of ink that words were written in. An additional detail that is now relevant to us is that subjects completed similar naming tasks multiple times under different conditions. In the <q>interference</q> condition, the names conflicted so that, for example, they would name the ink color of the word <q>blue</q> written in red ink. The correct response is to say <q>red</q> and ignore the fact that the word is <q>blue.</q> In a second condition, subjects named the ink color of colored rectangles.
         </p>
         
         <table xml:id="tbl-responsetime">
@@ -612,6 +618,8 @@
     <subsection xml:id="subsec-more-about-t-distribution">
       <title>More about the T Distribution</title>
       
+      <p><fn>This section is adapted from David M. Lane. "t Distribution." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/estimation/t_distribution.html">https://onlinestatbook.com/2/estimation/t_distribution.html</url></fn></p>
+
       <p>
         In the introduction to normal distributions it was shown that 95% of the area of a normal distribution is within 1.96 standard deviations of the mean. Therefore, if you randomly sampled a value from a normal distribution with a mean of 100, the probability it would be within 1.96<m>\sigma</m> of 100 is 0.95. Similarly, if you sample n values from the population, the probability that the sample mean (<m>\bar{X}</m>) will be within 1.96 <m>\sigma_{\bar{X}}</m> of 100 is 0.95.
       </p>
@@ -634,7 +642,7 @@
       </figure>
       
       <p>
-        Since the t distribution has more area in the tails, the percentage of the distribution within 1.96 standard deviations of the mean is less than the 95% for the normal distribution. <xref ref="tbl-abbrevttable"/> shows the number of standard deviations from the mean required to contain 95% and 99% of the area of the t distribution for various degrees of freedom. These are the values of t that you use in a confidence interval. The corresponding values for the normal distribution are 1.96 and 2.58 respectively. Notice that with few degrees of freedom, the values of t are much higher than the corresponding values for a normal distribution and that the difference decreases as the degrees of freedom increase. In fact, the critical t value for probability 0.95 gets closer and closer to 1.96 (the critical value for 0.95 in the normal distribution) as the degrees of freedom increase. The values shown in <xref ref="tbl-abbrevttable"/> can be obtained from statistical software or an online calculator.
+        Since the t distribution has more area in the tails, the percentage of the distribution within 1.96 standard deviations of the mean is less than the 95% for the normal distribution. <xref ref="tbl-abbrevttable"/> shows the number of standard deviations from the mean required to contain 95% and 99% of the area of the t distribution for various degrees of freedom. These are the values of t that you use in a confidence interval. The corresponding values for the normal distribution are 1.96 and 2.58 respectively. Notice that with few degrees of freedom, the values of t are much higher than the corresponding values for a normal distribution and that the difference decreases as the degrees of freedom increase. In fact, the critical t value for probability 0.95 gets closer and closer to 1.96 (the critical value for 0.95 in the normal distribution) as the degrees of freedom increase. The values shown in <xref ref="tbl-abbrevttable"/> can be obtained from statistical software or an online calculator.<fn><url href="https://onlinestatbook.com/2/calculators/inverse_t_dist.html">https://onlinestatbook.com/2/calculators/inverse_t_dist.html</url></fn>
       </p>
       
       <table xml:id="tbl-abbrevttable">
@@ -698,7 +706,7 @@
       </p>
       
       <p>
-        As shown in <xref ref="fig-tdist8df"/>, a t distribution calculator can be used to find that 0.086 of the area of a t distribution is more than 1.96 standard deviations from the mean, so the probability that <m>\bar{X}</m> would be less than 1.96<m>s_{\bar{X}}</m> from <m>\mu</m> is 1 - 0.086 = 0.914.
+        As shown in <xref ref="fig-tdist8df"/>, a t distribution calculator<fn><url href="https://onlinestatbook.com/2/calculators/t_dist.html">https://onlinestatbook.com/2/calculators/t_dist.html</url></fn> can be used to find that 0.086 of the area of a t distribution is more than 1.96 standard deviations from the mean, so the probability that <m>\bar{X}</m> would be less than 1.96<m>s_{\bar{X}}</m> from <m>\mu</m> is 1 - 0.086 = 0.914.
       </p>
       
       <figure xml:id="fig-tdist8df">
@@ -714,6 +722,8 @@
     <subsection xml:id="subsec-confidence-intervals-regression-slope">
       <title>Confidence Intervals for a Regression Slope Coefficient</title>
       
+      <p><fn>This section is adapted from David M. Lane. "Inferential Statistics for b and r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferential.html</url></fn></p>
+
       <p>
         The method for computing a confidence interval for the population slope in a simple linear regression is very similar to methods for computing other confidence intervals. For the 95% confidence interval, the formula is:
       </p>
@@ -803,6 +813,8 @@
   <section xml:id="sec-appendix-degrees-freedom">
     <title>Appendix I: Degrees of Freedom</title>
     
+    <p><fn>This section is adapted from David M. Lane. "Degrees of Freedom." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/estimation/df.html">https://onlinestatbook.com/2/estimation/df.html</url></fn></p>
+
     <p>
       Some estimates are based on more information than others. For example, an estimate of the variance based on a sample size of 100 is based on more information than an estimate of the variance based on a sample size of 5. The <term>degrees of freedom (df)</term> of an estimate is the number of independent pieces of information on which the estimate is based.
     </p>
@@ -863,6 +875,8 @@
   <section xml:id="sec-appendix-standard-error-regression-slope">
     <title>Appendix II: Estimating the Standard Error of a Regression Slope</title>
     
+    <p><fn>This section is adapted from David M. Lane. "Inferential Statistics for b and r." <em>Online Statistics Education: A Multimedia Course of Study</em>. <url href="https://onlinestatbook.com/2/regression/inferential.html">https://onlinestatbook.com/2/regression/inferential.html</url></fn></p>
+
     <p>
       This appendix shows how to compute the estimated standard error for the slope of a simple linear regression. The estimated standard error of <m>\beta</m> is computed using the following formula:
     </p>
