@@ -157,7 +157,7 @@
         </tabular>
       </table>
 
-      <p>Here there are two groups, each with three observations. To format these data for a computer program, you normally have to use two variables: the first specifies the group the subject is in and the second is the score itself. The reformatted version of the data in <url href="#tbl-exampledata">Table 8.2</url> is shown in <url href="#tbl-reformatdata">Table 8.3</url>. We sometimes describe the original format as “wide” form and the reformatted data as “long” form.</p>
+      <p>Here there are two groups, each with three observations. To format these data for a computer program, you normally have to use two variables: the first specifies the group the subject is in and the second is the score itself. The reformatted version of the data in<url href="#tbl-exampledata">Table 8.2</url>is shown in<url href="#tbl-reformatdata">Table 8.3</url>. We sometimes describe the original format as “wide” form and the reformatted data as “long” form.</p>
 
       <table xml:id="tbl-reformatdata">
         <title>Reformatted data (now in “long” form).</title>
@@ -225,7 +225,7 @@
 
     <p><fn>This section is adapted from David M. Lane. “All Pairwise Comparisons Among Means.” Online Statistics Education: A Multimedia Course of Study. https://onlinestatbook.com/2/tests_of_means/pairwise.html</fn></p>
 
-    <p>Many experiments are designed to compare more than two conditions. We will take as an example the case study “Smiles and Leniency.”In this study, the effect of different smiles on the leniency shown to a person was investigated. Four different types of smiles (neutral, false, felt, and miserable) were shown. “Type of Smile” is the independent variable, and the dependent variable is a leniency rating given by the subject to a fictional student (depicted with one of the four smiles) in an academic misconduct case. An obvious way to proceed would be to do a t test of the difference between each group mean and each of the other group means. This procedure would lead to the six comparisons shown in <url href="#tbl-feltmisneutral">Table 8.4</url>.</p>
+    <p>Many experiments are designed to compare more than two conditions. We will take as an example the case study “Smiles and Leniency.”In this study, the effect of different smiles on the leniency shown to a person was investigated. Four different types of smiles (neutral, false, felt, and miserable) were shown. “Type of Smile” is the independent variable, and the dependent variable is a leniency rating given by the subject to a fictional student (depicted with one of the four smiles) in an academic misconduct case. An obvious way to proceed would be to do a t test of the difference between each group mean and each of the other group means. This procedure would lead to the six comparisons shown in<url href="#tbl-feltmisneutral">Table 8.4</url>.</p>
 
     <table xml:id="tbl-feltmisneutral">
       <title>Six Comparisons among Means.</title>
@@ -282,7 +282,7 @@
     <p>Normally, statistical software will make all the necessary calculations for you in the background. But to illustrate what sorts of calculations the software is relying on, let’s return to the leniency study to see how to compute the Tukey HSD test. You will see that the computations are very similar to those of an independent-groups t test. The steps are outlined below:</p>
 
     <ol>
-      <li><p>Compute the means and variances of each group. For our example, they are shown in <url href="#tbl-sum-stats-leniency">Table 8.5</url>.</p></li>
+      <li><p>Compute the means and variances of each group. For our example, they are shown in<url href="#tbl-sum-stats-leniency">Table 8.5</url>.</p></li>
     </ol>
 
     <table xml:id="tbl-sum-stats-leniency">
@@ -338,13 +338,13 @@
 
     <ol>
       <li><p>Compute MSE, which is simply the mean of the variances. It is equal to 2.65.</p></li>
-      <li><p>Compute Q (using the formula below) for each pair of means, where <m>\bar{X}_i</m> is one mean, <m>\bar{X}_j</m> is the other mean, and <m>n</m> is the number of scores in each group. For these data, there are 34 observations per group. The value in the denominator is 0.279.</p>
+      <li><p>Compute Q (using the formula below) for each pair of means, where <m>\bar{X}_i</m> is one mean,<m>\bar{X}_j</m> is the other mean, and <m>n</m> is the number of scores in each group. For these data, there are 34 observations per group. The value in the denominator is 0.279.</p>
       <me>Q=\frac{\bar{X}_i-\bar{X}_j}{\sqrt{\frac{MSE}{n}}}</me>
       <p></p></li>
       <li><p>Compute p for each comparison using a Studentized Range Calculator. <fn>https://onlinestatbook.com/2/calculators/studentized_range_dist.html</fn> The degrees of freedom is equal to the total number of observations minus the number of means. For this experiment, df = 136 - 4 = 132.</p></li>
     </ol>
 
-    <p>The tests for these data are shown in <url href="#tbl-6pairwisecomp">Table 8.6</url>.</p>
+    <p>The tests for these data are shown in<url href="#tbl-6pairwisecomp">Table 8.6</url>.</p>
 
     <table xml:id="tbl-6pairwisecomp">
       <title>Six Pairwise Comparisons.</title>
@@ -528,7 +528,7 @@
 
       <p>where dfd is the degrees of freedom for the denominator of the F test and df is the degrees of freedom for the t test. dfd will always equal df. And because of how their probability distributions are constructed, these values of F and t will yield identical p-values for the (two tailed) null hypothesis of no difference between the two means.</p>
 
-      <p>There is also a third equivalent way to compare two means: using regression, as described in <url href="regression-qual-predictors.html">Chapter 12</url>. More generally, regression and ANOVA are two sides of the same coin and will yield equivalent results (assuming the same data/assumptions), even when testing for differences among more than two means. Statistical software will generally include a model F statistic among the results shown for a regression, and in the case of a model a single qualitative independent variable, the regression model F statistic will be the same F ratio used in an ANOVA. Because of this equivalence, whether one reports results as an ANOVA or regression is usually a matter of habit and familiarity. In some social science literatures, ANOVA results are rarely reported because researchers typically default to using regression instead.</p>
+      <p>There is also a third equivalent way to compare two means: using regression, as described in<url href="regression-qual-predictors.html">Chapter 12</url>. More generally, regression and ANOVA are two sides of the same coin and will yield equivalent results (assuming the same data/assumptions), even when testing for differences among more than two means. Statistical software will generally include a model F statistic among the results shown for a regression, and in the case of a model a single qualitative independent variable, the regression model F statistic will be the same F ratio used in an ANOVA. Because of this equivalence, whether one reports results as an ANOVA or regression is usually a matter of habit and familiarity. In some social science literatures, ANOVA results are rarely reported because researchers typically default to using regression instead.</p>
 
     </subsection>
 
@@ -554,11 +554,11 @@
 
       <p>In the “Smiles and Leniency” study, the four levels of the factor “Type of Smile” were represented by four separate groups of subjects. When different subjects are used for the levels of a factor, the factor is called a between-subjects factor or a between-subjects variable. The term “between subjects” reflects the fact that comparisons are between different groups of subjects.</p>
 
-      <p>In the “ADHD Treatment” study, in which every subject was tested with each of four dosage levels (0, 0.15, 0.30, 0.60 mg/kg) of a drug. Therefore there was only one group of subjects, and comparisons were not between different groups of subjects but between conditions within the same subjects. When the same subjects are used for the levels of a factor, the factor is called a within-subjects factor or a within-subjects variable. Within-subjects variables are sometimes referred to as repeated-measures variables since there are repeated measurements of the same subjects.</p>
+      <p>In the “ADHD Treatment” study,in which every subject was tested with each of four dosage levels (0, 0.15, 0.30, 0.60 mg/kg) of a drug. Therefore there was only one group of subjects, and comparisons were not between different groups of subjects but between conditions within the same subjects. When the same subjects are used for the levels of a factor, the factor is called a within-subjects factor or a within-subjects variable. Within-subjects variables are sometimes referred to as repeated-measures variables since there are repeated measurements of the same subjects.</p>
 
       <p><term>Multi-Factor Designs</term></p>
 
-      <p>It is common for designs to have more than one factor. For example, consider a hypothetical study of the effects of age and gender on reading speed in which males and females from the age levels of 8 years, 10 years, and 12 years are tested. There would be a total of six different groups as shown in <url href="#tbl-factorial-design">Table 8.8</url>.</p>
+      <p>It is common for designs to have more than one factor. For example, consider a hypothetical study of the effects of age and gender on reading speed in which males and females from the age levels of 8 years, 10 years, and 12 years are tested. There would be a total of six different groups as shown in<url href="#tbl-factorial-design">Table 8.8</url>.</p>
 
       <table xml:id="tbl-factorial-design">
         <title>Gender x Age Design.</title>
@@ -619,7 +619,7 @@
       <ol>
         <li><p>The populations have the same variance. This assumption is called the assumption of homogeneity of variance.</p></li>
         <li><p>The populations are normally distributed.</p></li>
-        <li><p>Each value is sampled independently from each other value. This assumption requires that each subject provide only one value. If a subject provides two scores, then the values are not independent; to accommodate such data, one must use within-subjects ANOVA (a type of ANOVA which is easily implemented but which lies beyond the scope of this text).</p></li>
+        <li><p>Each value is sampled independently from each other value. This assumption requires that each subject provide only one value. If a subject provides two scores, then the values are not independent; to accomodate such data, one must use within-subjects ANOVA (a type of ANOVA which is easily implemented but which lies beyond the scope of this text).</p></li>
       </ol>
 
       <p>These assumptions are the same as for a t test of differences between groups (<url href="#sec-difference-between-two-means">Section 8.1</url>) except that they apply to two or more groups, not just to two groups.</p>
@@ -630,7 +630,7 @@
 
       <p><term>Computing MSE</term></p>
 
-      <p>Recall that the assumption of homogeneity of variance states that the variance within each of the populations (<m>\sigma^2</m>) is the same. This variance, <m>\sigma^2</m>, is the quantity estimated by MSE and is computed as the mean of the sample variances. For these data, the MSE is equal to 2.6489.</p>
+      <p>Recall that the assumption of homogeneity of variance states that the variance within each of the populations (<m>\sigma^2</m>) is the same. This variance,<m>\sigma^2</m>, is the quantity estimated by MSE and is computed as the mean of the sample variances. For these data, the MSE is equal to 2.6489.</p>
 
       <p><term>Computing MSB</term></p>
 
@@ -658,11 +658,11 @@
 
       <p>If the population means are not equal, then MSE will still estimate <m>\sigma^2</m> because differences in population means do not affect variances. However, differences in population means affect MSB since differences among population means are associated with differences among sample means. It follows that the larger the differences among sample means, the larger the MSB.<em>In short, MSE estimates</em><m>\sigma^2</m><em>whether or not the population means are equal, whereas MSB estimates</em><m>\sigma^2</m><em>only when the population means are equal and estimates a larger quantity when they are not equal.</em></p>
 
-      <p>As shown in <url href="#sec-the-critical-step-calculating-an-f-ratio">Section 8.3.2</url>, we compare the MSE to the MSB by way of an F ratio in order to determine a p-value for the null hypothesis that the population means are all equal.</p>
+      <p>As shown in<url href="#sec-the-critical-step-calculating-an-f-ratio">Section 8.3.2</url>, we compare the MSE to the MSB by way of an F ratio in order to determine a p-value for the null hypothesis that the population means are all equal.</p>
 
       <p><term>One-Tailed or Two?</term></p>
 
-      <p>Is the probability value from an F ratio a one-tailed or a two-tailed probability? In the literal sense, it is a one-tailed probability since, as you could see in <url href="#fig-fdist">Figure 8.5</url>earlier in the chapter, the probability is the area in the right-hand tail of the distribution. However, the F ratio is sensitive to any pattern of differences among means. It is, therefore, a test of a two-tailed hypothesis and is best considered a two-tailed test.</p>
+      <p>Is the probability value from an F ratio a one-tailed or a two-tailed probability? In the literal sense, it is a one-tailed probability since, as you could see in<url href="#fig-fdist">Figure 8.5</url>earlier in the chapter, the probability is the area in the right-hand tail of the distribution. However, the F ratio is sensitive to any pattern of differences among means. It is, therefore, a test of a two-tailed hypothesis and is best considered a two-tailed test.</p>
 
       <p><term>Sources of Variation</term></p>
 
@@ -678,7 +678,7 @@
 
       <me>SSQ_\text{condition} = n \left[ (\bar{X}_1 - GM)^2 + (\bar{X}_2 - GM)^2 + ... +(\bar{X}_k - GM)^2 \right]</me>
 
-      <p>where n is the number of scores in each group, k is the number of groups, <m>\bar{X}_1</m> is the mean for Condition 1,<m>\bar{X}_2</m> is the mean for Condition 2, and <m>\bar{X}_k</m> is the mean for Condition k. For the Smiles and Leniency study, the values are:</p>
+      <p>where n is the number of scores in each group, k is the number of groups,<m>\bar{X}_1</m> is the mean for Condition 1,<m>\bar{X}_2</m> is the mean for Condition 2, and <m>\bar{X}_k</m> is the mean for Condition k. For the Smiles and Leniency study, the values are:</p>
 
       <me>SSQ_\text{condition} = 34 \left[ (5.37-4.83)^2 + (4.91-4.83)^2 + (4.91-4.83)^2 +(4.12-4.83)^2 \right]</me>
       <me>= 27.5</me>
@@ -727,7 +727,7 @@
 
       <p><term>Formatting Data for Computer Analysis</term></p>
 
-      <p>Most computer programs that compute ANOVAs require your data to be in a specific form. Consider the data in <url href="#tbl-reformatting-anova-wide">Table 8.9</url>.</p>
+      <p>Most computer programs that compute ANOVAs require your data to be in a specific form. Consider the data in<url href="#tbl-reformatting-anova-wide">Table 8.9</url>.</p>
 
       <table xml:id="tbl-reformatting-anova-wide">
         <title>Example data in wide form.</title>
@@ -755,7 +755,7 @@
         </tabular>
       </table>
 
-      <p>Here there are three groups, each with three observations. To format these data for a computer program, you normally have to use two variables: the first specifies the group the subject is in and the second is the score itself. The reformatted version of the data in <url href="#tbl-reformatting-anova-wide">Table 8.9</url> is shown in <url href="#tbl-reformatting-anova-long">Table 8.10</url>.</p>
+      <p>Here there are three groups, each with three observations. To format these data for a computer program, you normally have to use two variables: the first specifies the group the subject is in and the second is the score itself. The reformatted version of the data in<url href="#tbl-reformatting-anova-wide">Table 8.9</url>is shown in<url href="#tbl-reformatting-anova-long">Table 8.10</url>.</p>
 
       <table xml:id="tbl-reformatting-anova-long">
         <title>Reformatted data (now in long form).</title>
