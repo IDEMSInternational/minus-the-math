@@ -4,15 +4,222 @@
   
   <introduction>
     <p>
-      <!-- Introduction content to be added -->
+      In this chapter, I will walk you through some analysis I conduct with an example dataset, in order to show how regression works with qualitative independent variables. I could have easily completed this analysis using the methods from <xref ref="ch08-comparing-means">Chapter 8</xref>, but it is important to see how regression can also be used as a method for comparing means across groups.
+    </p>
+
+    <p>
+      Let's say I'm interested in studying how personality relates to gender. The most common model of personality in psychology is called the <q>Big Five.</q> One common measure consists of 50 survey items (the IPIP Big-Five Factor Markers), with 10 items for each of the five personality traits from the model.<fn>Goldberg, L. R. (1992). The development of markers for the Big-Five factor structure. <em>Psychological assessment</em>, <em>4</em>(1), 26.</fn> <xref ref="fig-Big5"/> shows some of these questions and how they are formatted.
+    </p>
+
+    <figure xml:id="fig-Big5">
+      <caption>Example survey items used in the <q>Big Five</q> case study.</caption>
+      <image source="Images/regression-qual-predictors/Big5.jpg" width="70%">
+        <description>Survey items from the Big Five personality questionnaire showing example questions</description>
+      </image>
+    </figure>
+
+    <p>
+      For now, I decide to focus on whether people are introverted or extroverted. Extroverts are outgoing and tend to enjoy interacting with others. Extroverts will tend to agree with the statement <q>I am the life of the party</q> while introverts will tend to agree with the item <q>I don't talk a lot.</q>
+    </p>
+
+    <p>
+      I find a dataset that contains lots of responses to the Big Five personality questions as well as information on the gender of each respondent.<fn><url href="https://openpsychometrics.org/_rawdata/"/> (the file I used is called <q>BIG5.zip</q>)</fn> There are 10 different questions related to extroversion, and the dataset has one variable for each of these 10 questions (<xref ref="fig-big5dataset"/>). The variable labeled e1 shows responses to the item <q>I am the life of the party.</q> A value of 1 means the respondent disagrees with this statement, while a 3 indicates neutral, and a 5 means they agree.
+    </p>
+
+    <figure xml:id="fig-big5dataset">
+      <caption>Screenshot of some observations and variable values in the <q>Big Five</q> dataset.</caption>
+      <image source="Images/regression-qual-predictors/big5dataset.jpg" width="70%">
+        <description>Dataset screenshot showing variables e1 through e10 representing extroversion questions</description>
+      </image>
+    </figure>
+
+    <p>
+      For all of the odd-numbered extroversion questions (e1, e3, e5, etc.), agreement indicates extroversion. For the even-numbered items (e2, e4, e6, etc.), agreement indicates introversion. To create a single extroversion variable that combines responses from all 10 survey items, I create a tally, adding up all the values for odd-numbered questions and then subtracting the responses to the even-numbered questions. An extreme extrovert will have a 5 for all the odd-numbered questions and a 1 for all of the even-numbered ones, giving them a score of 20 (<m>5 \times 5-5 \times 1=20</m>). An extreme introvert will have a -20 since they will answer 1 to all the odd-numbered questions and 5 to all the even-numbered ones (<m>5 \times 1-5 \times 5=-20</m>).
+    </p>
+
+    <p>
+      As <xref ref="fig-ExtHist"/> indicates, most people lie somewhere in the middle between introversion and extroversion.
+    </p>
+
+    <figure xml:id="fig-ExtHist">
+      <caption>Distribution of the extroversion trait.</caption>
+      <image source="Images/regression-qual-predictors/ExtHist.jpg" width="50%">
+        <description>Histogram showing distribution of extroversion scores centered around zero</description>
+      </image>
+    </figure>
+
+    <p>
+      Our gender variable was measured by asking respondents <q>What is your gender?</q> and they could choose from male (coded as a 1), female (2), or other (3). In a moment, we'll consider those who responded <q>other,</q> but for now, let's just look at those who chose either male or female.
     </p>
   </introduction>
 
-  <section xml:id="sec-ch12-section1">
-    <title>Section Title</title>
+  <section xml:id="sec-predicting-extroversion-using-gender">
+    <title>Predicting extroversion using gender</title>
     
     <p>
-      <!-- Section content to be added -->
+      If I want to describe differences in extroversion by gender in this dataset, I can compute the mean value of extroversion for males and for females. It turns out that males have an average extroversion of -0.46 while females' average level of extroversion is 0.53. Thus, the average female is about 1-point more extroverted than the average male. But of course, there is abundant variation in extroversion among both groups, as seen clearly in <xref ref="fig-GenderExtHist"/>. There are plenty of females who are introverts and plenty of males who are extroverts.
+    </p>
+
+    <figure xml:id="fig-GenderExtHist">
+      <caption>Distribution of extroversion by female/male identity.</caption>
+      <image source="Images/regression-qual-predictors/GenderExtHist.jpg" width="50%">
+        <description>Two overlapping histograms showing distribution of extroversion for females and males</description>
+      </image>
+    </figure>
+
+    <p>
+      If you asked me to guess the extroversion level of someone in this dataset and the only thing you told me about them was their gender, my best bet would probably be to guess the average extroversion level for someone of that gender. So for a female I knew nothing else about, I would guess their extroversion to be 0.53, while for a male I'd guess -0.46.
+    </p>
+
+    <p>
+      When we're working with data, sometimes it's helpful to express how I would make a guess about a dependent variable (extroversion) based on an independent variable (gender) using a mathematical formula. In fact, this is exactly what we do when we run a regression. There are many ways I could write this formula, but I'll show just two for now. First, I could write:
+    </p>
+
+    <men xml:id="eq-ExtReg">
+      \widehat{Extraversion}=0.53 \times Female-0.46 \times Male
+    </men>
+
+    <p>
+      Notice I've added a <q>hat</q> above the name of the variable <em>Extraversion</em>; this hat means that I'm making a guess about the value of that variable (I'm guessing the level of extroversion based on gender). The equation has two other variables <em>Female</em> and <em>Male</em>, and these two variables will take on a value of 1 if the person's gender is equal to the name of the variable and will otherwise take on a value of 0. For a female, <em>Female</em> will equal 1 and <em>Male</em> will equal 0, giving us:
+    </p>
+
+    <me>
+      \widehat{Extraversion}=0.53 \times (1)-0.46 \times (0)=0.53
+    </me>
+
+    <p>
+      So our guess for the level of extroversion (<m>\widehat{Extraversion}</m>) of a female we know nothing about is 0.53.
+    </p>
+
+    <p>
+      For a male, our guess is:
+    </p>
+
+    <me>
+      \widehat{Extraversion}=0.53 \times (0)-0.46 \times (1)=-0.46
+    </me>
+
+    <p>
+      There's a second way I can write my formula, which will turn out to be more useful in the future when we come to consider multiple factors at the same time that might help us predict the value of a dependent variable. Rather than having two variables to represent gender in my equation, I can just use one:
+    </p>
+
+    <men xml:id="eq-ExtRegFem">
+      \widehat{Extraversion}=0.53-0.99 \times Male
+    </men>
+
+    <p>
+      In <xref ref="eq-ExtRegFem"/>, we start from female as our baseline. Notice that the first number we see (0.53) is our guess for the value of extroversion for a female. When we're considering a female, Male=0, so:
+    </p>
+
+    <me>
+      \widehat{Extraversion}=0.53-0.99 \times 0=0.53
+    </me>
+
+    <p>
+      Thus, we get the right prediction for females from this equation, even though we didn't include a variable specifically for females. If we have a male, Male=1, so we get:
+    </p>
+
+    <me>
+      \widehat{Extraversion}=0.53-0.99 \times 1=-0.46
+    </me>
+
+    <p>
+      This is the same prediction we got before. Remember, I decided to initially just analyze respondents who selected either male or female. Since we are only considering two categories (male or female), and each respondent is either a male or a female, saying <em>Male</em> = 1 lets me know that <em>Female</em> = 0. It's actually repetitive in this context to both say that <em>Male</em> = 1 and <em>Female</em> = 0. Similarly, saying <em>Male</em> = 0 implies that <em>Female</em> = 1. So I can simplify my equation by just including one variable to indicate binary gender.
+    </p>
+
+    <p>
+      Notice that in <xref ref="eq-ExtRegFem"/>, the number next to <em>Male</em> is equal to the difference between the average level of extroversion for females and the average level for males (0.53-(-0.46)=0.99). This is because <xref ref="eq-ExtRegFem"/> starts with females as the baseline, so to get our prediction for males, we have to adjust our baseline prediction by the average difference for males.
+    </p>
+
+    <p>
+      <xref ref="eq-ExtRegFem"/> is also typically how we will arrange our equation when we're running a regression.
+    </p>
+  </section>
+
+  <section xml:id="sec-prediction-more-than-two-categories">
+    <title>Prediction with more than two categories for gender</title>
+    
+    <p>
+      I now move beyond the gender binary and consider the <q>other</q> category in survey responses. I'll refer to this other category as <q>non-binary</q> gender, although the data was collected at a time when survey items were not generally designed with this group in mind; thus, we might expect that this <q>other</q> category is only a rough proxy for a non-binary gender identity. The average level of extroversion among those with non-binary gender is -5.66. So people in this dataset identified as likely non-binary tend to be quite a bit more introverted than those who identify as male or female. As with males and females, there is still considerable variation among non-binary people (<xref ref="fig-NonBExtHist"/>).
+    </p>
+
+    <figure xml:id="fig-NonBExtHist">
+      <caption>Distribution of extroversion trait among those identifying with <q>other</q> gender (neither male nor female).</caption>
+      <image source="Images/regression-qual-predictors/NonBExtHist.jpg" width="50%">
+        <description>Histogram showing distribution of extroversion scores for non-binary respondents</description>
+      </image>
+    </figure>
+
+    <p>
+      The number of non-binary respondents is relatively small (102), so it's not terrible surprising that this histogram looks a bit choppier than the ones we saw before.
+    </p>
+
+    <p>
+      Again, if we had to make a guess about the level of extroversion of someone, and all we knew about that person was that their gender was non-binary, we would probably want to guess the mean value among non-binary respondents (-5.66). Modifying <xref ref="eq-ExtReg"/> to incorporate a third category is relatively straightforward:
+    </p>
+
+    <men xml:id="eq-ExtRegNonBin">
+      \widehat{Extraversion}=0.53 \times Female-0.46 \times Male-5.66 \times Other
+    </men>
+
+    <p>
+      For someone who identifies as female, we would plug in <em>Female</em> = 1, <em>Male</em> = 0, and <em>Other</em> = 0:
+    </p>
+
+    <me>
+      \widehat{Extraversion}=0.53 \times (1)-0.46 \times (0)-5.66 \times (0)=0.53
+    </me>
+
+    <p>
+      If someone identifies as non-binary, we would use <em>Female</em> = 0, <em>Male</em> = 0, and <em>Other</em> = 1:
+    </p>
+
+    <me>
+      \widehat{Extraversion}=0.53 \times (0)-0.46 \times (0)-5.66 \times (1)=-5.66
+    </me>
+
+    <p>
+      We can also return to the format of <xref ref="eq-ExtRegFem"/> but modify it to include the other category. This is how we will typically write our equation if we are doing a regression:
+    </p>
+
+    <men xml:id="eq-ExtRegFemNonBin">
+      \widehat{Extraversion}=0.53-0.99 \times Male-6.19 \times Other
+    </men>
+
+    <p>
+      Now that there are three possible values for gender (female, male, and other), knowing the value of <em>Male</em> doesn't necessarily allow us to conclude what the value of female is. If <em>Male</em> = 0, the individual could identify as either female or non-binary. So we have to include a second variable. In this case, we chose to include the variable <em>Other</em>. If we know the values of <em>Male</em> and <em>Other</em>, we can always figure out the value of <em>Female</em> by process of elimination.
+    </p>
+
+    <p>
+      For a non-binary person, we plug in <em>Male</em> = 0, and <em>Other</em> = 1:
+    </p>
+
+    <me>
+      \widehat{Extraversion}=0.53-0.99 \times (0)-6.19 \times (1)=-5.66
+    </me>
+
+    <p>
+      When considering a female, we use <em>Male</em> = 0, and <em>Other</em> = 0:
+    </p>
+
+    <me>
+      \widehat{Extraversion}=0.53-0.99 \times (0)-6.19 \times (0)=0.53
+    </me>
+
+    <p>
+      <xref ref="eq-ExtRegNonBin"/> and <xref ref="eq-ExtRegFemNonBin"/> communicate an equivalent method of making a prediction about extroversion based on gender; they just offer this information in two different formats. <xref ref="eq-ExtRegFemNonBin"/> might be a bit trickier to understand for now, but it will become very useful in the future.
+    </p>
+
+    <p>
+      Notice that we can talk about gender either as one qualitative variable with three possible values (female, male, or other), or we can talk about it as a series of three variables (<em>Female</em>, <em>Male</em>, and <em>Other</em>) that can take each on a value of either 0 or 1 (we call such variables <q>binary</q> or <q>dummy</q> variables). This can make things a bit confusing, but the important thing to remember is that when we have a qualitative variable with more than two categories, we'll need to break out the categories into a set of dummy variables for purposes of representing the qualitative variable in an equation.
+    </p>
+
+    <p>
+      However, as <xref ref="eq-ExtRegFem"/> and <xref ref="eq-ExtRegFemNonBin"/> illustrate, we don't necessarily need a dummy variable for every single category. Specifically, whenever we want to create an equation with a qualitative independent variable in a format like <xref ref="eq-ExtRegFem"/> or <xref ref="eq-ExtRegFemNonBin"/>, the number of dummy variables should be equal to the number of categories minus one. Since our gender variable can take on three possible values in this example, we included two independent variables in <xref ref="eq-ExtRegFemNonBin"/>. No dummy variable is included for female, so we call female the <term>omitted category</term>, also known as the <term>reference group</term> or <term>baseline category</term>. Remember, the first number in <xref ref="eq-ExtRegFemNonBin"/> is 0.53, which represents our guess for females<mdash/>the baseline category. If we instead had a qualitative variable with five categories, we would include four dummy variables in our equation.
+    </p>
+
+    <p>
+      As we will see at the end of the next chapter, it doesn't really matter which group we select as the omitted category because we get equivalent predictions regardless of which one we choose.
     </p>
   </section>
 
