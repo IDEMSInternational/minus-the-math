@@ -506,7 +506,7 @@
     </table>
 
     <p>
-      To test this null hypothesis, we compute what we call a t statistic (as opposed to a z statistic) because we will compare this value to the t distribution<mdash/>a distribution which allows for accurate inferences when <m>\sigma</m> is estimated rather than known (see <xref ref="sec-more-about-t-distribution" />). We compute t using a special case of the following formula:
+      To test this null hypothesis, we compute what we call a t statistic (as opposed to a z statistic) because we will compare this value to the t distribution<mdash/>a distribution which allows for accurate inferences when <m>\sigma</m> is estimated rather than known (see <xref ref="subsec-more-about-t-distribution" />). We compute t using a special case of the following formula:
     </p>
 
     <me>
@@ -601,7 +601,7 @@
     <title>Significance Test for a Regression Slope Coefficient</title>
     
     <p>
-      To conclude this chapter, let's briefly revisit the very first type of hypothesis test we encountered in this textbook (though we did not call it that at the time): testing for the significance of a regression slope coefficient (<xref ref="sec-interpreting-regression-results" />). Now that we know more about hypothesis testing, let's fill in some of the details of how to calculate the p-values we rely upon to determine the significance of these coefficients.
+      To conclude this chapter, let's briefly revisit the very first type of hypothesis test we encountered in this textbook (though we did not call it that at the time): testing for the significance of a regression slope coefficient (<xref ref="sec-quick-guide-interpreting-regression" />). Now that we know more about hypothesis testing, let's fill in some of the details of how to calculate the p-values we rely upon to determine the significance of these coefficients.
     </p>
 
     <p>
@@ -617,11 +617,11 @@
     </p>
 
     <p>
-      Just as when we generated a confidence interval for the slope coefficient in <xref ref="sec-confidence-interval-regression-slope" />, the degrees of freedom for this t test is n-2. We also use the same calculation for the estimated standard error as when calculating a confidence interval, so refer back to <xref ref="ch06-sampling-distributions" /> (specifically Appendix II) if you would like to review how we calculate it.
+      Just as when we generated a confidence interval for the slope coefficient in <xref ref="subsec-confidence-intervals-regression-slope" />, the degrees of freedom for this t test is n-2. We also use the same calculation for the estimated standard error as when calculating a confidence interval, so refer back to <xref ref="ch06-sampling-distributions" /> (specifically Appendix II) if you would like to review how we calculate it.
     </p>
 
     <p>
-      With the data example we used when learning precise confidence interval calculations (<xref ref="sec-confidence-interval-regression-slope" />), we had a sample slope coefficient (<m>\hat{\beta}</m>) of 0.425, a standard error (<m>s_{\beta}</m>) of 0.305, and a sample size of 5. Given these numbers and a hypothesized value of 0:
+      With the data example we used when learning precise confidence interval calculations (<xref ref="subsec-confidence-intervals-regression-slope" />), we had a sample slope coefficient (<m>\hat{\beta}</m>) of 0.425, a standard error (<m>s_{\beta}</m>) of 0.305, and a sample size of 5. Given these numbers and a hypothesized value of 0:
     </p>
 
     <md>
