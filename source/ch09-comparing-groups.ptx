@@ -4,15 +4,469 @@
   
   <introduction>
     <p>
-      <!-- Introduction content to be added -->
+      We previously learned how to graphically depict the relationship between two qualitative variables with a bar chart (<xref ref="sec-comparing-distributions"/>). To make a comparison that includes a significance test, we will need to use the chi square distribution, together with a contingency table.
     </p>
   </introduction>
 
-  <section xml:id="sec-ch09-section1">
-    <title>Section Title</title>
+  <section xml:id="sec-chi-square-distribution">
+    <title>Chi Square Distribution</title>
     
     <p>
-      <!-- Section content to be added -->
+      While the details of the Chi Square distribution are not so important for understanding how to interpret a test of the relationship between two qualitative variable, a brief explanation is nonetheless provided here (with more information provided in this chapter's appendix). A standard normal deviate is a random sample from the standard normal distribution. The Chi Square distribution is the distribution of the sum of squared standard normal deviates, and the degrees of freedom of the distribution is equal to the number of standard normal deviates being summed. Again, don't worry if you don't follow these details since they are not important for the average reader of this text.
+    </p>
+
+    <p>
+      Chi Square distributions are positively skewed, but as the degrees of freedom increases, the degree of skew decreases and the Chi Square distribution approaches a normal distribution. <xref ref="fig-chisquare"/> shows density functions for three Chi Square distributions. Notice how the skew decreases as the degrees of freedom increases.
+    </p>
+
+    <figure xml:id="fig-chisquare">
+      <caption>Chi Square distributions with 2, 4, and 6 degrees of freedom.</caption>
+      <image source="Images/comparing-groups/chisquare.png" width="60%">
+        <description>Three overlaid probability density curves showing chi-square distributions with 2, 4, and 6 degrees of freedom, demonstrating how the distribution becomes less skewed as degrees of freedom increase.</description>
+      </image>
+    </figure>
+
+    <p>
+      The Chi Square distribution is very important because many test statistics are approximately distributed as Chi Square. Two of the more common tests using the Chi Square distribution are tests of deviations of differences between theoretically expected and observed frequencies (one-way tables) and the relationship between qualitative variables (contingency tables). Numerous other tests beyond the scope of this work are based on the Chi Square distribution.
+    </p>
+  </section>
+
+  <section xml:id="sec-one-way-tables">
+    <title>One-Way Tables</title>
+    
+    <p>
+      The Chi Square distribution can be used to test whether observed data differ <em>significantly</em> from theoretical expectations. For example, for a fair six-sided die, the probability of any given outcome on a single roll would be 1/6. The data in <xref ref="tbl-sixsidedie"/> were obtained by rolling a six-sided die 36 times. However, as can be seen in <xref ref="tbl-sixsidedie"/>, some outcomes occurred more frequently than others. For example, a <q>3</q> came up nine times, whereas a <q>4</q> came up only two times. Are these data consistent with the hypothesis that the die is a fair die? Naturally, we do not expect the sample frequencies of the six possible outcomes to be the same since chance differences will occur. So, the finding that the frequencies differ does not mean that the die is not fair. One way to test whether the die is fair is to conduct a significance (hypothesis) test. The null hypothesis is that the die is fair. This hypothesis is tested by computing the probability of obtaining frequencies as discrepant or more discrepant from a uniform distribution of frequencies as obtained in the sample. If this probability is sufficiently low, then the null hypothesis that the die is fair can be rejected.
+    </p>
+
+    <table xml:id="tbl-sixsidedie">
+      <title>Outcome Frequencies from a Six-Sided Die.</title>
+      <tabular>
+        <row header="yes">
+          <cell>Outcome</cell>
+          <cell>Frequency</cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>8</cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell>5</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>9</cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell>2</cell>
+        </row>
+        <row>
+          <cell>5</cell>
+          <cell>7</cell>
+        </row>
+        <row>
+          <cell>6</cell>
+          <cell>5</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The first step in conducting the significance test is to compute the expected frequency for each outcome given that the null hypothesis is true. For example, the expected frequency of a <q>1</q> is 6 since the probability of a <q>1</q> coming up is 1/6 and there were a total of 36 rolls of the die.
+    </p>
+
+    <p>
+      Expected frequency = (1/6)(36) = 6
+    </p>
+
+    <p>
+      Note that the expected frequencies are expected only in a theoretical sense. We do not really <q>expect</q> the observed frequencies to match the <q>expected frequencies</q> exactly.
+    </p>
+
+    <p>
+      The calculation continues as follows. Letting E be the expected frequency of an outcome and O be the observed frequency of that outcome, compute
+      <me>
+        \frac{(E-O)^2}{E}
+      </me>
+      for each outcome. <xref ref="tbl-sixsidedieoutcomes"/> shows these calculations.
+    </p>
+
+    <table xml:id="tbl-sixsidedieoutcomes">
+      <title>Outcome Frequencies from a Six-Sided Die.</title>
+      <tabular halign="center">
+        <row header="yes">
+          <cell>Outcome</cell>
+          <cell>E</cell>
+          <cell>O</cell>
+          <cell><m>\frac{(E-O)^2}{E}</m></cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>6</cell>
+          <cell>8</cell>
+          <cell>0.667</cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell>6</cell>
+          <cell>5</cell>
+          <cell>0.167</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>6</cell>
+          <cell>9</cell>
+          <cell>1.500</cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell>6</cell>
+          <cell>2</cell>
+          <cell>2.667</cell>
+        </row>
+        <row>
+          <cell>5</cell>
+          <cell>6</cell>
+          <cell>7</cell>
+          <cell>0.167</cell>
+        </row>
+        <row>
+          <cell>6</cell>
+          <cell>6</cell>
+          <cell>5</cell>
+          <cell>0.167</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Next we add up all the values in Column 4 of <xref ref="tbl-sixsidedieoutcomes"/>.
+      <me>
+        \sum{\frac{(E-O)^2}{E}}=5.333
+      </me>
+    </p>
+
+    <p>
+      This sampling distribution of
+      <me>
+        \sum{\frac{(E-O)^2}{E}}
+      </me>
+      is approximately distributed as Chi Square with k-1 degrees of freedom, where k is the number of categories (in our example, the six possible values we might get from a die roll). Therefore, for this problem the test statistic is
+      <me>
+        \chi^2_5=5.333
+      </me>
+      which means the value of Chi Square with 5 degrees of freedom is 5.333.
+    </p>
+
+    <p>
+      From a Chi Square calculator it can be determined that the probability of a Chi Square of 5.333 or larger is 0.377. Therefore, the null hypothesis that the die is fair cannot be rejected.
+    </p>
+
+    <p>
+      This Chi Square test can also be used to test other deviations between expected and observed frequencies. The following example shows a test of whether the variable <q>University GPA</q> in the <q>SAT and College GPA</q> case study (used previously to demonstrate regression) is normally distributed.
+    </p>
+
+    <p>
+      The first column in <xref ref="tbl-universitygpascores"/> shows the standard normal distribution divided into four ranges. The second column shows the proportions of a standard normal distribution falling in the ranges specified in the first column. For example, we see that for the range 0 to 1, the proportion is 0.341 (or 34.1%). This follows directly from what we learned in <xref ref="ch05-probability-distributions"/>; 68% of the area under the standard normal distribution lies between -1 and 1, so naturally 34% (half of 68%) will be covered by [0, 1]. The expected frequencies (E) are calculated by multiplying the number of scores (105) by the proportion expected according to the standard normal distribution. The final column shows the observed number of scores (O) in each range, after standardizing the University GPA variable so that it will map onto the standard normal distribution (see <xref ref="sec-the-standard-normal-distribution"/>). It is clear from the table that the observed frequencies vary greatly from the expected frequencies. Note that if the distribution were normal, we would expect only about 35 scores between 0 and 1, whereas 60 were observed.
+    </p>
+
+    <table xml:id="tbl-universitygpascores">
+      <title>Expected and Observed Scores for 105 University GPA Scores.</title>
+      <tabular>
+        <row header="yes">
+          <cell>Range</cell>
+          <cell>Proportion</cell>
+          <cell>E</cell>
+          <cell>O</cell>
+        </row>
+        <row>
+          <cell>Above 1</cell>
+          <cell>0.159</cell>
+          <cell>16.695</cell>
+          <cell>9</cell>
+        </row>
+        <row>
+          <cell>0 to 1</cell>
+          <cell>0.341</cell>
+          <cell>35.805</cell>
+          <cell>60</cell>
+        </row>
+        <row>
+          <cell>-1 to 0</cell>
+          <cell>0.341</cell>
+          <cell>35.805</cell>
+          <cell>17</cell>
+        </row>
+        <row>
+          <cell>Below -1</cell>
+          <cell>0.159</cell>
+          <cell>16.695</cell>
+          <cell>19</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The test of whether the observed scores deviate significantly from the expected scores is computed using the familiar calculation.
+      <me>
+        \chi^2_3=\sum\frac{(E-O)^2}{E}=30.09
+      </me>
+    </p>
+
+    <p>
+      The subscript <q>3</q> means there are three degrees of freedom. As before, the degrees of freedom is the number of outcomes (in our example, the number of ranges listed in <xref ref="tbl-universitygpascores"/>) minus 1, which is 4 - 1 = 3 in this example. A Chi Square distribution calculator shows that p <m>\lt</m> 0.001 for this Chi Square. Therefore, the null hypothesis that the scores are normally distributed can be rejected.
+    </p>
+  </section>
+
+  <section xml:id="sec-contingency-tables">
+    <title>Contingency Tables</title>
+    
+    <p>
+      This section shows how to use Chi Square to test the relationship between qualitative variables for significance. For example, <xref ref="tbl-studyfreqs"/> shows the data from the Mediterranean Diet and Health case study, in which 605 survivors of a heart attack were randomly assigned to follow either (1) a low-fat diet similar to one recommended at the time by the American Heart Association (AHA) or (2) a Mediterranean-type diet rich in vegetables, fruits, and grains.
+    </p>
+
+    <table xml:id="tbl-studyfreqs">
+      <title>Frequencies for Diet and Health Study.</title>
+      <tabular>
+        <row header="yes">
+          <cell></cell>
+          <cell colspan="4">Outcome</cell>
+          <cell></cell>
+        </row>
+        <row header="yes">
+          <cell>Diet</cell>
+          <cell>Cancers</cell>
+          <cell>Fatal Heart Disease</cell>
+          <cell>Non-Fatal Heart Disease</cell>
+          <cell>Healthy</cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>AHA</cell>
+          <cell>15</cell>
+          <cell>24</cell>
+          <cell>25</cell>
+          <cell>239</cell>
+          <cell>303</cell>
+        </row>
+        <row>
+          <cell>Mediterranean</cell>
+          <cell>7</cell>
+          <cell>14</cell>
+          <cell>8</cell>
+          <cell>273</cell>
+          <cell>302</cell>
+        </row>
+        <row header="yes">
+          <cell>Total</cell>
+          <cell>22</cell>
+          <cell>38</cell>
+          <cell>33</cell>
+          <cell>512</cell>
+          <cell>605</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      The question is whether there is a <em>significant relationship</em> between diet and outcome. Again, software can calculate a p-value for us in order to test for significance. But if we are wondering what's going on under the hood, the first step is to compute the expected frequency for each cell based on the assumption that there is no relationship. These expected frequencies are computed from the totals as follows. We begin by computing the expected frequency for the AHA Diet/Cancers combination. Note that 22/605 subjects developed cancer. The proportion who developed cancer is therefore 0.0364. If there were no relationship between diet and outcome, then we would expect 0.0364 of those on the AHA diet to develop cancer. Since 303 subjects were on the AHA diet, we would expect (0.0364)(303) = 11.02 cancers on the AHA diet. Similarly, we would expect (0.0364)(302) = 10.98 cancers on the Mediterranean diet. In general, the expected frequency for a cell in the <m>i</m>th row and the <m>j</m>th column is equal to
+      <me>
+        E_{ij}=\frac{T_iT_j}{T}
+      </me>
+      where <m>E_{ij}</m> is the expected frequency for cell <m>i,j</m>, <m>T_i</m> is the total for the <m>i</m>th row, <m>T_j</m> is the total for the <m>j</m>th column, and <m>T</m> is the total number of observations. For the AHA Diet/Cancers cell, <m>i = 1</m>, <m>j = 1</m>, <m>T_i = 303</m>, <m>T_j = 22</m>, and <m>T = 605</m>. <xref ref="tbl-observedstudyfreqs"/> shows the expected frequencies (in parenthesis) for each cell in the experiment.
+    </p>
+
+    <p>
+      The significance test is conducted by computing Chi Square as follows.
+      <me>
+        \chi^2_3=\sum\frac{(E-O)^2}{E}=16.55
+      </me>
+    </p>
+
+    <p>
+      The degrees of freedom is equal to <m>(r-1)(c-1)</m>, where <m>r</m> is the number of rows and <m>c</m> is the number of columns. For this example, the degrees of freedom is <m>(2-1)(4-1) = 3</m>. The Chi Square calculator can be used to determine that the probability value for a Chi Square of 16.55 with three degrees of freedom is equal to 0.0009. Therefore, the null hypothesis of no relationship between diet and outcome can be rejected.
+    </p>
+
+    <table xml:id="tbl-observedstudyfreqs">
+      <title>Observed and Expected Frequencies for Diet and Health Study.</title>
+      <tabular>
+        <row header="yes">
+          <cell></cell>
+          <cell colspan="4">Outcome</cell>
+        </row>
+        <row header="yes">
+          <cell>Diet</cell>
+          <cell>Cancers</cell>
+          <cell>Fatal Heart Disease</cell>
+          <cell>Non-Fatal Heart Disease</cell>
+          <cell>Healthy</cell>
+        </row>
+        <row>
+          <cell>AHA</cell>
+          <cell>15<line/>(11.02)</cell>
+          <cell>24<line/>(19.03)</cell>
+          <cell>25<line/>(16.53)</cell>
+          <cell>239<line/>(256.42)</cell>
+        </row>
+        <row>
+          <cell>Mediterranean</cell>
+          <cell>7<line/>(10.98)</cell>
+          <cell>14<line/>(18.97)</cell>
+          <cell>8<line/>(16.47)</cell>
+          <cell>273<line/>(255.58)</cell>
+        </row>
+        <row header="yes">
+          <cell>Total</cell>
+          <cell>22</cell>
+          <cell>38</cell>
+          <cell>33</cell>
+          <cell>512</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <subsection xml:id="subsec-drawing-substantive-conclusions">
+      <title>Drawing Substantive Conclusions from a Contingency Table</title>
+      
+      <p>
+        The finding that there is a significant relationship between diet and outcome does not tell us the nature of the relationship. We therefore need to look at the data. The expected frequencies shown in <xref ref="tbl-observedstudyfreqs"/> can help. Recall that the expected frequencies show the frequencies expected if there were no relationship. Therefore, to assess the relationship, it is useful to compare the observed frequencies to the expected frequencies. In our example, we see that people on the AHA diet had more cancers and heart disease than expected whereas people on the Mediterranean diet had fewer occurrences of these diseases than expected.
+      </p>
+
+      <p>
+        Another approach is to compute percentages. Consider <xref ref="tbl-studyfreqsrows"/>, which shows the frequencies and the percentage of people in each diet condition who developed cancer, developed fatal heart disease, developed non-fatal heart disease, or stayed healthy. Percentages allow us to see that 4.95% of those on the AHA diet developed cancers as compared to 2.32% on the Mediterranean diet. Similarly, 7.92% of those on the AHA diet developed fatal heart disease compared to 4.64% on the Mediterranean diet, and 8.25% on the AHA diet developed non-fatal heart disease compared to 2.65% on the Mediterranean diet.
+      </p>
+
+      <table xml:id="tbl-studyfreqsrows">
+        <title>Frequencies and Percentages by Row for Diet and Health Study.</title>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell colspan="4">Outcome</cell>
+          </row>
+          <row header="yes">
+            <cell>Diet</cell>
+            <cell>Cancers</cell>
+            <cell>Fatal Heart Disease</cell>
+            <cell>Non-Fatal Heart Disease</cell>
+            <cell>Healthy</cell>
+          </row>
+          <row>
+            <cell>AHA</cell>
+            <cell>15<line/>(4.95%)</cell>
+            <cell>24<line/>(7.92%)</cell>
+            <cell>25<line/>(8.25%)</cell>
+            <cell>239<line/>(78.88%)</cell>
+          </row>
+          <row>
+            <cell>Mediterranean</cell>
+            <cell>7<line/>(2.32%)</cell>
+            <cell>14<line/>(4.64%)</cell>
+            <cell>8<line/>(2.65%)</cell>
+            <cell>273<line/>(90.40%)</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        Yet another approach is to show the percentage of people within each health outcome who were on the AHA diet and what percentage were on the Mediterranean diet. This is shown in <xref ref="tbl-studyfreqscols"/>.
+      </p>
+
+      <table xml:id="tbl-studyfreqscols">
+        <title>Frequencies and Percentages by Column for Diet and Health Study.</title>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell colspan="4">Outcome</cell>
+          </row>
+          <row header="yes">
+            <cell>Diet</cell>
+            <cell>Cancers</cell>
+            <cell>Fatal Heart Disease</cell>
+            <cell>Non-Fatal Heart Disease</cell>
+            <cell>Healthy</cell>
+          </row>
+          <row>
+            <cell>AHA</cell>
+            <cell>15<line/>(68.18%)</cell>
+            <cell>24<line/>(63.16%)</cell>
+            <cell>25<line/>(75.76%)</cell>
+            <cell>239<line/>(46.68%)</cell>
+          </row>
+          <row>
+            <cell>Mediterranean</cell>
+            <cell>7<line/>(31.82%)</cell>
+            <cell>14<line/>(36.84%)</cell>
+            <cell>8<line/>(24.24%)</cell>
+            <cell>273<line/>(53.32%)</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        Looking at <xref ref="tbl-studyfreqscols"/>, we see that 68.18% of people who developed cancer had been on the AHA diet whereas only 31.82% of people who developed cancer had been on the Mediterranean diet. This compares with roughly 50% of healthy people being on each diet.
+      </p>
+
+      <p>
+        Although all three approaches lead to the same conclusion about the direction of the relationship, they differ in terms of the particular comparisons they highlight. It is useful to keep in mind that any cell in <xref ref="tbl-studyfreqs"/> or <xref ref="tbl-studyfreqsrows"/> can be easily computed from any other. Once we specify a diet group, we can compare across outcomes. Or, alternatively, once we specify an outcome, we can compare across diet groups. Therefore, the choice of approach comes down mainly to which type of comparison is most relevant to your goals.
+      </p>
+    </subsection>
+
+    <subsection xml:id="subsec-key-assumption">
+      <title>Key Assumption of the Chi Square Test</title>
+      
+      <p>
+        There is an important assumption that is sometimes violated. The assumption is that each subject contributes data to only one cell. Therefore, the sum of all cell frequencies in the table must be the same as the number of subjects in the experiment. A common error is to compute Chi Square on the total number of responses rather than on the total number of subjects. An example will help illustrate the distinction.
+      </p>
+
+      <p>
+        Suppose a group of 16 subjects is given two types of anagram problems: (1) problems that can be solved by rearranging the letters to form a word related to the field of psychology and (2) problems that can be solved by rearranging the letters to form a word unrelated to psychology. The question of interest is whether problem type (psychology related or not) is related to whether or not the subject can solve the anagram. <xref ref="tbl-anagramdata"/> shows some fictitious data. Looking at the table, it is tempting to conclude that 9 + 8 = 17 out of 32 anagrams were solved. However, this conclusion is not justified because each subject contributed two anagrams, one of each type. Therefore, it is not correct to conclude that 17 out of 32 anagrams were solved; it is only correct to say that 17 out of 32 responses were correct. The chance that the two responses from a given subject would both be correct is certainly higher than the chance that two responses from two different subjects would both be correct. The dependencies among responses render the assumption that each observation is independent invalid. And when we violate this assumption, we get distorted estimates of significance.
+      </p>
+
+      <table xml:id="tbl-anagramdata">
+        <title>Anagram Problem Data.</title>
+        <tabular halign="center">
+          <row header="yes">
+            <cell></cell>
+            <cell>Solved</cell>
+            <cell>Did not Solve</cell>
+          </row>
+          <row>
+            <cell>Psychology</cell>
+            <cell>9</cell>
+            <cell>7</cell>
+          </row>
+          <row>
+            <cell>Not Psychology</cell>
+            <cell>8</cell>
+            <cell>8</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        The problem is that the table gives the impression that there were 32 observations when in fact there were only 16 observations (each contributing two data points).
+      </p>
+    </subsection>
+  </section>
+
+  <section xml:id="sec-comparing-groups-appendix">
+    <title>Appendix: More about the Chi Square Distribution</title>
+    
+    <p>
+      In the discussion of the Chi Square distribution, we introduced the Chi Square distribution as the distribution of the sum of squared standard normal deviates. To get a feeling for this definition, consider the Chi Square distribution with one degree of freedom. This is the distribution of the sum of one squared standard normal deviate; the distribution of a single standard normal deviate squared. Consider what the distribution would look like. The square of a number is always positive, so all values of the Chi Square distribution are positive. If a standard normal deviate is close to 0, then its square will be close to 0. Therefore, low values of Chi Square occur frequently with high values occurring rarely. The median of the Chi Square distribution with one degree of freedom is 0.45.
+    </p>
+
+    <p>
+      Since the Chi Square distribution with one degree of freedom is the distribution of a single squared standard normal deviate, the area under the Chi Square distribution below 4 equals the area under the standard normal distribution below 2 plus the area above 2. This is because a Chi Square of 4 or less is obtained if the standard normal deviate is between -2 and 2 (that is, if the deviate is less than or equal to 2 in absolute value). The total area under the standard normal distribution between -2 and 2 equals 0.9544.
+    </p>
+
+    <p>
+      Now suppose two standard normal deviates are sampled and squared. What is the probability that their sum is 6 or more? The <q>Chi Square Probability Calculator</q> shows that the probability of a Chi Square with 2 degrees of freedom being greater than or equal to 6 is 0.050. You can use the <q>Normal Calculator</q> to verify that the probability that two squared standard normal deviates are both greater than 3 is equal to 0.000032. However, it is not obvious how the <q>Normal Calculator</q> can be used to determine the probability that the sum of two squared normal deviates is greater than or equal to 6.
+    </p>
+
+    <p>
+      It is straightforward to show that the mean of a Chi Square distribution is the number of degrees of freedom. Recall that if a single score is sampled from a standard normal distribution, the mean of that distribution is 0 and its variance is 1. The variance of a squared standard normal deviate is 2. If k independent squared standard normal deviates are summed, then the variance of the sum is k times 2, which is 2k. For the Chi Square distribution with k degrees of freedom, the mean equals k and the variance equals 2k.
     </p>
   </section>
 
